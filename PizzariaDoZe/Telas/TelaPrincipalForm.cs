@@ -30,5 +30,17 @@ namespace PizzariaDoZe.Telas
             CadastroDeIngredientesForm TelaCadastroIngrediente = new CadastroDeIngredientesForm();
             TelaCadastroIngrediente.ShowDialog();
         }
+
+        private void btnCadastroValores_Click(object sender, EventArgs e)
+        {
+            CadastroDeValorForm TelaCadastroValores = new CadastroDeValorForm();
+            TelaCadastroValores.ShowDialog();
+        }
+
+        private void btnCadastrarProduto_Click(object sender, EventArgs e)
+        {
+            CadastroDeProdutosForm TelaCadastroProduto = new CadastroDeProdutosForm();
+            TelaCadastroProduto.ShowDialog();
+        }
     }
 }

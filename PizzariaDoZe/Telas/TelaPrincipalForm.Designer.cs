@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipalForm));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             labelLogo = new Label();
             panel2 = new Panel();
-            btnIconIngredientes = new Button();
-            btnIconSabores = new Button();
-            btnIconFuncionario = new Button();
-            btnIconCliente = new Button();
+            btnCadastrarProduto = new Button();
+            btnCadastroValores = new Button();
             btnCadastroDeIngredientes = new Button();
             btnCadastroDeSabores = new Button();
             btnCadastroDeFuncionarios = new Button();
             btnCadastrarCliente = new Button();
             panel3 = new Panel();
+            btnIconExcluir = new Button();
+            btnIconEditar = new Button();
             btnSearch = new Button();
             Searchtxt = new TextBox();
             tabControlCadastros = new TabControl();
@@ -50,14 +51,27 @@
             ListarFuncionários = new TabPage();
             ListarSabores = new TabPage();
             ListarIngredientes = new TabPage();
+            ListarTamanhos = new TabPage();
+            ListarProdutos = new TabPage();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            btnIconEditar = new Button();
-            btnIconExcluir = new Button();
+            imageList1 = new ImageList(components);
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox7 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             tabControlCadastros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -110,10 +124,14 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
-            panel2.Controls.Add(btnIconIngredientes);
-            panel2.Controls.Add(btnIconSabores);
-            panel2.Controls.Add(btnIconFuncionario);
-            panel2.Controls.Add(btnIconCliente);
+            panel2.Controls.Add(pictureBox7);
+            panel2.Controls.Add(pictureBox6);
+            panel2.Controls.Add(pictureBox5);
+            panel2.Controls.Add(pictureBox4);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(pictureBox2);
+            panel2.Controls.Add(btnCadastrarProduto);
+            panel2.Controls.Add(btnCadastroValores);
             panel2.Controls.Add(btnCadastroDeIngredientes);
             panel2.Controls.Add(btnCadastroDeSabores);
             panel2.Controls.Add(btnCadastroDeFuncionarios);
@@ -124,57 +142,37 @@
             panel2.Size = new Size(253, 481);
             panel2.TabIndex = 1;
             // 
-            // btnIconIngredientes
+            // btnCadastrarProduto
             // 
-            btnIconIngredientes.BackgroundImage = (Image)resources.GetObject("btnIconIngredientes.BackgroundImage");
-            btnIconIngredientes.BackgroundImageLayout = ImageLayout.Stretch;
-            btnIconIngredientes.FlatStyle = FlatStyle.Flat;
-            btnIconIngredientes.Location = new Point(8, 359);
-            btnIconIngredientes.Name = "btnIconIngredientes";
-            btnIconIngredientes.Size = new Size(53, 49);
-            btnIconIngredientes.TabIndex = 7;
-            btnIconIngredientes.UseVisualStyleBackColor = true;
+            btnCadastrarProduto.FlatStyle = FlatStyle.Popup;
+            btnCadastrarProduto.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCadastrarProduto.Location = new Point(67, 317);
+            btnCadastrarProduto.Margin = new Padding(3, 4, 3, 4);
+            btnCadastrarProduto.Name = "btnCadastrarProduto";
+            btnCadastrarProduto.Size = new Size(173, 49);
+            btnCadastrarProduto.TabIndex = 10;
+            btnCadastrarProduto.Text = "Cadastro de Produtos";
+            btnCadastrarProduto.UseVisualStyleBackColor = true;
+            btnCadastrarProduto.Click += btnCadastrarProduto_Click;
             // 
-            // btnIconSabores
+            // btnCadastroValores
             // 
-            btnIconSabores.BackgroundImage = (Image)resources.GetObject("btnIconSabores.BackgroundImage");
-            btnIconSabores.BackgroundImageLayout = ImageLayout.Stretch;
-            btnIconSabores.FlatStyle = FlatStyle.Flat;
-            btnIconSabores.Location = new Point(8, 250);
-            btnIconSabores.Name = "btnIconSabores";
-            btnIconSabores.Size = new Size(53, 49);
-            btnIconSabores.TabIndex = 6;
-            btnIconSabores.UseVisualStyleBackColor = true;
-            // 
-            // btnIconFuncionario
-            // 
-            btnIconFuncionario.BackColor = Color.Transparent;
-            btnIconFuncionario.BackgroundImage = (Image)resources.GetObject("btnIconFuncionario.BackgroundImage");
-            btnIconFuncionario.BackgroundImageLayout = ImageLayout.Stretch;
-            btnIconFuncionario.FlatStyle = FlatStyle.Flat;
-            btnIconFuncionario.Location = new Point(8, 137);
-            btnIconFuncionario.Name = "btnIconFuncionario";
-            btnIconFuncionario.Size = new Size(53, 49);
-            btnIconFuncionario.TabIndex = 5;
-            btnIconFuncionario.UseVisualStyleBackColor = false;
-            // 
-            // btnIconCliente
-            // 
-            btnIconCliente.BackColor = Color.Transparent;
-            btnIconCliente.BackgroundImage = (Image)resources.GetObject("btnIconCliente.BackgroundImage");
-            btnIconCliente.BackgroundImageLayout = ImageLayout.Stretch;
-            btnIconCliente.FlatStyle = FlatStyle.Flat;
-            btnIconCliente.Location = new Point(8, 32);
-            btnIconCliente.Name = "btnIconCliente";
-            btnIconCliente.Size = new Size(53, 49);
-            btnIconCliente.TabIndex = 4;
-            btnIconCliente.UseVisualStyleBackColor = false;
+            btnCadastroValores.FlatStyle = FlatStyle.Popup;
+            btnCadastroValores.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCadastroValores.Location = new Point(67, 260);
+            btnCadastroValores.Margin = new Padding(3, 4, 3, 4);
+            btnCadastroValores.Name = "btnCadastroValores";
+            btnCadastroValores.Size = new Size(173, 49);
+            btnCadastroValores.TabIndex = 8;
+            btnCadastroValores.Text = "Cadastro de Valores";
+            btnCadastroValores.UseVisualStyleBackColor = true;
+            btnCadastroValores.Click += btnCadastroValores_Click;
             // 
             // btnCadastroDeIngredientes
             // 
             btnCadastroDeIngredientes.FlatStyle = FlatStyle.Popup;
             btnCadastroDeIngredientes.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroDeIngredientes.Location = new Point(67, 359);
+            btnCadastroDeIngredientes.Location = new Point(67, 203);
             btnCadastroDeIngredientes.Margin = new Padding(3, 4, 3, 4);
             btnCadastroDeIngredientes.Name = "btnCadastroDeIngredientes";
             btnCadastroDeIngredientes.Size = new Size(173, 49);
@@ -187,7 +185,7 @@
             // 
             btnCadastroDeSabores.FlatStyle = FlatStyle.Popup;
             btnCadastroDeSabores.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroDeSabores.Location = new Point(67, 250);
+            btnCadastroDeSabores.Location = new Point(67, 146);
             btnCadastroDeSabores.Margin = new Padding(3, 4, 3, 4);
             btnCadastroDeSabores.Name = "btnCadastroDeSabores";
             btnCadastroDeSabores.Size = new Size(173, 49);
@@ -200,7 +198,7 @@
             // 
             btnCadastroDeFuncionarios.FlatStyle = FlatStyle.Popup;
             btnCadastroDeFuncionarios.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroDeFuncionarios.Location = new Point(67, 137);
+            btnCadastroDeFuncionarios.Location = new Point(67, 89);
             btnCadastroDeFuncionarios.Margin = new Padding(3, 4, 3, 4);
             btnCadastroDeFuncionarios.Name = "btnCadastroDeFuncionarios";
             btnCadastroDeFuncionarios.Size = new Size(173, 49);
@@ -235,6 +233,30 @@
             panel3.Size = new Size(697, 481);
             panel3.TabIndex = 2;
             // 
+            // btnIconExcluir
+            // 
+            btnIconExcluir.BackColor = Color.Transparent;
+            btnIconExcluir.BackgroundImage = (Image)resources.GetObject("btnIconExcluir.BackgroundImage");
+            btnIconExcluir.BackgroundImageLayout = ImageLayout.Stretch;
+            btnIconExcluir.FlatStyle = FlatStyle.Flat;
+            btnIconExcluir.Location = new Point(445, 31);
+            btnIconExcluir.Name = "btnIconExcluir";
+            btnIconExcluir.Size = new Size(39, 28);
+            btnIconExcluir.TabIndex = 6;
+            btnIconExcluir.UseVisualStyleBackColor = false;
+            // 
+            // btnIconEditar
+            // 
+            btnIconEditar.BackColor = Color.Transparent;
+            btnIconEditar.BackgroundImage = (Image)resources.GetObject("btnIconEditar.BackgroundImage");
+            btnIconEditar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnIconEditar.FlatStyle = FlatStyle.Flat;
+            btnIconEditar.Location = new Point(395, 31);
+            btnIconEditar.Name = "btnIconEditar";
+            btnIconEditar.Size = new Size(39, 28);
+            btnIconEditar.TabIndex = 5;
+            btnIconEditar.UseVisualStyleBackColor = false;
+            // 
             // btnSearch
             // 
             btnSearch.BackColor = Color.Transparent;
@@ -260,6 +282,8 @@
             tabControlCadastros.Controls.Add(ListarFuncionários);
             tabControlCadastros.Controls.Add(ListarSabores);
             tabControlCadastros.Controls.Add(ListarIngredientes);
+            tabControlCadastros.Controls.Add(ListarTamanhos);
+            tabControlCadastros.Controls.Add(ListarProdutos);
             tabControlCadastros.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             tabControlCadastros.Location = new Point(20, 66);
             tabControlCadastros.Name = "tabControlCadastros";
@@ -305,29 +329,114 @@
             ListarIngredientes.Text = "Ingredientes";
             ListarIngredientes.UseVisualStyleBackColor = true;
             // 
-            // btnIconEditar
+            // ListarTamanhos
             // 
-            btnIconEditar.BackColor = Color.Transparent;
-            btnIconEditar.BackgroundImage = (Image)resources.GetObject("btnIconEditar.BackgroundImage");
-            btnIconEditar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnIconEditar.FlatStyle = FlatStyle.Flat;
-            btnIconEditar.Location = new Point(395, 31);
-            btnIconEditar.Name = "btnIconEditar";
-            btnIconEditar.Size = new Size(39, 28);
-            btnIconEditar.TabIndex = 5;
-            btnIconEditar.UseVisualStyleBackColor = false;
+            ListarTamanhos.Location = new Point(4, 29);
+            ListarTamanhos.Name = "ListarTamanhos";
+            ListarTamanhos.Size = new Size(643, 365);
+            ListarTamanhos.TabIndex = 4;
+            ListarTamanhos.Text = "Tamanhos";
+            ListarTamanhos.UseVisualStyleBackColor = true;
             // 
-            // btnIconExcluir
+            // ListarProdutos
             // 
-            btnIconExcluir.BackColor = Color.Transparent;
-            btnIconExcluir.BackgroundImage = (Image)resources.GetObject("btnIconExcluir.BackgroundImage");
-            btnIconExcluir.BackgroundImageLayout = ImageLayout.Stretch;
-            btnIconExcluir.FlatStyle = FlatStyle.Flat;
-            btnIconExcluir.Location = new Point(445, 31);
-            btnIconExcluir.Name = "btnIconExcluir";
-            btnIconExcluir.Size = new Size(39, 28);
-            btnIconExcluir.TabIndex = 6;
-            btnIconExcluir.UseVisualStyleBackColor = false;
+            ListarProdutos.Location = new Point(4, 29);
+            ListarProdutos.Name = "ListarProdutos";
+            ListarProdutos.Size = new Size(643, 365);
+            ListarProdutos.TabIndex = 5;
+            ListarProdutos.Text = "Produtos";
+            ListarProdutos.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth8Bit;
+            imageList1.ImageSize = new Size(16, 16);
+            imageList1.TransparentColor = Color.Transparent;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.None;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.InitialImage = (Image)resources.GetObject("pictureBox2.InitialImage");
+            pictureBox2.Location = new Point(3, 32);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(58, 49);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 11;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.None;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.InitialImage = (Image)resources.GetObject("pictureBox3.InitialImage");
+            pictureBox3.Location = new Point(3, 89);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(58, 49);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 12;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImageLayout = ImageLayout.None;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.InitialImage = (Image)resources.GetObject("pictureBox4.InitialImage");
+            pictureBox4.Location = new Point(3, 144);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(58, 49);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 13;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.None;
+            pictureBox5.ErrorImage = (Image)resources.GetObject("pictureBox5.ErrorImage");
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.InitialImage = (Image)resources.GetObject("pictureBox5.InitialImage");
+            pictureBox5.Location = new Point(3, 204);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(58, 49);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 14;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImageLayout = ImageLayout.None;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.InitialImage = (Image)resources.GetObject("pictureBox6.InitialImage");
+            pictureBox6.Location = new Point(3, 260);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(58, 49);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 15;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
+            pictureBox7.BackgroundImageLayout = ImageLayout.None;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.InitialImage = (Image)resources.GetObject("pictureBox7.InitialImage");
+            pictureBox7.Location = new Point(3, 317);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(58, 49);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 16;
+            pictureBox7.TabStop = false;
             // 
             // TelaPrincipalForm
             // 
@@ -349,6 +458,12 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             tabControlCadastros.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
         }
 
@@ -370,13 +485,20 @@
         private TabPage ListarIngredientes;
         private Button btnSearch;
         private TextBox Searchtxt;
-        private Button btnIconIngredientes;
-        private Button btnIconSabores;
-        private Button btnIconFuncionario;
-        private Button btnIconCliente;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private PictureBox pictureBox1;
         private Button btnIconExcluir;
         private Button btnIconEditar;
+        private Button btnCadastrarProduto;
+        private Button btnCadastroValores;
+        private TabPage ListarTamanhos;
+        private TabPage ListarProdutos;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+        private ImageList imageList1;
     }
 }

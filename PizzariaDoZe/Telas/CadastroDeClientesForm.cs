@@ -17,6 +17,25 @@ namespace PizzariaDoZe.Telas
             InitializeComponent();
         }
 
+        private void labelNome_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void CadastroDeClientesForm_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
