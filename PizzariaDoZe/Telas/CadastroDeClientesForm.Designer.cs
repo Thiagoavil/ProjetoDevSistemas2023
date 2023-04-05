@@ -74,6 +74,7 @@
             labelCpf.Size = new Size(33, 20);
             labelCpf.TabIndex = 2;
             labelCpf.Text = "CPF";
+            labelCpf.Click += labelCpf_Click;
             // 
             // labelTelefone
             // 

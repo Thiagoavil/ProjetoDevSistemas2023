@@ -1,0 +1,795 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PizzariaDoZe</name>
+    </assembly>
+    <members>
+        <member name="M:PizzariaDoZe.Funcoes.AjustaResourcesControl(System.Windows.Forms.Control)">
+            <summary>
+            De forma recursiva, varre todos os componentes do Control informado, executando o método ApplyResources em cada um dos componentes localizados.
+            O ApplyResources realiza a leitura do satellite assembly, ou seja, do arquivo de resource que foi ativo conforme o idioma escolhido pelo usuário,
+            e com base no nome do campo ajusta todos os parâmetros contidos no resource para aquele campo, por exemplo Text, Font, Size, PasswordChar, Location etc.
+            O objetivo principal aqui é ajustar o Control, por exemplo o Form, para o Idioma e Cultura escolhido pelo usuário.
+            Deve possuir, em Properties, um arquivo de resources para cada idioma desejado, devendo ser alimentado na coluna nome o nome do campo e a propriedade que deseja ajustar.
+            Por exemplo, em cadeias de caracteres labelLogin.Text, em outros textBoxSenha.PasswordChar, ou seja, todas as propriedades podem ser ajustadas conforme o idioma e região em uso.
+            </summary>
+            <param name="container">Informar o container inicial, geralmente this para pegar todos os campos da tela, ou então, por exemplo, o nome de um panel ou usercontrol.</param>
+        </member>
+        <member name="M:PizzariaDoZe.Program.Main">
+            <summary>
+             The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:PizzariaDoZe.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.btnCadastrarCliente_text">
+            <summary>
+              Looks up a localized string similar to Cadastro de Cliente.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.btnCadastrarProduto_text">
+            <summary>
+              Looks up a localized string similar to Cadastro de Produtos.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.btnCadastroDeFuncionarios_text">
+            <summary>
+              Looks up a localized string similar to Cadastro de Funcionário.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.btnCadastroDeIngredientes_text">
+            <summary>
+              Looks up a localized string similar to Cadastro de Ingredientes.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.btnCadastroDeSabores_text">
+            <summary>
+              Looks up a localized string similar to Cadastro de Sabores.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.btnCadastroValores_text">
+            <summary>
+              Looks up a localized string similar to Cadastro de Valores.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.btnCancelar_text">
+            <summary>
+              Looks up a localized string similar to Cancelar.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.btnLimpar_text">
+            <summary>
+              Looks up a localized string similar to Limpar.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.btnSalvar_text">
+            <summary>
+              Looks up a localized string similar to Salvar.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.ConfiguraçõesBtn_Text">
+            <summary>
+              Looks up a localized string similar to Configurações.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.Idioma_Text">
+            <summary>
+              Looks up a localized string similar to Idioma/Região.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.IdiomaTab_Text">
+            <summary>
+              Looks up a localized string similar to Idioma/Região.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelBairro">
+            <summary>
+              Looks up a localized string similar to Bairro.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelCategoria">
+            <summary>
+              Looks up a localized string similar to Categoria.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelCnh">
+            <summary>
+              Looks up a localized string similar to Cnh.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelComplemento">
+            <summary>
+              Looks up a localized string similar to Complemento.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelCpf">
+            <summary>
+              Looks up a localized string similar to CPF.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelEmail">
+            <summary>
+              Looks up a localized string similar to Email.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelFuncao">
+            <summary>
+              Looks up a localized string similar to Função.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelIngredientes">
+            <summary>
+              Looks up a localized string similar to Ingredientes.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelLogo">
+            <summary>
+              Looks up a localized string similar to Pizzaria 
+                   Do zé.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.LabelMl">
+            <summary>
+              Looks up a localized string similar to ml.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelNome">
+            <summary>
+              Looks up a localized string similar to Nome.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelRua">
+            <summary>
+              Looks up a localized string similar to Rua.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelSenha">
+            <summary>
+              Looks up a localized string similar to Senha.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelTamanho">
+            <summary>
+              Looks up a localized string similar to Tamanho.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelTelefone">
+            <summary>
+              Looks up a localized string similar to Telefone.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelTipo">
+            <summary>
+              Looks up a localized string similar to Tipo.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelValidadecnh">
+            <summary>
+              Looks up a localized string similar to Validade Da Cnh.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.LabelValor">
+            <summary>
+              Looks up a localized string similar to Valor.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelValorBorda">
+            <summary>
+              Looks up a localized string similar to Valor Borda.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.LabelValorEspecial">
+            <summary>
+              Looks up a localized string similar to Valor Especial.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.labelValorTradicional">
+            <summary>
+              Looks up a localized string similar to Valor Tradicional.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.ListarClientes_text">
+            <summary>
+              Looks up a localized string similar to Clientes.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.ListarFuncionários">
+            <summary>
+              Looks up a localized string similar to Funcionários.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.ListarIngredientes">
+            <summary>
+              Looks up a localized string similar to Ingredientes.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.ListarProdutos">
+            <summary>
+              Looks up a localized string similar to Produtos.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.ListarSabores">
+            <summary>
+              Looks up a localized string similar to Sabores.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.ListarTamanhos">
+            <summary>
+              Looks up a localized string similar to Tamanhos.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.Telalabel">
+            <summary>
+              Looks up a localized string similar to Tela Principal.
+            </summary>
+        </member>
+        <member name="T:PizzariaDoZe.Properties.Resources_en_US">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.btnCadastrarCliente_Text">
+            <summary>
+              Looks up a localized string similar to Customer registration.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.btnCadastrarProduto_Text">
+            <summary>
+              Looks up a localized string similar to Product Registration.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.btnCadastroDeFuncionarios_Text">
+            <summary>
+              Looks up a localized string similar to Employee registration.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.btnCadastroDeIngredientes_Text">
+            <summary>
+              Looks up a localized string similar to Register of ingredients.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.btnCadastroDeSabores_Text">
+            <summary>
+              Looks up a localized string similar to Flavors Registration.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.btnCadastroValores_Text">
+            <summary>
+              Looks up a localized string similar to Registration of values.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.btnCancelar_Text">
+            <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.btnLimpar_Text">
+            <summary>
+              Looks up a localized string similar to To clean.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.btnSalvar_Text">
+            <summary>
+              Looks up a localized string similar to To save.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelBairro_Text">
+            <summary>
+              Looks up a localized string similar to Neighborhood.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelCategoria_Text">
+            <summary>
+              Looks up a localized string similar to Category.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelCnh_Text">
+            <summary>
+              Looks up a localized string similar to CNH.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelComplemento_Text">
+            <summary>
+              Looks up a localized string similar to Complement.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelCpf_Text">
+            <summary>
+              Looks up a localized string similar to CPF.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelEmail_Text">
+            <summary>
+              Looks up a localized string similar to Email.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelFuncao_Text">
+            <summary>
+              Looks up a localized string similar to Function.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelIngredientes_Text">
+            <summary>
+              Looks up a localized string similar to Ingredients.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelLogo_Text">
+            <summary>
+              Looks up a localized string similar to Zé pizzeria.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.LabelMl_Text">
+            <summary>
+              Looks up a localized string similar to ml.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelNome_Text">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelRua_Text">
+            <summary>
+              Looks up a localized string similar to Road.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelSenha_Text">
+            <summary>
+              Looks up a localized string similar to Password.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelTamanho_Text">
+            <summary>
+              Looks up a localized string similar to Size.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelTelefone_Text">
+            <summary>
+              Looks up a localized string similar to Telephone.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelTipo_Text">
+            <summary>
+              Looks up a localized string similar to Type.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelValidadecnh_Text">
+            <summary>
+              Looks up a localized string similar to CNH validity.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.LabelValor_Text">
+            <summary>
+              Looks up a localized string similar to Value.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelValorBorda_Text">
+            <summary>
+              Looks up a localized string similar to Border value.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.LabelValorEspecial_Text">
+            <summary>
+              Looks up a localized string similar to Special value.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.labelValorTradicional_Text">
+            <summary>
+              Looks up a localized string similar to Traditional value.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.ListarClientes_Text">
+            <summary>
+              Looks up a localized string similar to Customers.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.ListarFuncionários_Text">
+            <summary>
+              Looks up a localized string similar to Employees.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.ListarIngredientes_Text">
+            <summary>
+              Looks up a localized string similar to Ingredients.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.ListarProdutos_Text">
+            <summary>
+              Looks up a localized string similar to Products.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.ListarSabores_Text">
+            <summary>
+              Looks up a localized string similar to Flavors.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.ListarTamanhos_Text">
+            <summary>
+              Looks up a localized string similar to Sizes.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_en_US.Telalabel_Text">
+            <summary>
+              Looks up a localized string similar to Main screen.
+            </summary>
+        </member>
+        <member name="T:PizzariaDoZe.Properties.Resources_es">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.btnCadastrarCliente_Text">
+            <summary>
+              Looks up a localized string similar to Registración de cliente.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.btnCadastrarProduto_Text">
+            <summary>
+              Looks up a localized string similar to Registración del producto.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.btnCadastroDeFuncionarios_Text">
+            <summary>
+              Looks up a localized string similar to Registración de empleados.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.btnCadastroDeIngredientes_Text">
+            <summary>
+              Looks up a localized string similar to Registración de ingredientes.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.btnCadastroDeSabores_Text">
+            <summary>
+              Looks up a localized string similar to Registración de sabores.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.btnCadastroValores_Text">
+            <summary>
+              Looks up a localized string similar to Registración de valores.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.btnCancelar_Text">
+            <summary>
+              Looks up a localized string similar to Cancelar.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.btnLimpar_Text">
+            <summary>
+              Looks up a localized string similar to Limpiar.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.btnSalvar_Text">
+            <summary>
+              Looks up a localized string similar to Ahorrar.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelBairro_Text">
+            <summary>
+              Looks up a localized string similar to Vecindario.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelCategoria_Text">
+            <summary>
+              Looks up a localized string similar to Categoría.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelCnh_Text">
+            <summary>
+              Looks up a localized string similar to CNH.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelComplemento_Text">
+            <summary>
+              Looks up a localized string similar to Complementar.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelCpf_Text">
+            <summary>
+              Looks up a localized string similar to CPF.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelEmail_Text">
+            <summary>
+              Looks up a localized string similar to Correo electrónico.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelFuncao_Text">
+            <summary>
+              Looks up a localized string similar to Función.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelIngredientes_Text">
+            <summary>
+              Looks up a localized string similar to Ingredientes.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelLogo_Text1">
+            <summary>
+              Looks up a localized string similar to Pizzería
+            Del Cabron.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.LabelMl_Text">
+            <summary>
+              Looks up a localized string similar to ml.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelNome_Text">
+            <summary>
+              Looks up a localized string similar to Nombre.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelRua_Text">
+            <summary>
+              Looks up a localized string similar to Camino.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelSenha_Text">
+            <summary>
+              Looks up a localized string similar to Contraseña.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelTamanho_Text">
+            <summary>
+              Looks up a localized string similar to Tamaño.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelTelefone_Text">
+            <summary>
+              Looks up a localized string similar to Teléfono.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelTipo_Text">
+            <summary>
+              Looks up a localized string similar to Tipo.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelValidadecnh_Text">
+            <summary>
+              Looks up a localized string similar to Validez de CNH.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.LabelValor_Text">
+            <summary>
+              Looks up a localized string similar to Valor.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelValorBorda_Text">
+            <summary>
+              Looks up a localized string similar to Valor fronterizo.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.LabelValorEspecial_Text">
+            <summary>
+              Looks up a localized string similar to Valor especial.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.labelValorTradicional_Text">
+            <summary>
+              Looks up a localized string similar to Valor tradicional.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.ListarClientes_Text">
+            <summary>
+              Looks up a localized string similar to Clientes.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.ListarFuncionários_Text">
+            <summary>
+              Looks up a localized string similar to Empleados.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.ListarIngredientes_Text">
+            <summary>
+              Looks up a localized string similar to Ingredientes.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.ListarProdutos_Text">
+            <summary>
+              Looks up a localized string similar to Productos.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.ListarSabores_Text">
+            <summary>
+              Looks up a localized string similar to Sabores.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.ListarTamanhos_Text">
+            <summary>
+              Looks up a localized string similar to Tallas.
+            </summary>
+        </member>
+        <member name="P:PizzariaDoZe.Properties.Resources_es.Telalabel_Text">
+            <summary>
+              Looks up a localized string similar to Pantalla principal.
+            </summary>
+        </member>
+        <member name="F:PizzariaDoZe.Telas.CadastroDeClientesForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeClientesForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeClientesForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PizzariaDoZe.Telas.CadastroDeFuncionariosForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeFuncionariosForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeFuncionariosForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PizzariaDoZe.Telas.CadastroDeIngredientesForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeIngredientesForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeIngredientesForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PizzariaDoZe.Telas.CadastroDeProdutosForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeProdutosForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeProdutosForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PizzariaDoZe.Telas.CadastroDeSaboresForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeSaboresForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeSaboresForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PizzariaDoZe.Telas.CadastroDeValorForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeValorForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeValorForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PizzariaDoZe.Telas.TelaConfiguraçãoForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.TelaConfiguraçãoForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.TelaConfiguraçãoForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PizzariaDoZe.Telas.TelaPrincipalForm.components">
+            <summary>
+             Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.TelaPrincipalForm.Dispose(System.Boolean)">
+            <summary>
+             Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.TelaPrincipalForm.InitializeComponent">
+            <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PizzariaDoZe.ApplicationConfiguration">
+            <summary>
+             Bootstrap the application configuration.
+            </summary>
+        </member>
+        <member name="M:PizzariaDoZe.ApplicationConfiguration.Initialize">
+            <summary>
+             Bootstrap the application as follows:
+             <code>
+             global::System.Windows.Forms.Application.EnableVisualStyles();
+             global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+             global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            </code>
+            </summary>
+        </member>
+    </members>
+</doc>

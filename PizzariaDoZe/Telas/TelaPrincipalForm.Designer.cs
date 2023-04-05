@@ -32,9 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipalForm));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
+            Telalabel = new Label();
             labelLogo = new Label();
             panel2 = new Panel();
+            pictureBox7 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
             btnCadastrarProduto = new Button();
             btnCadastroValores = new Button();
             btnCadastroDeIngredientes = new Button();
@@ -55,30 +61,27 @@
             ListarProdutos = new TabPage();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             imageList1 = new ImageList(components);
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox7 = new PictureBox();
+            pictureBox8 = new PictureBox();
+            ConfiguraçõesBtn = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             tabControlCadastros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(Telalabel);
             panel1.Controls.Add(labelLogo);
             panel1.Location = new Point(9, 9);
             panel1.Margin = new Padding(3, 4, 3, 4);
@@ -97,17 +100,17 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // label1
+            // Telalabel
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Khaki;
-            label1.Location = new Point(557, 41);
-            label1.Name = "label1";
-            label1.Size = new Size(296, 62);
-            label1.TabIndex = 1;
-            label1.Text = "Tela Principal";
+            Telalabel.AutoSize = true;
+            Telalabel.BackColor = Color.Transparent;
+            Telalabel.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            Telalabel.ForeColor = Color.Khaki;
+            Telalabel.Location = new Point(557, 41);
+            Telalabel.Name = "Telalabel";
+            Telalabel.Size = new Size(296, 62);
+            Telalabel.TabIndex = 1;
+            Telalabel.Text = "Tela Principal";
             // 
             // labelLogo
             // 
@@ -124,6 +127,8 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(ConfiguraçõesBtn);
+            panel2.Controls.Add(pictureBox8);
             panel2.Controls.Add(pictureBox7);
             panel2.Controls.Add(pictureBox6);
             panel2.Controls.Add(pictureBox5);
@@ -142,11 +147,96 @@
             panel2.Size = new Size(253, 481);
             panel2.TabIndex = 1;
             // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
+            pictureBox7.BackgroundImageLayout = ImageLayout.None;
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.InitialImage = (Image)resources.GetObject("pictureBox7.InitialImage");
+            pictureBox7.Location = new Point(3, 312);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(58, 49);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 16;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImageLayout = ImageLayout.None;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.InitialImage = (Image)resources.GetObject("pictureBox6.InitialImage");
+            pictureBox6.Location = new Point(3, 256);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(58, 49);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 15;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.None;
+            pictureBox5.ErrorImage = (Image)resources.GetObject("pictureBox5.ErrorImage");
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.InitialImage = (Image)resources.GetObject("pictureBox5.InitialImage");
+            pictureBox5.Location = new Point(3, 200);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(58, 49);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 14;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImageLayout = ImageLayout.None;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.InitialImage = (Image)resources.GetObject("pictureBox4.InitialImage");
+            pictureBox4.Location = new Point(3, 144);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(58, 49);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 13;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.None;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.InitialImage = (Image)resources.GetObject("pictureBox3.InitialImage");
+            pictureBox3.Location = new Point(3, 88);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(58, 49);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 12;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.None;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.InitialImage = (Image)resources.GetObject("pictureBox2.InitialImage");
+            pictureBox2.Location = new Point(3, 32);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(58, 49);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 11;
+            pictureBox2.TabStop = false;
+            // 
             // btnCadastrarProduto
             // 
             btnCadastrarProduto.FlatStyle = FlatStyle.Popup;
             btnCadastrarProduto.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastrarProduto.Location = new Point(67, 317);
+            btnCadastrarProduto.Location = new Point(67, 312);
             btnCadastrarProduto.Margin = new Padding(3, 4, 3, 4);
             btnCadastrarProduto.Name = "btnCadastrarProduto";
             btnCadastrarProduto.Size = new Size(173, 49);
@@ -159,7 +249,7 @@
             // 
             btnCadastroValores.FlatStyle = FlatStyle.Popup;
             btnCadastroValores.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroValores.Location = new Point(67, 260);
+            btnCadastroValores.Location = new Point(67, 256);
             btnCadastroValores.Margin = new Padding(3, 4, 3, 4);
             btnCadastroValores.Name = "btnCadastroValores";
             btnCadastroValores.Size = new Size(173, 49);
@@ -172,7 +262,7 @@
             // 
             btnCadastroDeIngredientes.FlatStyle = FlatStyle.Popup;
             btnCadastroDeIngredientes.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroDeIngredientes.Location = new Point(67, 203);
+            btnCadastroDeIngredientes.Location = new Point(67, 200);
             btnCadastroDeIngredientes.Margin = new Padding(3, 4, 3, 4);
             btnCadastroDeIngredientes.Name = "btnCadastroDeIngredientes";
             btnCadastroDeIngredientes.Size = new Size(173, 49);
@@ -185,7 +275,7 @@
             // 
             btnCadastroDeSabores.FlatStyle = FlatStyle.Popup;
             btnCadastroDeSabores.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroDeSabores.Location = new Point(67, 146);
+            btnCadastroDeSabores.Location = new Point(67, 144);
             btnCadastroDeSabores.Margin = new Padding(3, 4, 3, 4);
             btnCadastroDeSabores.Name = "btnCadastroDeSabores";
             btnCadastroDeSabores.Size = new Size(173, 49);
@@ -198,7 +288,7 @@
             // 
             btnCadastroDeFuncionarios.FlatStyle = FlatStyle.Popup;
             btnCadastroDeFuncionarios.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroDeFuncionarios.Location = new Point(67, 89);
+            btnCadastroDeFuncionarios.Location = new Point(67, 88);
             btnCadastroDeFuncionarios.Margin = new Padding(3, 4, 3, 4);
             btnCadastroDeFuncionarios.Name = "btnCadastroDeFuncionarios";
             btnCadastroDeFuncionarios.Size = new Size(173, 49);
@@ -289,6 +379,7 @@
             tabControlCadastros.Name = "tabControlCadastros";
             tabControlCadastros.SelectedIndex = 0;
             tabControlCadastros.Size = new Size(651, 398);
+            tabControlCadastros.SizeMode = TabSizeMode.FillToRight;
             tabControlCadastros.TabIndex = 0;
             // 
             // ListarClientes
@@ -353,90 +444,32 @@
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
             // 
-            // pictureBox2
+            // pictureBox8
             // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.None;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.InitialImage = (Image)resources.GetObject("pictureBox2.InitialImage");
-            pictureBox2.Location = new Point(3, 32);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(58, 49);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 11;
-            pictureBox2.TabStop = false;
+            pictureBox8.BackColor = Color.Transparent;
+            pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
+            pictureBox8.BackgroundImageLayout = ImageLayout.None;
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.InitialImage = (Image)resources.GetObject("pictureBox8.InitialImage");
+            pictureBox8.Location = new Point(3, 368);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(58, 49);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.TabIndex = 17;
+            pictureBox8.TabStop = false;
             // 
-            // pictureBox3
+            // ConfiguraçõesBtn
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.BackgroundImageLayout = ImageLayout.None;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.InitialImage = (Image)resources.GetObject("pictureBox3.InitialImage");
-            pictureBox3.Location = new Point(3, 89);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(58, 49);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 12;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
-            pictureBox4.BackgroundImageLayout = ImageLayout.None;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.InitialImage = (Image)resources.GetObject("pictureBox4.InitialImage");
-            pictureBox4.Location = new Point(3, 144);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(58, 49);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 13;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.BackgroundImageLayout = ImageLayout.None;
-            pictureBox5.ErrorImage = (Image)resources.GetObject("pictureBox5.ErrorImage");
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.InitialImage = (Image)resources.GetObject("pictureBox5.InitialImage");
-            pictureBox5.Location = new Point(3, 204);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(58, 49);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 14;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.BackColor = Color.Transparent;
-            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
-            pictureBox6.BackgroundImageLayout = ImageLayout.None;
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.InitialImage = (Image)resources.GetObject("pictureBox6.InitialImage");
-            pictureBox6.Location = new Point(3, 260);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(58, 49);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 15;
-            pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.BackColor = Color.Transparent;
-            pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
-            pictureBox7.BackgroundImageLayout = ImageLayout.None;
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.InitialImage = (Image)resources.GetObject("pictureBox7.InitialImage");
-            pictureBox7.Location = new Point(3, 317);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(58, 49);
-            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox7.TabIndex = 16;
-            pictureBox7.TabStop = false;
+            ConfiguraçõesBtn.FlatStyle = FlatStyle.Popup;
+            ConfiguraçõesBtn.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            ConfiguraçõesBtn.Location = new Point(67, 368);
+            ConfiguraçõesBtn.Margin = new Padding(3, 4, 3, 4);
+            ConfiguraçõesBtn.Name = "ConfiguraçõesBtn";
+            ConfiguraçõesBtn.Size = new Size(173, 49);
+            ConfiguraçõesBtn.TabIndex = 18;
+            ConfiguraçõesBtn.Text = "Configurações";
+            ConfiguraçõesBtn.UseVisualStyleBackColor = true;
+            ConfiguraçõesBtn.Click += ConfiguraçõesBtn_Click;
             // 
             // TelaPrincipalForm
             // 
@@ -455,15 +488,16 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             tabControlCadastros.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
         }
 
@@ -476,7 +510,7 @@
         private Button btnCadastroDeIngredientes;
         private Button btnCadastroDeSabores;
         private Button btnCadastroDeFuncionarios;
-        private Label label1;
+        private Label Telalabel;
         private Label labelLogo;
         private TabControl tabControlCadastros;
         private TabPage ListarClientes;
@@ -500,5 +534,7 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private ImageList imageList1;
+        private Button ConfiguraçõesBtn;
+        private PictureBox pictureBox8;
     }
 }

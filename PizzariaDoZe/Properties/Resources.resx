@@ -117,4 +117,125 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnCadastrarCliente.text" xml:space="preserve">
+    <value>Cadastro de Cliente</value>
+  </data>
+  <data name="btnCadastrarProduto.text" xml:space="preserve">
+    <value>Cadastro de Produtos</value>
+  </data>
+  <data name="btnCadastroDeFuncionarios.text" xml:space="preserve">
+    <value>Cadastro de Funcionário</value>
+  </data>
+  <data name="btnCadastroDeIngredientes.text" xml:space="preserve">
+    <value>Cadastro de Ingredientes</value>
+  </data>
+  <data name="btnCadastroDeSabores.text" xml:space="preserve">
+    <value>Cadastro de Sabores</value>
+  </data>
+  <data name="btnCadastroValores.text" xml:space="preserve">
+    <value>Cadastro de Valores</value>
+  </data>
+  <data name="btnCancelar.text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="btnLimpar.text" xml:space="preserve">
+    <value>Limpar</value>
+  </data>
+  <data name="btnSalvar.text" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="ConfiguraçõesBtn.Text" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="Idioma.Text" xml:space="preserve">
+    <value>Idioma/Região</value>
+  </data>
+  <data name="IdiomaTab.Text" xml:space="preserve">
+    <value>Idioma/Região</value>
+  </data>
+  <data name="labelBairro" xml:space="preserve">
+    <value>Bairro</value>
+  </data>
+  <data name="labelCategoria" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="labelCnh" xml:space="preserve">
+    <value>Cnh</value>
+  </data>
+  <data name="labelComplemento" xml:space="preserve">
+    <value>Complemento</value>
+  </data>
+  <data name="labelCpf" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="labelEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="labelFuncao" xml:space="preserve">
+    <value>Função</value>
+  </data>
+  <data name="labelIngredientes" xml:space="preserve">
+    <value>Ingredientes</value>
+  </data>
+  <data name="labelLogo" xml:space="preserve">
+    <value>Pizzaria 
+        Do zé</value>
+  </data>
+  <data name="LabelMl" xml:space="preserve">
+    <value>ml</value>
+  </data>
+  <data name="labelNome" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="labelRua" xml:space="preserve">
+    <value>Rua</value>
+  </data>
+  <data name="labelSenha" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="labelTamanho" xml:space="preserve">
+    <value>Tamanho</value>
+  </data>
+  <data name="labelTelefone" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="labelTipo" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="labelValidadecnh" xml:space="preserve">
+    <value>Validade Da Cnh</value>
+  </data>
+  <data name="LabelValor" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="labelValorBorda" xml:space="preserve">
+    <value>Valor Borda</value>
+  </data>
+  <data name="LabelValorEspecial" xml:space="preserve">
+    <value>Valor Especial</value>
+  </data>
+  <data name="labelValorTradicional" xml:space="preserve">
+    <value>Valor Tradicional</value>
+  </data>
+  <data name="ListarClientes.text" xml:space="preserve">
+    <value>Clientes</value>
+  </data>
+  <data name="ListarFuncionários" xml:space="preserve">
+    <value>Funcionários</value>
+  </data>
+  <data name="ListarIngredientes" xml:space="preserve">
+    <value>Ingredientes</value>
+  </data>
+  <data name="ListarProdutos" xml:space="preserve">
+    <value>Produtos</value>
+  </data>
+  <data name="ListarSabores" xml:space="preserve">
+    <value>Sabores</value>
+  </data>
+  <data name="ListarTamanhos" xml:space="preserve">
+    <value>Tamanhos</value>
+  </data>
+  <data name="Telalabel" xml:space="preserve">
+    <value>Tela Principal</value>
+  </data>
 </root>
