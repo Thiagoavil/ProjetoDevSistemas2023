@@ -32,13 +32,13 @@
             labelTamanho = new Label();
             labelValorTradicional = new Label();
             LabelValorEspecial = new Label();
-            txtValorTradicional = new TextBox();
-            TxtValorEspecial = new TextBox();
-            textBox1 = new TextBox();
             labelValorBorda = new Label();
             btnLimpar = new Button();
             btnSalvar = new Button();
             btnCancelar = new Button();
+            maskedTextBoxValorTradicional = new MaskedTextBox();
+            maskedTextBoxValorEspecial = new MaskedTextBox();
+            maskedTextBoValorBorda = new MaskedTextBox();
             SuspendLayout();
             // 
             // ListTamanho
@@ -77,27 +77,6 @@
             LabelValorEspecial.TabIndex = 3;
             LabelValorEspecial.Text = "Valor Especial";
             // 
-            // txtValorTradicional
-            // 
-            txtValorTradicional.Location = new Point(22, 156);
-            txtValorTradicional.Name = "txtValorTradicional";
-            txtValorTradicional.Size = new Size(125, 27);
-            txtValorTradicional.TabIndex = 4;
-            // 
-            // TxtValorEspecial
-            // 
-            TxtValorEspecial.Location = new Point(22, 221);
-            TxtValorEspecial.Name = "TxtValorEspecial";
-            TxtValorEspecial.Size = new Size(125, 27);
-            TxtValorEspecial.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(22, 286);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 6;
-            // 
             // labelValorBorda
             // 
             labelValorBorda.AutoSize = true;
@@ -113,7 +92,7 @@
             btnLimpar.Margin = new Padding(3, 4, 3, 4);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(125, 76);
-            btnLimpar.TabIndex = 40;
+            btnLimpar.TabIndex = 4;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
             // 
@@ -123,7 +102,7 @@
             btnSalvar.Margin = new Padding(3, 4, 3, 4);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(125, 76);
-            btnSalvar.TabIndex = 39;
+            btnSalvar.TabIndex = 5;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -134,9 +113,34 @@
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(125, 76);
-            btnCancelar.TabIndex = 38;
+            btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBoxValorTradicional
+            // 
+            maskedTextBoxValorTradicional.Location = new Point(22, 156);
+            maskedTextBoxValorTradicional.Mask = "$000,00";
+            maskedTextBoxValorTradicional.Name = "maskedTextBoxValorTradicional";
+            maskedTextBoxValorTradicional.Size = new Size(125, 27);
+            maskedTextBoxValorTradicional.TabIndex = 1;
+            // 
+            // maskedTextBoxValorEspecial
+            // 
+            maskedTextBoxValorEspecial.Location = new Point(22, 221);
+            maskedTextBoxValorEspecial.Mask = "$000,00";
+            maskedTextBoxValorEspecial.Name = "maskedTextBoxValorEspecial";
+            maskedTextBoxValorEspecial.Size = new Size(125, 27);
+            maskedTextBoxValorEspecial.TabIndex = 2;
+            // 
+            // maskedTextBoValorBorda
+            // 
+            maskedTextBoValorBorda.Location = new Point(22, 286);
+            maskedTextBoValorBorda.Mask = "$000,00";
+            maskedTextBoValorBorda.Name = "maskedTextBoValorBorda";
+            maskedTextBoValorBorda.Size = new Size(125, 27);
+            maskedTextBoValorBorda.TabIndex = 3;
+            maskedTextBoValorBorda.MaskInputRejected += maskedTextBoValorBorda_MaskInputRejected;
             // 
             // CadastroDeValorForm
             // 
@@ -144,17 +148,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
             ClientSize = new Size(447, 450);
+            Controls.Add(maskedTextBoValorBorda);
+            Controls.Add(maskedTextBoxValorEspecial);
+            Controls.Add(maskedTextBoxValorTradicional);
             Controls.Add(btnLimpar);
             Controls.Add(btnSalvar);
             Controls.Add(btnCancelar);
             Controls.Add(labelValorBorda);
-            Controls.Add(textBox1);
-            Controls.Add(TxtValorEspecial);
-            Controls.Add(txtValorTradicional);
             Controls.Add(LabelValorEspecial);
             Controls.Add(labelValorTradicional);
             Controls.Add(labelTamanho);
             Controls.Add(ListTamanho);
+            KeyPreview = true;
             Name = "CadastroDeValorForm";
             Text = "CadastroDeValores";
             ResumeLayout(false);
@@ -167,12 +172,12 @@
         private Label labelTamanho;
         private Label labelValorTradicional;
         private Label LabelValorEspecial;
-        private TextBox txtValorTradicional;
-        private TextBox TxtValorEspecial;
-        private TextBox textBox1;
         private Label labelValorBorda;
         private Button btnLimpar;
         private Button btnSalvar;
         private Button btnCancelar;
+        private MaskedTextBox maskedTextBoxValorTradicional;
+        private MaskedTextBox maskedTextBoxValorEspecial;
+        private MaskedTextBox maskedTextBoValorBorda;
     }
 }

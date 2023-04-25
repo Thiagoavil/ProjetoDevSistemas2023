@@ -49,7 +49,7 @@
             txtNome.Margin = new Padding(3, 4, 3, 4);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(161, 27);
-            txtNome.TabIndex = 9;
+            txtNome.TabIndex = 0;
             // 
             // labelNome
             // 
@@ -76,7 +76,7 @@
             CbCategoria.Margin = new Padding(3, 4, 3, 4);
             CbCategoria.Name = "CbCategoria";
             CbCategoria.Size = new Size(161, 28);
-            CbCategoria.TabIndex = 11;
+            CbCategoria.TabIndex = 1;
             CbCategoria.SelectedIndexChanged += CbCategoria_SelectedIndexChanged;
             // 
             // PBFotoPizza
@@ -95,7 +95,7 @@
             CheckListIngredientes.Margin = new Padding(3, 4, 3, 4);
             CheckListIngredientes.Name = "CheckListIngredientes";
             CheckListIngredientes.Size = new Size(198, 224);
-            CheckListIngredientes.TabIndex = 13;
+            CheckListIngredientes.TabIndex = 3;
             // 
             // labelIngredientes
             // 
@@ -113,7 +113,7 @@
             CBTipo.Margin = new Padding(3, 4, 3, 4);
             CBTipo.Name = "CBTipo";
             CBTipo.Size = new Size(161, 28);
-            CBTipo.TabIndex = 16;
+            CBTipo.TabIndex = 2;
             // 
             // labelTipo
             // 
@@ -130,7 +130,7 @@
             btnLimpar.Margin = new Padding(3, 4, 3, 4);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(125, 76);
-            btnLimpar.TabIndex = 34;
+            btnLimpar.TabIndex = 5;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
             // 
@@ -140,7 +140,7 @@
             btnSalvar.Margin = new Padding(3, 4, 3, 4);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(125, 76);
-            btnSalvar.TabIndex = 33;
+            btnSalvar.TabIndex = 6;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -151,7 +151,7 @@
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(125, 76);
-            btnCancelar.TabIndex = 32;
+            btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -173,6 +173,7 @@
             Controls.Add(labelCategoria);
             Controls.Add(txtNome);
             Controls.Add(labelNome);
+            KeyPreview = true;
             Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroDeSaboresForm";
             StartPosition = FormStartPosition.CenterScreen;

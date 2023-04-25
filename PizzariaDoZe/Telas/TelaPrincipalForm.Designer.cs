@@ -35,6 +35,8 @@
             Telalabel = new Label();
             labelLogo = new Label();
             panel2 = new Panel();
+            ConfiguraçõesBtn = new Button();
+            pictureBox8 = new PictureBox();
             pictureBox7 = new PictureBox();
             pictureBox6 = new PictureBox();
             pictureBox5 = new PictureBox();
@@ -61,11 +63,10 @@
             ListarProdutos = new TabPage();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             imageList1 = new ImageList(components);
-            pictureBox8 = new PictureBox();
-            ConfiguraçõesBtn = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -74,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             tabControlCadastros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -146,6 +146,33 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(253, 481);
             panel2.TabIndex = 1;
+            // 
+            // ConfiguraçõesBtn
+            // 
+            ConfiguraçõesBtn.FlatStyle = FlatStyle.Popup;
+            ConfiguraçõesBtn.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            ConfiguraçõesBtn.Location = new Point(67, 368);
+            ConfiguraçõesBtn.Margin = new Padding(3, 4, 3, 4);
+            ConfiguraçõesBtn.Name = "ConfiguraçõesBtn";
+            ConfiguraçõesBtn.Size = new Size(173, 49);
+            ConfiguraçõesBtn.TabIndex = 6;
+            ConfiguraçõesBtn.Text = "Configurações";
+            ConfiguraçõesBtn.UseVisualStyleBackColor = true;
+            ConfiguraçõesBtn.Click += ConfiguraçõesBtn_Click;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.BackColor = Color.Transparent;
+            pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
+            pictureBox8.BackgroundImageLayout = ImageLayout.None;
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.InitialImage = (Image)resources.GetObject("pictureBox8.InitialImage");
+            pictureBox8.Location = new Point(3, 368);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(58, 49);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.TabIndex = 17;
+            pictureBox8.TabStop = false;
             // 
             // pictureBox7
             // 
@@ -240,7 +267,7 @@
             btnCadastrarProduto.Margin = new Padding(3, 4, 3, 4);
             btnCadastrarProduto.Name = "btnCadastrarProduto";
             btnCadastrarProduto.Size = new Size(173, 49);
-            btnCadastrarProduto.TabIndex = 10;
+            btnCadastrarProduto.TabIndex = 5;
             btnCadastrarProduto.Text = "Cadastro de Produtos";
             btnCadastrarProduto.UseVisualStyleBackColor = true;
             btnCadastrarProduto.Click += btnCadastrarProduto_Click;
@@ -253,7 +280,7 @@
             btnCadastroValores.Margin = new Padding(3, 4, 3, 4);
             btnCadastroValores.Name = "btnCadastroValores";
             btnCadastroValores.Size = new Size(173, 49);
-            btnCadastroValores.TabIndex = 8;
+            btnCadastroValores.TabIndex = 4;
             btnCadastroValores.Text = "Cadastro de Valores";
             btnCadastroValores.UseVisualStyleBackColor = true;
             btnCadastroValores.Click += btnCadastroValores_Click;
@@ -333,6 +360,7 @@
             btnIconExcluir.Name = "btnIconExcluir";
             btnIconExcluir.Size = new Size(39, 28);
             btnIconExcluir.TabIndex = 6;
+            btnIconExcluir.TabStop = false;
             btnIconExcluir.UseVisualStyleBackColor = false;
             // 
             // btnIconEditar
@@ -345,6 +373,7 @@
             btnIconEditar.Name = "btnIconEditar";
             btnIconEditar.Size = new Size(39, 28);
             btnIconEditar.TabIndex = 5;
+            btnIconEditar.TabStop = false;
             btnIconEditar.UseVisualStyleBackColor = false;
             // 
             // btnSearch
@@ -357,6 +386,7 @@
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(39, 28);
             btnSearch.TabIndex = 2;
+            btnSearch.TabStop = false;
             btnSearch.UseVisualStyleBackColor = false;
             // 
             // Searchtxt
@@ -364,7 +394,7 @@
             Searchtxt.Location = new Point(20, 32);
             Searchtxt.Name = "Searchtxt";
             Searchtxt.Size = new Size(319, 27);
-            Searchtxt.TabIndex = 1;
+            Searchtxt.TabIndex = 7;
             // 
             // tabControlCadastros
             // 
@@ -380,7 +410,7 @@
             tabControlCadastros.SelectedIndex = 0;
             tabControlCadastros.Size = new Size(651, 398);
             tabControlCadastros.SizeMode = TabSizeMode.FillToRight;
-            tabControlCadastros.TabIndex = 0;
+            tabControlCadastros.TabIndex = 8;
             // 
             // ListarClientes
             // 
@@ -444,33 +474,6 @@
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
             // 
-            // pictureBox8
-            // 
-            pictureBox8.BackColor = Color.Transparent;
-            pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
-            pictureBox8.BackgroundImageLayout = ImageLayout.None;
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.InitialImage = (Image)resources.GetObject("pictureBox8.InitialImage");
-            pictureBox8.Location = new Point(3, 368);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(58, 49);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 17;
-            pictureBox8.TabStop = false;
-            // 
-            // ConfiguraçõesBtn
-            // 
-            ConfiguraçõesBtn.FlatStyle = FlatStyle.Popup;
-            ConfiguraçõesBtn.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            ConfiguraçõesBtn.Location = new Point(67, 368);
-            ConfiguraçõesBtn.Margin = new Padding(3, 4, 3, 4);
-            ConfiguraçõesBtn.Name = "ConfiguraçõesBtn";
-            ConfiguraçõesBtn.Size = new Size(173, 49);
-            ConfiguraçõesBtn.TabIndex = 18;
-            ConfiguraçõesBtn.Text = "Configurações";
-            ConfiguraçõesBtn.UseVisualStyleBackColor = true;
-            ConfiguraçõesBtn.Click += ConfiguraçõesBtn_Click;
-            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -480,6 +483,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            KeyPreview = true;
             Margin = new Padding(3, 4, 3, 4);
             Name = "TelaPrincipalForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -488,6 +492,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -497,7 +502,6 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             tabControlCadastros.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
         }
 

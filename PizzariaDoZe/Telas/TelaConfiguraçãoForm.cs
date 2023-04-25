@@ -18,6 +18,14 @@ namespace PizzariaDoZe.Telas
             InitializeComponent();
             //seleciona no comboBox o idioma/cultura atual
             comboBoxIdioma.SelectedItem = ConfigurationManager.AppSettings.Get("IdiomaRegiao");
+            #region Configuração De Botões no Foco
+            //adiciona eventos em geral, exemplo: ganhar e perder o foco
+            Funcoes.EventoFocoCampos(this);
+            #endregion
+            #region Enter Como Tab
+            //Evento em Funcoes que congifura a tecla enter como o tab
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown);
+            #endregion
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtTelefone = new TextBox();
-            txtCpf = new TextBox();
             txtNome = new TextBox();
             labelTelefone = new Label();
             labelCpf = new Label();
@@ -45,23 +43,9 @@
             btnSalvar = new Button();
             btnCancelar = new Button();
             btnLimpar = new Button();
+            maskedTextBoxCpf = new MaskedTextBox();
+            maskedTextBoxTelefone = new MaskedTextBox();
             SuspendLayout();
-            // 
-            // txtTelefone
-            // 
-            txtTelefone.Location = new Point(95, 104);
-            txtTelefone.Margin = new Padding(3, 4, 3, 4);
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(161, 27);
-            txtTelefone.TabIndex = 18;
-            // 
-            // txtCpf
-            // 
-            txtCpf.Location = new Point(95, 159);
-            txtCpf.Margin = new Padding(3, 4, 3, 4);
-            txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(161, 27);
-            txtCpf.TabIndex = 17;
             // 
             // txtNome
             // 
@@ -69,7 +53,7 @@
             txtNome.Margin = new Padding(3, 4, 3, 4);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(161, 27);
-            txtNome.TabIndex = 16;
+            txtNome.TabIndex = 0;
             // 
             // labelTelefone
             // 
@@ -140,7 +124,8 @@
             txtSenha.Margin = new Padding(3, 4, 3, 4);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(161, 27);
-            txtSenha.TabIndex = 24;
+            txtSenha.TabIndex = 1;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // DatePickerValidadeCNH
             // 
@@ -149,16 +134,16 @@
             DatePickerValidadeCNH.Margin = new Padding(3, 4, 3, 4);
             DatePickerValidadeCNH.Name = "DatePickerValidadeCNH";
             DatePickerValidadeCNH.Size = new Size(99, 27);
-            DatePickerValidadeCNH.TabIndex = 25;
+            DatePickerValidadeCNH.TabIndex = 6;
             // 
             // TxtCnh
             // 
             TxtCnh.Location = new Point(95, 268);
             TxtCnh.Margin = new Padding(3, 4, 3, 4);
-            TxtCnh.Mask = "00000000000";
+            TxtCnh.Mask = "000000000000";
             TxtCnh.Name = "TxtCnh";
             TxtCnh.Size = new Size(138, 27);
-            TxtCnh.TabIndex = 26;
+            TxtCnh.TabIndex = 5;
             // 
             // CbFuncao
             // 
@@ -167,7 +152,7 @@
             CbFuncao.Margin = new Padding(3, 4, 3, 4);
             CbFuncao.Name = "CbFuncao";
             CbFuncao.Size = new Size(138, 28);
-            CbFuncao.TabIndex = 27;
+            CbFuncao.TabIndex = 4;
             // 
             // btnSalvar
             // 
@@ -175,7 +160,7 @@
             btnSalvar.Margin = new Padding(3, 4, 3, 4);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(125, 76);
-            btnSalvar.TabIndex = 29;
+            btnSalvar.TabIndex = 9;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -186,7 +171,7 @@
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(125, 76);
-            btnCancelar.TabIndex = 28;
+            btnCancelar.TabIndex = 7;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -196,9 +181,25 @@
             btnLimpar.Margin = new Padding(3, 4, 3, 4);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(125, 76);
-            btnLimpar.TabIndex = 30;
+            btnLimpar.TabIndex = 8;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBoxCpf
+            // 
+            maskedTextBoxCpf.Location = new Point(95, 160);
+            maskedTextBoxCpf.Mask = "000.000.000-00";
+            maskedTextBoxCpf.Name = "maskedTextBoxCpf";
+            maskedTextBoxCpf.Size = new Size(161, 27);
+            maskedTextBoxCpf.TabIndex = 3;
+            // 
+            // maskedTextBoxTelefone
+            // 
+            maskedTextBoxTelefone.Location = new Point(95, 105);
+            maskedTextBoxTelefone.Mask = "(00) 00000-0000";
+            maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
+            maskedTextBoxTelefone.Size = new Size(161, 27);
+            maskedTextBoxTelefone.TabIndex = 2;
             // 
             // CadastroDeFuncionariosForm
             // 
@@ -206,6 +207,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
             ClientSize = new Size(534, 444);
+            Controls.Add(maskedTextBoxTelefone);
+            Controls.Add(maskedTextBoxCpf);
             Controls.Add(btnLimpar);
             Controls.Add(btnSalvar);
             Controls.Add(btnCancelar);
@@ -217,12 +220,11 @@
             Controls.Add(labelCnh);
             Controls.Add(labelFuncao);
             Controls.Add(labelSenha);
-            Controls.Add(txtTelefone);
-            Controls.Add(txtCpf);
             Controls.Add(txtNome);
             Controls.Add(labelTelefone);
             Controls.Add(labelCpf);
             Controls.Add(labelNome);
+            KeyPreview = true;
             Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroDeFuncionariosForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -232,9 +234,6 @@
         }
 
         #endregion
-
-        private TextBox txtTelefone;
-        private TextBox txtCpf;
         private TextBox txtNome;
         private Label labelTelefone;
         private Label labelCpf;
@@ -250,5 +249,7 @@
         private Button btnSalvar;
         private Button btnCancelar;
         private Button btnLimpar;
+        private MaskedTextBox maskedTextBoxCpf;
+        private MaskedTextBox maskedTextBoxTelefone;
     }
 }

@@ -24,6 +24,19 @@ namespace PizzariaDoZe.Telas
             //automatizadas acima
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+            #region Configuração De Botões no Foco
+            //adiciona eventos em geral, exemplo: ganhar e perder o foco
+            Funcoes.EventoFocoCampos(this);
+            #endregion
+            #region Enter Como Tab
+            //Evento em Funcoes que congifura a tecla enter como o tab
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown);
+            #endregion
+        }
+
+        private void maskedTextBoValorBorda_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

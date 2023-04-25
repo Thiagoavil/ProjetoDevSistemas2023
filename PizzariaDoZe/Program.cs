@@ -12,8 +12,12 @@ namespace PizzariaDoZe
         [STAThread]
         static void Main()
         {
-            string? auxIdiomaRegiao = ConfigurationManager.AppSettings.Get("IdiomaRegiao");
+            // ? indica que o valor pode ser nulo
+            // no ternário estamos tratando para isso não ocorrer
+            string? auxIdiomaRegiao = (ConfigurationManager.AppSettings.Get("IdiomaRegiao") is not null) ?
+            ConfigurationManager.AppSettings.Get("IdiomaRegiao") : "";
             //ajusta o idioma/região
+            //o ! afirma que o valor já foi tratado e não será nulo aqui
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(auxIdiomaRegiao!);
             Thread.CurrentThread.CurrentCulture = new CultureInfo(auxIdiomaRegiao!);
 

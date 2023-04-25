@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PizzariaDoZe.Telas
 {
@@ -23,6 +25,14 @@ namespace PizzariaDoZe.Telas
             //ajuste manual de campos ou mensagens para o usuário que não puderam ser
             //automatizadas acima
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
+            #endregion
+            #region Configuração De Botões no Foco
+            //adiciona eventos em geral, exemplo: ganhar e perder o foco
+            Funcoes.EventoFocoCampos(this);
+            #endregion
+            #region Enter Como Tab
+            //Evento em Funcoes que congifura a tecla enter como o tab
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown);
             #endregion
         }
 
@@ -50,6 +60,27 @@ namespace PizzariaDoZe.Telas
         private void labelCpf_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CadastroDeClientesForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.DialogResult != DialogResult.None)
+            {
+                TelaDeFechamento fechando = new TelaDeFechamento();
+                DialogResult resultado = fechando.ShowDialog();
+
+
+                if (resultado == DialogResult.OK)
+                {
+
+                }
+                else if (resultado == DialogResult.Cancel)
+                {
+                    this.Close();
+                    CadastroDeClientesForm cadastro = new CadastroDeClientesForm();
+                    cadastro.ShowDialog();
+                }
+            }
         }
     }
 }

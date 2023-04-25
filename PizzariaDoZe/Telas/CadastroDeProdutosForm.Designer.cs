@@ -31,7 +31,6 @@
             txtNome = new TextBox();
             labelNome = new Label();
             LabelValor = new Label();
-            txtValor = new TextBox();
             ListTipo = new ListBox();
             LabelTipo = new Label();
             LabelMl = new Label();
@@ -39,6 +38,7 @@
             btnLimpar = new Button();
             btnSalvar = new Button();
             btnCancelar = new Button();
+            maskedTextBoxValor = new MaskedTextBox();
             SuspendLayout();
             // 
             // txtNome
@@ -47,7 +47,7 @@
             txtNome.Margin = new Padding(3, 4, 3, 4);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(185, 27);
-            txtNome.TabIndex = 11;
+            txtNome.TabIndex = 0;
             // 
             // labelNome
             // 
@@ -67,14 +67,6 @@
             LabelValor.TabIndex = 12;
             LabelValor.Text = "Valor";
             // 
-            // txtValor
-            // 
-            txtValor.Location = new Point(16, 127);
-            txtValor.Margin = new Padding(3, 4, 3, 4);
-            txtValor.Name = "txtValor";
-            txtValor.Size = new Size(185, 27);
-            txtValor.TabIndex = 13;
-            // 
             // ListTipo
             // 
             ListTipo.FormattingEnabled = true;
@@ -83,7 +75,7 @@
             ListTipo.Location = new Point(18, 195);
             ListTipo.Name = "ListTipo";
             ListTipo.Size = new Size(160, 144);
-            ListTipo.TabIndex = 14;
+            ListTipo.TabIndex = 2;
             // 
             // LabelTipo
             // 
@@ -112,7 +104,7 @@
             listBox1.Location = new Point(222, 195);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(160, 144);
-            listBox1.TabIndex = 16;
+            listBox1.TabIndex = 3;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // btnLimpar
@@ -121,7 +113,7 @@
             btnLimpar.Margin = new Padding(3, 4, 3, 4);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(125, 76);
-            btnLimpar.TabIndex = 37;
+            btnLimpar.TabIndex = 5;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
             // 
@@ -131,7 +123,7 @@
             btnSalvar.Margin = new Padding(3, 4, 3, 4);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(125, 76);
-            btnSalvar.TabIndex = 36;
+            btnSalvar.TabIndex = 6;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -142,9 +134,17 @@
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(125, 76);
-            btnCancelar.TabIndex = 35;
+            btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBoxValor
+            // 
+            maskedTextBoxValor.Location = new Point(16, 126);
+            maskedTextBoxValor.Mask = "$000,00";
+            maskedTextBoxValor.Name = "maskedTextBoxValor";
+            maskedTextBoxValor.Size = new Size(125, 27);
+            maskedTextBoxValor.TabIndex = 1;
             // 
             // CadastroDeProdutosForm
             // 
@@ -152,6 +152,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
             ClientSize = new Size(473, 467);
+            Controls.Add(maskedTextBoxValor);
             Controls.Add(btnLimpar);
             Controls.Add(btnSalvar);
             Controls.Add(btnCancelar);
@@ -159,10 +160,10 @@
             Controls.Add(listBox1);
             Controls.Add(LabelTipo);
             Controls.Add(ListTipo);
-            Controls.Add(txtValor);
             Controls.Add(LabelValor);
             Controls.Add(txtNome);
             Controls.Add(labelNome);
+            KeyPreview = true;
             Name = "CadastroDeProdutosForm";
             Text = "CadastroDeProdutosForm";
             ResumeLayout(false);
@@ -174,7 +175,6 @@
         private TextBox txtNome;
         private Label labelNome;
         private Label LabelValor;
-        private TextBox txtValor;
         private ListBox ListTipo;
         private Label LabelTipo;
         private Label LabelMl;
@@ -182,5 +182,6 @@
         private Button btnLimpar;
         private Button btnSalvar;
         private Button btnCancelar;
+        private MaskedTextBox maskedTextBoxValor;
     }
 }

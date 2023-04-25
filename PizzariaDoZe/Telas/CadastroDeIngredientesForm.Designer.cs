@@ -37,59 +37,65 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(88, 115);
+            txtNome.Location = new Point(101, 153);
+            txtNome.Margin = new Padding(3, 4, 3, 4);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(162, 23);
-            txtNome.TabIndex = 9;
+            txtNome.Size = new Size(185, 27);
+            txtNome.TabIndex = 0;
             // 
             // labelNome
             // 
             labelNome.AutoSize = true;
-            labelNome.Location = new Point(42, 118);
+            labelNome.Location = new Point(48, 157);
             labelNome.Name = "labelNome";
-            labelNome.Size = new Size(40, 15);
+            labelNome.Size = new Size(50, 20);
             labelNome.TabIndex = 8;
             labelNome.Text = "Nome";
             // 
             // btnLimpar
             // 
-            btnLimpar.Location = new Point(115, 180);
+            btnLimpar.Location = new Point(131, 240);
+            btnLimpar.Margin = new Padding(3, 4, 3, 4);
             btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(74, 51);
-            btnLimpar.TabIndex = 34;
+            btnLimpar.Size = new Size(85, 68);
+            btnLimpar.TabIndex = 2;
             btnLimpar.Text = "Limpar";
             btnLimpar.UseVisualStyleBackColor = true;
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(220, 180);
+            btnSalvar.Location = new Point(251, 240);
+            btnSalvar.Margin = new Padding(3, 4, 3, 4);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(74, 51);
-            btnSalvar.TabIndex = 33;
+            btnSalvar.Size = new Size(85, 68);
+            btnSalvar.TabIndex = 3;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(10, 180);
+            btnCancelar.Location = new Point(11, 240);
+            btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(74, 51);
-            btnCancelar.TabIndex = 32;
+            btnCancelar.Size = new Size(85, 68);
+            btnCancelar.TabIndex = 1;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
             // CadastroDeIngredientesForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
-            ClientSize = new Size(308, 254);
+            ClientSize = new Size(352, 339);
             Controls.Add(btnLimpar);
             Controls.Add(btnSalvar);
             Controls.Add(btnCancelar);
             Controls.Add(txtNome);
             Controls.Add(labelNome);
+            KeyPreview = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroDeIngredientesForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaCadastroDeIngredientesForm";

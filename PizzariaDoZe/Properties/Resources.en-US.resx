@@ -144,10 +144,13 @@
   <data name="btnSalvar.Text" xml:space="preserve">
     <value>To save</value>
   </data>
+  <data name="CheckBoxReinicio.Text" xml:space="preserve">
+    <value>Reset for aply the language?</value>
+  </data>
   <data name="ConfiguraçõesBtn.Text" xml:space="preserve">
     <value>Configuration</value>
   </data>
-  <data name="Idioma.Text" xml:space="preserve">
+  <data name="IdiomaGroup.Text" xml:space="preserve">
     <value>Language/Region</value>
   </data>
   <data name="IdiomaTab.Text" xml:space="preserve">

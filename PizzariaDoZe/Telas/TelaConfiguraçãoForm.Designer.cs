@@ -30,14 +30,14 @@
         {
             ConfiguracaoTab = new TabControl();
             IdiomaTab = new TabPage();
-            Idioma = new GroupBox();
-            comboBoxIdioma = new ComboBox();
+            IdiomaGroup = new GroupBox();
             CheckBoxReinicio = new CheckBox();
+            comboBoxIdioma = new ComboBox();
             btnConfirmar = new Button();
             btnCancelar = new Button();
             ConfiguracaoTab.SuspendLayout();
             IdiomaTab.SuspendLayout();
-            Idioma.SuspendLayout();
+            IdiomaGroup.SuspendLayout();
             SuspendLayout();
             // 
             // ConfiguracaoTab
@@ -51,7 +51,7 @@
             // 
             // IdiomaTab
             // 
-            IdiomaTab.Controls.Add(Idioma);
+            IdiomaTab.Controls.Add(IdiomaGroup);
             IdiomaTab.Location = new Point(4, 29);
             IdiomaTab.Name = "IdiomaTab";
             IdiomaTab.Padding = new Padding(3);
@@ -60,16 +60,26 @@
             IdiomaTab.Text = "Idioma/Região";
             IdiomaTab.UseVisualStyleBackColor = true;
             // 
-            // Idioma
+            // IdiomaGroup
             // 
-            Idioma.Controls.Add(CheckBoxReinicio);
-            Idioma.Controls.Add(comboBoxIdioma);
-            Idioma.Location = new Point(17, 28);
-            Idioma.Name = "Idioma";
-            Idioma.Size = new Size(530, 96);
-            Idioma.TabIndex = 0;
-            Idioma.TabStop = false;
-            Idioma.Text = "Idioma/Região";
+            IdiomaGroup.Controls.Add(CheckBoxReinicio);
+            IdiomaGroup.Controls.Add(comboBoxIdioma);
+            IdiomaGroup.Location = new Point(17, 28);
+            IdiomaGroup.Name = "IdiomaGroup";
+            IdiomaGroup.Size = new Size(530, 96);
+            IdiomaGroup.TabIndex = 0;
+            IdiomaGroup.TabStop = false;
+            IdiomaGroup.Text = "Idioma/Região";
+            // 
+            // CheckBoxReinicio
+            // 
+            CheckBoxReinicio.AutoSize = true;
+            CheckBoxReinicio.Location = new Point(210, 30);
+            CheckBoxReinicio.Name = "CheckBoxReinicio";
+            CheckBoxReinicio.Size = new Size(242, 24);
+            CheckBoxReinicio.TabIndex = 2;
+            CheckBoxReinicio.Text = "Reiniciar para aplicar o idioma?";
+            CheckBoxReinicio.UseVisualStyleBackColor = true;
             // 
             // comboBoxIdioma
             // 
@@ -78,17 +88,7 @@
             comboBoxIdioma.Location = new Point(16, 26);
             comboBoxIdioma.Name = "comboBoxIdioma";
             comboBoxIdioma.Size = new Size(151, 28);
-            comboBoxIdioma.TabIndex = 0;
-            // 
-            // CheckBoxReinicio
-            // 
-            CheckBoxReinicio.AutoSize = true;
-            CheckBoxReinicio.Location = new Point(210, 30);
-            CheckBoxReinicio.Name = "CheckBoxReinicio";
-            CheckBoxReinicio.Size = new Size(242, 24);
-            CheckBoxReinicio.TabIndex = 1;
-            CheckBoxReinicio.Text = "Reiniciar para aplicar o idioma?";
-            CheckBoxReinicio.UseVisualStyleBackColor = true;
+            comboBoxIdioma.TabIndex = 1;
             // 
             // btnConfirmar
             // 
@@ -96,7 +96,7 @@
             btnConfirmar.Margin = new Padding(3, 4, 3, 4);
             btnConfirmar.Name = "btnConfirmar";
             btnConfirmar.Size = new Size(125, 76);
-            btnConfirmar.TabIndex = 40;
+            btnConfirmar.TabIndex = 4;
             btnConfirmar.Text = "Confirmar";
             btnConfirmar.UseVisualStyleBackColor = true;
             btnConfirmar.Click += btnConfirmar_Click;
@@ -108,7 +108,7 @@
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(125, 76);
-            btnCancelar.TabIndex = 41;
+            btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -121,12 +121,13 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnConfirmar);
             Controls.Add(ConfiguracaoTab);
+            KeyPreview = true;
             Name = "TelaConfiguraçãoForm";
             Text = "TelaConfiguraçãoForm";
             ConfiguracaoTab.ResumeLayout(false);
             IdiomaTab.ResumeLayout(false);
-            Idioma.ResumeLayout(false);
-            Idioma.PerformLayout();
+            IdiomaGroup.ResumeLayout(false);
+            IdiomaGroup.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -134,7 +135,7 @@
 
         private TabControl ConfiguracaoTab;
         private TabPage IdiomaTab;
-        private GroupBox Idioma;
+        private GroupBox IdiomaGroup;
         private CheckBox CheckBoxReinicio;
         private ComboBox comboBoxIdioma;
         private Button btnConfirmar;

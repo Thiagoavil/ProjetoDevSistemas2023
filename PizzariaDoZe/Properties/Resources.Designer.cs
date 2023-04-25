@@ -142,6 +142,15 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reiniciar para aplicar o idioma?.
+        /// </summary>
+        public static string CheckBoxReinicio_Text {
+            get {
+                return ResourceManager.GetString("CheckBoxReinicio.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configurações.
         /// </summary>
         public static string ConfiguraçõesBtn_Text {
@@ -153,9 +162,9 @@ namespace PizzariaDoZe.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Idioma/Região.
         /// </summary>
-        public static string Idioma_Text {
+        public static string IdiomaGroup_Text {
             get {
-                return ResourceManager.GetString("Idioma.Text", resourceCulture);
+                return ResourceManager.GetString("IdiomaGroup.Text", resourceCulture);
             }
         }
         

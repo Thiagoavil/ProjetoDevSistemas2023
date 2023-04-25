@@ -15,6 +15,43 @@
             </summary>
             <param name="container">Informar o container inicial, geralmente this para pegar todos os campos da tela, ou então, por exemplo, o nome de um panel ou usercontrol.</param>
         </member>
+        <member name="M:PizzariaDoZe.Funcoes.EventoFocoCampos(System.Windows.Forms.Control)">
+            <summary>
+            De forma recursiva, varre todos os componentes do Control informado,
+            adicionando nos tipos informados os eventos Enter e Leave,
+            e vinculando aos manipuladores criados.
+            </summary>
+            <param name="container">Informar o container inicial,
+            geralmente this para pegar todos os campos da tela, ou então, por exemplo, o nome de um panel ou usercontrol.
+            </param>
+        </member>
+        <member name="M:PizzariaDoZe.Funcoes.CampoEventoEnter(System.Object,System.EventArgs)">
+            <summary>
+            Altera a cor do BackGroud quando o campo ganha o foco
+            </summary>
+            <param name="sender">Objeto que gerou o evento</param>
+            <param name="e">Evento que foi capturado</param>
+            <example> textBoxUsuario.Enter += new System.EventHandler(ClassFuncoes.CampoEventoEnter); </example>
+        </member>
+        <member name="M:PizzariaDoZe.Funcoes.CampoEventoLeave(System.Object,System.EventArgs)">
+            <summary>
+            Alterar a cor do BackGroup quando o campo perde o foco
+            </summary>
+            <param name="sender">Objeto que gerou o evento</param>
+            <param name="e">Evento que foi capturado</param>
+            <example> textBoxUsuario.Leave += new System.EventHandler(ClassFuncoes.CampoEventoLeave); </example>
+        </member>
+        <member name="M:PizzariaDoZe.Funcoes.FormEventoKeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+             <summary>
+             Tratar eventos de teclado, no caso tecla ENTER funcionando com TAB e tecla ESC para fechar
+             </summary>
+             <remarks>KeyPreview do formulário para true.</remarks>
+             <param name="sender">Objeto que gerou o evento</param>
+             <param name="e">Evento que foi capturado</param>
+             <example>No construtor do formulário:
+             this.KeyDown += new System.Windows.Forms.KeyEventHandler(ClassFuncoes.FormEventoKeyDown);
+            </example>
+        </member>
         <member name="M:PizzariaDoZe.Program.Main">
             <summary>
              The main entry point for the application.
@@ -81,12 +118,17 @@
               Looks up a localized string similar to Salvar.
             </summary>
         </member>
+        <member name="P:PizzariaDoZe.Properties.Resources.CheckBoxReinicio_Text">
+            <summary>
+              Looks up a localized string similar to Reiniciar para aplicar o idioma?.
+            </summary>
+        </member>
         <member name="P:PizzariaDoZe.Properties.Resources.ConfiguraçõesBtn_Text">
             <summary>
               Looks up a localized string similar to Configurações.
             </summary>
         </member>
-        <member name="P:PizzariaDoZe.Properties.Resources.Idioma_Text">
+        <member name="P:PizzariaDoZe.Properties.Resources.IdiomaGroup_Text">
             <summary>
               Looks up a localized string similar to Idioma/Região.
             </summary>
@@ -754,6 +796,23 @@
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:PizzariaDoZe.Telas.TelaConfiguraçãoForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PizzariaDoZe.Telas.TelaDeFechamento.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.TelaDeFechamento.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PizzariaDoZe.Telas.TelaDeFechamento.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
