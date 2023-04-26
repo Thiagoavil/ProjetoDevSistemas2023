@@ -99,7 +99,18 @@ namespace PizzariaDoZe.Telas
 
         private void TelaPrincipalForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            TelaFechamentoPrincipal telaFechamento = new TelaFechamentoPrincipal();
+            DialogResult resultado = telaFechamento.ShowDialog();
 
+            if(resultado == DialogResult.OK)
+            {
+                this.Activate();
+            }
+            else if(resultado == DialogResult.Cancel)
+            {
+                this.Close();
+            }
+            
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using PizzariaDoZe.Telas;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -25,6 +24,18 @@ namespace PizzariaDoZe
             {
                 AjustaResourcesControl(c);
                 ComponentResourceManager resources = new(typeof(Properties.Resources));
+                resources.ApplyResources(c, c.Name);
+            }
+        }
+
+        // Os itens de menu do nosso menu suspenso fazem parte de uma Collection, ou seja,
+        // não estão diretamente em uma camada de Control e sim internamente no menu de contexto.
+        // Desta forma precisamos percorrer seus itens para poder ajustar os parâmetros via resources
+        public static void AjustaResourcesItem(ContextMenuStrip cmt)
+        {
+            ComponentResourceManager resources = new(typeof(Properties.Resources));
+            foreach (ToolStripItem c in cmt.Items)
+            {
                 resources.ApplyResources(c, c.Name);
             }
         }
@@ -136,17 +147,7 @@ namespace PizzariaDoZe
             //verifica se foi pressionado ESC
             else if (e.KeyCode == Keys.Escape)
             {
-                TelaDeFechamento fechando = new TelaDeFechamento();
-                DialogResult resultado = fechando.ShowDialog();
-
-                if(resultado == DialogResult.OK)
-                {
-                    form.Close();
-                }
-                else if(resultado == DialogResult.Cancel)
-                {
-
-                }
+                form.Close();
             }
         }
     }
