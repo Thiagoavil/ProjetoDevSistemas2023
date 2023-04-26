@@ -43,6 +43,7 @@ namespace PizzariaDoZe.Telas
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -64,23 +65,8 @@ namespace PizzariaDoZe.Telas
 
         private void CadastroDeClientesForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (this.DialogResult != DialogResult.None)
-            {
-                TelaDeFechamento fechando = new TelaDeFechamento();
-                DialogResult resultado = fechando.ShowDialog();
-
-
-                if (resultado == DialogResult.OK)
-                {
-
-                }
-                else if (resultado == DialogResult.Cancel)
-                {
-                    this.Close();
-                    CadastroDeClientesForm cadastro = new CadastroDeClientesForm();
-                    cadastro.ShowDialog();
-                }
-            }
+            TelaDeFechamento fechando = new TelaDeFechamento();
+            DialogResult resultado = fechando.ShowDialog();
         }
     }
 }

@@ -63,6 +63,23 @@
             ListarProdutos = new TabPage();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             imageList1 = new ImageList(components);
+            contextMenuStripPrincipal = new ContextMenuStrip(components);
+            inicioToolStripMenuItem = new ToolStripMenuItem();
+            ClienteStripMenuItem = new ToolStripMenuItem();
+            funcionariosToolStripMenuItem = new ToolStripMenuItem();
+            saboresToolStripMenuItem = new ToolStripMenuItem();
+            ingredientesToolStripMenuItem = new ToolStripMenuItem();
+            valoresToolStripMenuItem = new ToolStripMenuItem();
+            produtosToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
+            configuraçõesToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            sairToolStripMenuItem = new ToolStripMenuItem();
+            notifyIcon1 = new NotifyIcon(components);
+            contextMenuStripSystemTray = new ContextMenuStrip(components);
+            abrirAplicaçãoToolStripMenuItem = new ToolStripMenuItem();
+            encerrarToolStripMenuItem = new ToolStripMenuItem();
+            sobreToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -75,6 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             tabControlCadastros.SuspendLayout();
+            contextMenuStripPrincipal.SuspendLayout();
+            contextMenuStripSystemTray.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -474,6 +493,120 @@
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
             // 
+            // contextMenuStripPrincipal
+            // 
+            contextMenuStripPrincipal.ImageScalingSize = new Size(20, 20);
+            contextMenuStripPrincipal.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, funcionariosToolStripMenuItem, ClienteStripMenuItem, ingredientesToolStripMenuItem, saboresToolStripMenuItem, valoresToolStripMenuItem, produtosToolStripMenuItem, toolStripSeparator2, configuraçõesToolStripMenuItem, toolStripSeparator1, sairToolStripMenuItem });
+            contextMenuStripPrincipal.Name = "contextMenuStripPrincipal";
+            contextMenuStripPrincipal.Size = new Size(238, 232);
+            // 
+            // inicioToolStripMenuItem
+            // 
+            inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            inicioToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F1;
+            inicioToolStripMenuItem.Size = new Size(237, 24);
+            inicioToolStripMenuItem.Text = "Inicio";
+            inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click;
+            // 
+            // ClienteStripMenuItem
+            // 
+            ClienteStripMenuItem.Name = "ClienteStripMenuItem";
+            ClienteStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F3;
+            ClienteStripMenuItem.Size = new Size(237, 24);
+            ClienteStripMenuItem.Text = "Cliente";
+            // 
+            // funcionariosToolStripMenuItem
+            // 
+            funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
+            funcionariosToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F2;
+            funcionariosToolStripMenuItem.Size = new Size(237, 24);
+            funcionariosToolStripMenuItem.Text = "Funcionarios";
+            funcionariosToolStripMenuItem.Click += funcionariosToolStripMenuItem_Click;
+            // 
+            // saboresToolStripMenuItem
+            // 
+            saboresToolStripMenuItem.Name = "saboresToolStripMenuItem";
+            saboresToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F5;
+            saboresToolStripMenuItem.Size = new Size(237, 24);
+            saboresToolStripMenuItem.Text = "Sabores";
+            // 
+            // ingredientesToolStripMenuItem
+            // 
+            ingredientesToolStripMenuItem.Name = "ingredientesToolStripMenuItem";
+            ingredientesToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F4;
+            ingredientesToolStripMenuItem.Size = new Size(237, 24);
+            ingredientesToolStripMenuItem.Text = "Ingredientes";
+            // 
+            // valoresToolStripMenuItem
+            // 
+            valoresToolStripMenuItem.Name = "valoresToolStripMenuItem";
+            valoresToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F6;
+            valoresToolStripMenuItem.Size = new Size(237, 24);
+            valoresToolStripMenuItem.Text = "Valores";
+            // 
+            // produtosToolStripMenuItem
+            // 
+            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            produtosToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F7;
+            produtosToolStripMenuItem.Size = new Size(237, 24);
+            produtosToolStripMenuItem.Text = "Produtos";
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(234, 6);
+            // 
+            // configuraçõesToolStripMenuItem
+            // 
+            configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            configuraçõesToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F8;
+            configuraçõesToolStripMenuItem.Size = new Size(237, 24);
+            configuraçõesToolStripMenuItem.Text = "Configurações";
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(234, 6);
+            // 
+            // sairToolStripMenuItem
+            // 
+            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            sairToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.Delete;
+            sairToolStripMenuItem.Size = new Size(237, 24);
+            sairToolStripMenuItem.Text = "Sair";
+            // 
+            // notifyIcon1
+            // 
+            notifyIcon1.ContextMenuStrip = contextMenuStripSystemTray;
+            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            notifyIcon1.Text = "Pizzaria Do Zé";
+            notifyIcon1.MouseDoubleClick += notifyIcon1_MouseDoubleClick;
+            // 
+            // contextMenuStripSystemTray
+            // 
+            contextMenuStripSystemTray.ImageScalingSize = new Size(20, 20);
+            contextMenuStripSystemTray.Items.AddRange(new ToolStripItem[] { abrirAplicaçãoToolStripMenuItem, encerrarToolStripMenuItem, sobreToolStripMenuItem });
+            contextMenuStripSystemTray.Name = "contextMenuStripSystemTray";
+            contextMenuStripSystemTray.Size = new Size(182, 76);
+            // 
+            // abrirAplicaçãoToolStripMenuItem
+            // 
+            abrirAplicaçãoToolStripMenuItem.Name = "abrirAplicaçãoToolStripMenuItem";
+            abrirAplicaçãoToolStripMenuItem.Size = new Size(181, 24);
+            abrirAplicaçãoToolStripMenuItem.Text = "Abrir Aplicação";
+            // 
+            // encerrarToolStripMenuItem
+            // 
+            encerrarToolStripMenuItem.Name = "encerrarToolStripMenuItem";
+            encerrarToolStripMenuItem.Size = new Size(181, 24);
+            encerrarToolStripMenuItem.Text = "Encerrar";
+            // 
+            // sobreToolStripMenuItem
+            // 
+            sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            sobreToolStripMenuItem.Size = new Size(181, 24);
+            sobreToolStripMenuItem.Text = "Sobre";
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -502,6 +635,8 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             tabControlCadastros.ResumeLayout(false);
+            contextMenuStripPrincipal.ResumeLayout(false);
+            contextMenuStripSystemTray.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -540,5 +675,22 @@
         private ImageList imageList1;
         private Button ConfiguraçõesBtn;
         private PictureBox pictureBox8;
+        private ContextMenuStrip contextMenuStripPrincipal;
+        private ToolStripMenuItem inicioToolStripMenuItem;
+        private ToolStripMenuItem funcionariosToolStripMenuItem;
+        private ToolStripMenuItem saboresToolStripMenuItem;
+        private ToolStripMenuItem ingredientesToolStripMenuItem;
+        private ToolStripMenuItem valoresToolStripMenuItem;
+        private ToolStripMenuItem produtosToolStripMenuItem;
+        private ToolStripMenuItem configuraçõesToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem sairToolStripMenuItem;
+        private ToolStripMenuItem ClienteStripMenuItem;
+        private NotifyIcon notifyIcon1;
+        private ContextMenuStrip contextMenuStripSystemTray;
+        private ToolStripMenuItem abrirAplicaçãoToolStripMenuItem;
+        private ToolStripMenuItem encerrarToolStripMenuItem;
+        private ToolStripMenuItem sobreToolStripMenuItem;
     }
 }

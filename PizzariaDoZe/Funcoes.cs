@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzariaDoZe.Telas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -135,7 +136,17 @@ namespace PizzariaDoZe
             //verifica se foi pressionado ESC
             else if (e.KeyCode == Keys.Escape)
             {
-                form.Close();
+                TelaDeFechamento fechando = new TelaDeFechamento();
+                DialogResult resultado = fechando.ShowDialog();
+
+                if(resultado == DialogResult.OK)
+                {
+                    form.Close();
+                }
+                else if(resultado == DialogResult.Cancel)
+                {
+
+                }
             }
         }
     }

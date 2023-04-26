@@ -16,6 +16,9 @@ namespace PizzariaDoZe.Telas
             //automatizadas acima
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+            #region configuração idioma - MenuStrip 
+            Funcoes.AjustaResourcesItem(contextMenuStripPrincipal);
+            #endregion
             #region Configuração De Botões no Foco
             //adiciona eventos em geral, exemplo: ganhar e perder o foco
             Funcoes.EventoFocoCampos(this);
@@ -23,6 +26,17 @@ namespace PizzariaDoZe.Telas
             #region Enter Como Tab
             //Evento em Funcoes que congifura a tecla enter como o tab
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown);
+            #endregion
+            #region Configuração MenuStrip
+            //inicioToolStripMenuItem.Click += new EventHandler(bt!);
+            ClienteStripMenuItem.Click += new EventHandler(btnCadastrarCliente_Click!);
+            funcionariosToolStripMenuItem.Click += new EventHandler(btnCadastroDeFuncionarios_Click!);
+            saboresToolStripMenuItem.Click += new EventHandler(btnCadastroDeSabores_Click!);
+            ingredientesToolStripMenuItem.Click += new EventHandler(btnCadastroDeIngredientes_Click!);
+            valoresToolStripMenuItem.Click += new EventHandler(btnCadastroValores_Click!);
+            produtosToolStripMenuItem.Click += new EventHandler(btnCadastrarProduto_Click!);
+            configuraçõesToolStripMenuItem.Click += new EventHandler(ConfiguraçõesBtn_Click!);
+            //sairToolStripMenuItem.Click += new EventHandler(ButtonSair_Click!);
             #endregion
         }
 
@@ -66,6 +80,21 @@ namespace PizzariaDoZe.Telas
         {
             TelaConfiguraçãoForm telaConfiguração = new TelaConfiguraçãoForm();
             telaConfiguração.ShowDialog();
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Activate();
         }
     }
 }
