@@ -96,5 +96,10 @@ namespace PizzariaDoZe.Telas
         {
             this.Activate();
         }
+
+        private void TelaPrincipalForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

@@ -65,10 +65,10 @@
             imageList1 = new ImageList(components);
             contextMenuStripPrincipal = new ContextMenuStrip(components);
             inicioToolStripMenuItem = new ToolStripMenuItem();
-            ClienteStripMenuItem = new ToolStripMenuItem();
             funcionariosToolStripMenuItem = new ToolStripMenuItem();
-            saboresToolStripMenuItem = new ToolStripMenuItem();
+            ClienteStripMenuItem = new ToolStripMenuItem();
             ingredientesToolStripMenuItem = new ToolStripMenuItem();
+            saboresToolStripMenuItem = new ToolStripMenuItem();
             valoresToolStripMenuItem = new ToolStripMenuItem();
             produtosToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator2 = new ToolStripSeparator();
@@ -508,13 +508,6 @@
             inicioToolStripMenuItem.Text = "Inicio";
             inicioToolStripMenuItem.Click += inicioToolStripMenuItem_Click;
             // 
-            // ClienteStripMenuItem
-            // 
-            ClienteStripMenuItem.Name = "ClienteStripMenuItem";
-            ClienteStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F3;
-            ClienteStripMenuItem.Size = new Size(237, 24);
-            ClienteStripMenuItem.Text = "Cliente";
-            // 
             // funcionariosToolStripMenuItem
             // 
             funcionariosToolStripMenuItem.Name = "funcionariosToolStripMenuItem";
@@ -523,12 +516,12 @@
             funcionariosToolStripMenuItem.Text = "Funcionarios";
             funcionariosToolStripMenuItem.Click += funcionariosToolStripMenuItem_Click;
             // 
-            // saboresToolStripMenuItem
+            // ClienteStripMenuItem
             // 
-            saboresToolStripMenuItem.Name = "saboresToolStripMenuItem";
-            saboresToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F5;
-            saboresToolStripMenuItem.Size = new Size(237, 24);
-            saboresToolStripMenuItem.Text = "Sabores";
+            ClienteStripMenuItem.Name = "ClienteStripMenuItem";
+            ClienteStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F3;
+            ClienteStripMenuItem.Size = new Size(237, 24);
+            ClienteStripMenuItem.Text = "Cliente";
             // 
             // ingredientesToolStripMenuItem
             // 
@@ -536,6 +529,13 @@
             ingredientesToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F4;
             ingredientesToolStripMenuItem.Size = new Size(237, 24);
             ingredientesToolStripMenuItem.Text = "Ingredientes";
+            // 
+            // saboresToolStripMenuItem
+            // 
+            saboresToolStripMenuItem.Name = "saboresToolStripMenuItem";
+            saboresToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F5;
+            saboresToolStripMenuItem.Size = new Size(237, 24);
+            saboresToolStripMenuItem.Text = "Sabores";
             // 
             // valoresToolStripMenuItem
             // 
@@ -621,6 +621,7 @@
             Name = "TelaPrincipalForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pizzaria Do zé";
+            FormClosing += TelaPrincipalForm_FormClosing;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
