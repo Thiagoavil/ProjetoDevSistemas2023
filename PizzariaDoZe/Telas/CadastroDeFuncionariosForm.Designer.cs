@@ -229,6 +229,7 @@
             Name = "CadastroDeFuncionariosForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaCadastroDeFuncionariosForm";
+            FormClosing += CadastroDeFuncionariosForm_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

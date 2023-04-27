@@ -166,6 +166,7 @@
             KeyPreview = true;
             Name = "CadastroDeProdutosForm";
             Text = "CadastroDeProdutosForm";
+            FormClosing += CadastroDeProdutosForm_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

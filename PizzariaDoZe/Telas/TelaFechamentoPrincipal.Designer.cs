@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LabelFechamento = new Label();
+            LabelFechamentoPrincipal = new Label();
             btnContinuar = new Button();
             btnSair = new Button();
             btnEnviarParaBandeija = new Button();
             SuspendLayout();
             // 
-            // LabelFechamento
+            // LabelFechamentoPrincipal
             // 
-            LabelFechamento.AutoSize = true;
-            LabelFechamento.BackColor = Color.Transparent;
-            LabelFechamento.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            LabelFechamento.ForeColor = SystemColors.ActiveCaptionText;
-            LabelFechamento.Location = new Point(115, 48);
-            LabelFechamento.Name = "LabelFechamento";
-            LabelFechamento.Size = new Size(217, 56);
-            LabelFechamento.TabIndex = 1;
-            LabelFechamento.Text = "Tem certeza que deseja \r\nfechar essa tela?";
-            LabelFechamento.TextAlign = ContentAlignment.MiddleCenter;
+            LabelFechamentoPrincipal.AutoSize = true;
+            LabelFechamentoPrincipal.BackColor = Color.Transparent;
+            LabelFechamentoPrincipal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LabelFechamentoPrincipal.ForeColor = SystemColors.ActiveCaptionText;
+            LabelFechamentoPrincipal.Location = new Point(115, 48);
+            LabelFechamentoPrincipal.Name = "LabelFechamentoPrincipal";
+            LabelFechamentoPrincipal.Size = new Size(217, 56);
+            LabelFechamentoPrincipal.TabIndex = 1;
+            LabelFechamentoPrincipal.Text = "Tem certeza que deseja \r\nfechar essa tela?";
+            LabelFechamentoPrincipal.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnContinuar
             // 
@@ -85,8 +85,9 @@
             Controls.Add(btnEnviarParaBandeija);
             Controls.Add(btnSair);
             Controls.Add(btnContinuar);
-            Controls.Add(LabelFechamento);
+            Controls.Add(LabelFechamentoPrincipal);
             Name = "TelaFechamentoPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaFechamentoPrincipal";
             ResumeLayout(false);
             PerformLayout();
@@ -94,7 +95,7 @@
 
         #endregion
 
-        private Label LabelFechamento;
+        private Label LabelFechamentoPrincipal;
         private Button btnContinuar;
         private Button btnSair;
         private Button btnEnviarParaBandeija;

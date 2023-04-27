@@ -36,7 +36,7 @@ namespace PizzariaDoZe.Telas
             valoresToolStripMenuItem.Click += new EventHandler(btnCadastroValores_Click!);
             produtosToolStripMenuItem.Click += new EventHandler(btnCadastrarProduto_Click!);
             configuraçõesToolStripMenuItem.Click += new EventHandler(ConfiguraçõesBtn_Click!);
-            //sairToolStripMenuItem.Click += new EventHandler(ButtonSair_Click!);
+            //sairToolStripMenuItem.Click += new EventHandler(TelaPrincipalForm_FormClosing!);
             #endregion
         }
 
@@ -94,23 +94,57 @@ namespace PizzariaDoZe.Telas
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            this.Activate();
+            Show();
+            WindowState = FormWindowState.Normal;
+            notifyIconSystemTray.Visible = false;
         }
 
         private void TelaPrincipalForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            TelaFechamentoPrincipal telaFechamento = new TelaFechamentoPrincipal();
-            DialogResult resultado = telaFechamento.ShowDialog();
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                TelaFechamentoPrincipal telaFechamento = new TelaFechamentoPrincipal();
+                DialogResult resultado = telaFechamento.ShowDialog();
 
-            if(resultado == DialogResult.OK)
-            {
-                this.Activate();
+                if (resultado == DialogResult.OK)
+                {
+                    e.Cancel = true;
+                }
+                else if (resultado == DialogResult.Cancel)
+                {
+
+                }
+                else if (resultado == DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                    this.WindowState = FormWindowState.Minimized;
+                    notifyIconSystemTray.ShowBalloonTip(1000);
+                }
             }
-            else if(resultado == DialogResult.Cancel)
+
+        }
+
+        private void TelaPrincipalForm_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
             {
-                this.Close();
+                this.Hide();
+                notifyIconSystemTray.Visible = true;
             }
-            
+            else if (FormWindowState.Normal == this.WindowState)
+            {
+                notifyIconSystemTray.Visible = false;
+            }
+        }
+
+        private void abrirAplicaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void encerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -60,13 +60,11 @@ namespace PizzariaDoZe.Telas
 
         private void labelCpf_Click(object sender, EventArgs e)
         {
-
         }
 
         private void CadastroDeClientesForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            TelaDeFechamento fechando = new TelaDeFechamento();
-            DialogResult resultado = fechando.ShowDialog();
+           
         }
     }
 }

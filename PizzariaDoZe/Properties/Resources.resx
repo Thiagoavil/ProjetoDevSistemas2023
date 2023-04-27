@@ -117,38 +117,68 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCadastrarCliente.text" xml:space="preserve">
+  <data name="abrirAplicaçãoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="btnCadastrarCliente.Text" xml:space="preserve">
     <value>Cadastro de Cliente</value>
   </data>
-  <data name="btnCadastrarProduto.text" xml:space="preserve">
+  <data name="btnCadastrarProduto.Text" xml:space="preserve">
     <value>Cadastro de Produtos</value>
   </data>
-  <data name="btnCadastroDeFuncionarios.text" xml:space="preserve">
+  <data name="btnCadastroDeFuncionarios.Text" xml:space="preserve">
     <value>Cadastro de Funcionário</value>
   </data>
-  <data name="btnCadastroDeIngredientes.text" xml:space="preserve">
+  <data name="btnCadastroDeIngredientes.Text" xml:space="preserve">
     <value>Cadastro de Ingredientes</value>
   </data>
-  <data name="btnCadastroDeSabores.text" xml:space="preserve">
+  <data name="btnCadastroDeSabores.Text" xml:space="preserve">
     <value>Cadastro de Sabores</value>
   </data>
-  <data name="btnCadastroValores.text" xml:space="preserve">
+  <data name="btnCadastroValores.Text" xml:space="preserve">
     <value>Cadastro de Valores</value>
   </data>
-  <data name="btnCancelar.text" xml:space="preserve">
+  <data name="btnCancelar.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
-  <data name="btnLimpar.text" xml:space="preserve">
+  <data name="btnContinuar.Text" xml:space="preserve">
+    <value>Continuar</value>
+  </data>
+  <data name="btnEnviarParaBandeija.Text" xml:space="preserve">
+    <value>Enviar para a bandeija</value>
+  </data>
+  <data name="btnLimpar.Text" xml:space="preserve">
     <value>Limpar</value>
   </data>
-  <data name="btnSalvar.text" xml:space="preserve">
+  <data name="btnNao.Text" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="btnSair.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="btnSalvar.Text" xml:space="preserve">
     <value>Salvar</value>
+  </data>
+  <data name="btnSim.Text" xml:space="preserve">
+    <value>Sim</value>
   </data>
   <data name="CheckBoxReinicio.Text" xml:space="preserve">
     <value>Reiniciar para aplicar o idioma?</value>
   </data>
+  <data name="ClienteStripMenuItem.Text" xml:space="preserve">
+    <value>Clientes</value>
+  </data>
   <data name="ConfiguraçõesBtn.Text" xml:space="preserve">
     <value>Configurações</value>
+  </data>
+  <data name="configuraçõesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="encerrarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Encerrar</value>
+  </data>
+  <data name="funcionariosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Funcionarios</value>
   </data>
   <data name="IdiomaGroup.Text" xml:space="preserve">
     <value>Idioma/Região</value>
@@ -156,89 +186,117 @@
   <data name="IdiomaTab.Text" xml:space="preserve">
     <value>Idioma/Região</value>
   </data>
-  <data name="labelBairro" xml:space="preserve">
-    <value>Bairro</value>
-  </data>
-  <data name="labelCategoria" xml:space="preserve">
-    <value>Categoria</value>
-  </data>
-  <data name="labelCnh" xml:space="preserve">
-    <value>Cnh</value>
-  </data>
-  <data name="labelComplemento" xml:space="preserve">
-    <value>Complemento</value>
-  </data>
-  <data name="labelCpf" xml:space="preserve">
-    <value>CPF</value>
-  </data>
-  <data name="labelEmail" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="labelFuncao" xml:space="preserve">
-    <value>Função</value>
-  </data>
-  <data name="labelIngredientes" xml:space="preserve">
+  <data name="ingredientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Ingredientes</value>
   </data>
-  <data name="labelLogo" xml:space="preserve">
+  <data name="inicioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="labelBairro.Text" xml:space="preserve">
+    <value>Bairro</value>
+  </data>
+  <data name="labelCategoria.Text" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="labelCnh.Text" xml:space="preserve">
+    <value>Cnh</value>
+  </data>
+  <data name="labelComplemento.Text" xml:space="preserve">
+    <value>Complemento</value>
+  </data>
+  <data name="labelCpf.Text" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="labelEmail.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="LabelFechamentoPrincipal.Text" xml:space="preserve">
+    <value>Tem certeza que deseja 
+fechar essa tela?</value>
+  </data>
+  <data name="labelFuncao.Text" xml:space="preserve">
+    <value>Função</value>
+  </data>
+  <data name="labelIngredientes.Text" xml:space="preserve">
+    <value>Ingredientes</value>
+  </data>
+  <data name="labelLogo.Text" xml:space="preserve">
     <value>Pizzaria 
         Do zé</value>
   </data>
-  <data name="LabelMl" xml:space="preserve">
+  <data name="LabelMl.Text" xml:space="preserve">
     <value>ml</value>
   </data>
-  <data name="labelNome" xml:space="preserve">
+  <data name="labelNome.Text" xml:space="preserve">
     <value>Nome</value>
   </data>
-  <data name="labelRua" xml:space="preserve">
+  <data name="labelRua.Text" xml:space="preserve">
     <value>Rua</value>
   </data>
-  <data name="labelSenha" xml:space="preserve">
+  <data name="labelSenha.Text" xml:space="preserve">
     <value>Senha</value>
   </data>
-  <data name="labelTamanho" xml:space="preserve">
+  <data name="labelTamanho.Text" xml:space="preserve">
     <value>Tamanho</value>
   </data>
-  <data name="labelTelefone" xml:space="preserve">
+  <data name="labelTelefone.Text" xml:space="preserve">
     <value>Telefone</value>
   </data>
-  <data name="labelTipo" xml:space="preserve">
+  <data name="labelTipo.Text" xml:space="preserve">
     <value>Tipo</value>
   </data>
-  <data name="labelValidadecnh" xml:space="preserve">
+  <data name="labelValidadecnh.Text" xml:space="preserve">
     <value>Validade Da Cnh</value>
   </data>
-  <data name="LabelValor" xml:space="preserve">
+  <data name="LabelValor.Text" xml:space="preserve">
     <value>Valor</value>
   </data>
-  <data name="labelValorBorda" xml:space="preserve">
+  <data name="labelValorBorda.Text" xml:space="preserve">
     <value>Valor Borda</value>
   </data>
-  <data name="LabelValorEspecial" xml:space="preserve">
+  <data name="LabelValorEspecial.Text" xml:space="preserve">
     <value>Valor Especial</value>
   </data>
-  <data name="labelValorTradicional" xml:space="preserve">
+  <data name="labelValorTradicional.Text" xml:space="preserve">
     <value>Valor Tradicional</value>
   </data>
-  <data name="ListarClientes.text" xml:space="preserve">
+  <data name="ListarClientes.Text" xml:space="preserve">
     <value>Clientes</value>
   </data>
-  <data name="ListarFuncionários" xml:space="preserve">
+  <data name="ListarFuncionários.Text" xml:space="preserve">
     <value>Funcionários</value>
   </data>
-  <data name="ListarIngredientes" xml:space="preserve">
+  <data name="ListarIngredientes.Text" xml:space="preserve">
     <value>Ingredientes</value>
   </data>
-  <data name="ListarProdutos" xml:space="preserve">
+  <data name="ListarProdutos.Text" xml:space="preserve">
     <value>Produtos</value>
   </data>
-  <data name="ListarSabores" xml:space="preserve">
+  <data name="ListarSabores.Text" xml:space="preserve">
     <value>Sabores</value>
   </data>
-  <data name="ListarTamanhos" xml:space="preserve">
+  <data name="ListarTamanhos.Text" xml:space="preserve">
     <value>Tamanhos</value>
   </data>
-  <data name="Telalabel" xml:space="preserve">
+  <data name="notifyIconSystemTray.Tetx" xml:space="preserve">
+    <value>Pizzaria Do Zé</value>
+  </data>
+  <data name="produtosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Produtos</value>
+  </data>
+  <data name="saboresToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sabores</value>
+  </data>
+  <data name="sairToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="sobreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="Telalabel.Text" xml:space="preserve">
     <value>Tela Principal</value>
+  </data>
+  <data name="valoresToolStripMenuItem.Text" xml:space="preserve">
+    <value>Valores</value>
   </data>
 </root>

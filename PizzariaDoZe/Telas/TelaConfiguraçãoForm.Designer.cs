@@ -124,6 +124,7 @@
             KeyPreview = true;
             Name = "TelaConfiguraçãoForm";
             Text = "TelaConfiguraçãoForm";
+            FormClosing += TelaConfiguraçãoForm_FormClosing;
             ConfiguracaoTab.ResumeLayout(false);
             IdiomaTab.ResumeLayout(false);
             IdiomaGroup.ResumeLayout(false);

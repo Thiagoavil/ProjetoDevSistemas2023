@@ -38,5 +38,10 @@ namespace PizzariaDoZe.Telas
         {
 
         }
+
+        private void CadastroDeValorForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
     }
 }

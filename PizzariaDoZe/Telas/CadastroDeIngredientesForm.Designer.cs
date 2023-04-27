@@ -99,6 +99,7 @@
             Name = "CadastroDeIngredientesForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaCadastroDeIngredientesForm";
+            FormClosing += CadastroDeIngredientesForm_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

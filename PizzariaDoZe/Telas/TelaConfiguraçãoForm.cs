@@ -18,6 +18,15 @@ namespace PizzariaDoZe.Telas
             InitializeComponent();
             //seleciona no comboBox o idioma/cultura atual
             comboBoxIdioma.SelectedItem = ConfigurationManager.AppSettings.Get("IdiomaRegiao");
+            #region idioma/região interface - satellite assembly
+            // com base no idioma/região escolhido pelo usuário,
+            // ajusta as propriedades dos componentes da tela com base no conteúdo do arquivo
+            //resources
+            Funcoes.AjustaResourcesControl(this);
+            //ajuste manual de campos ou mensagens para o usuário que não puderam ser
+            //automatizadas acima
+            this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
+            #endregion
             #region Configuração De Botões no Foco
             //adiciona eventos em geral, exemplo: ganhar e perder o foco
             Funcoes.EventoFocoCampos(this);
@@ -43,6 +52,11 @@ namespace PizzariaDoZe.Telas
                 Application.Restart();
                 Environment.Exit(0);
             }
+        }
+
+        private void TelaConfiguraçãoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }

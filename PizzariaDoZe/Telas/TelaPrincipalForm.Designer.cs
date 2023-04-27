@@ -75,7 +75,7 @@
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             sairToolStripMenuItem = new ToolStripMenuItem();
-            notifyIcon1 = new NotifyIcon(components);
+            notifyIconSystemTray = new NotifyIcon(components);
             contextMenuStripSystemTray = new ContextMenuStrip(components);
             abrirAplicaçãoToolStripMenuItem = new ToolStripMenuItem();
             encerrarToolStripMenuItem = new ToolStripMenuItem();
@@ -496,7 +496,9 @@
             // contextMenuStripPrincipal
             // 
             contextMenuStripPrincipal.ImageScalingSize = new Size(20, 20);
+            contextMenuStripPrincipal.ImeMode = ImeMode.NoControl;
             contextMenuStripPrincipal.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, funcionariosToolStripMenuItem, ClienteStripMenuItem, ingredientesToolStripMenuItem, saboresToolStripMenuItem, valoresToolStripMenuItem, produtosToolStripMenuItem, toolStripSeparator2, configuraçõesToolStripMenuItem, toolStripSeparator1, sairToolStripMenuItem });
+            contextMenuStripPrincipal.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
             contextMenuStripPrincipal.Name = "contextMenuStripPrincipal";
             contextMenuStripPrincipal.Size = new Size(238, 232);
             // 
@@ -575,15 +577,21 @@
             sairToolStripMenuItem.Size = new Size(237, 24);
             sairToolStripMenuItem.Text = "Sair";
             // 
-            // notifyIcon1
+            // notifyIconSystemTray
             // 
-            notifyIcon1.ContextMenuStrip = contextMenuStripSystemTray;
-            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
-            notifyIcon1.Text = "Pizzaria Do Zé";
-            notifyIcon1.MouseDoubleClick += notifyIcon1_MouseDoubleClick;
+            notifyIconSystemTray.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIconSystemTray.BalloonTipText = "Enivado Para Bandeija";
+            notifyIconSystemTray.BalloonTipTitle = "Pizzaria Do Zé";
+            notifyIconSystemTray.ContextMenuStrip = contextMenuStripSystemTray;
+            notifyIconSystemTray.Icon = (Icon)resources.GetObject("notifyIconSystemTray.Icon");
+            notifyIconSystemTray.Text = "Pizzaria Do Zé";
+            notifyIconSystemTray.Visible = true;
+            notifyIconSystemTray.MouseDoubleClick += notifyIcon1_MouseDoubleClick;
             // 
             // contextMenuStripSystemTray
             // 
+            contextMenuStripSystemTray.BackgroundImage = (Image)resources.GetObject("contextMenuStripSystemTray.BackgroundImage");
+            contextMenuStripSystemTray.BackgroundImageLayout = ImageLayout.Stretch;
             contextMenuStripSystemTray.ImageScalingSize = new Size(20, 20);
             contextMenuStripSystemTray.Items.AddRange(new ToolStripItem[] { abrirAplicaçãoToolStripMenuItem, encerrarToolStripMenuItem, sobreToolStripMenuItem });
             contextMenuStripSystemTray.Name = "contextMenuStripSystemTray";
@@ -594,12 +602,14 @@
             abrirAplicaçãoToolStripMenuItem.Name = "abrirAplicaçãoToolStripMenuItem";
             abrirAplicaçãoToolStripMenuItem.Size = new Size(181, 24);
             abrirAplicaçãoToolStripMenuItem.Text = "Abrir Aplicação";
+            abrirAplicaçãoToolStripMenuItem.Click += abrirAplicaçãoToolStripMenuItem_Click;
             // 
             // encerrarToolStripMenuItem
             // 
             encerrarToolStripMenuItem.Name = "encerrarToolStripMenuItem";
             encerrarToolStripMenuItem.Size = new Size(181, 24);
             encerrarToolStripMenuItem.Text = "Encerrar";
+            encerrarToolStripMenuItem.Click += encerrarToolStripMenuItem_Click;
             // 
             // sobreToolStripMenuItem
             // 
@@ -622,6 +632,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pizzaria Do zé";
             FormClosing += TelaPrincipalForm_FormClosing;
+            Resize += TelaPrincipalForm_Resize;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -693,5 +704,6 @@
         private ToolStripMenuItem abrirAplicaçãoToolStripMenuItem;
         private ToolStripMenuItem encerrarToolStripMenuItem;
         private ToolStripMenuItem sobreToolStripMenuItem;
+        public NotifyIcon notifyIconSystemTray;
     }
 }

@@ -162,6 +162,7 @@
             KeyPreview = true;
             Name = "CadastroDeValorForm";
             Text = "CadastroDeValores";
+            FormClosing += CadastroDeValorForm_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

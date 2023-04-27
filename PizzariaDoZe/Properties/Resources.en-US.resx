@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="abrirAplicaçãoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
   <data name="btnCadastrarCliente.Text" xml:space="preserve">
     <value>Customer registration</value>
   </data>
@@ -138,23 +141,56 @@
   <data name="btnCancelar.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="btnContinuar.text" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="btnEnviarParaBandeija.Text" xml:space="preserve">
+    <value>Tray</value>
+  </data>
   <data name="btnLimpar.Text" xml:space="preserve">
     <value>To clean</value>
+  </data>
+  <data name="btnNao.Text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="btnSair.Text" xml:space="preserve">
+    <value>Exit</value>
   </data>
   <data name="btnSalvar.Text" xml:space="preserve">
     <value>To save</value>
   </data>
+  <data name="btnSim.Text" xml:space="preserve">
+    <value>Yes</value>
+  </data>
   <data name="CheckBoxReinicio.Text" xml:space="preserve">
     <value>Reset for aply the language?</value>
   </data>
+  <data name="ClienteStripMenuItem.Text" xml:space="preserve">
+    <value>Customers</value>
+  </data>
   <data name="ConfiguraçõesBtn.Text" xml:space="preserve">
     <value>Configuration</value>
+  </data>
+  <data name="configuraçõesToolStripMenuItem.Text" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="encerrarToolStripMenuItem.Text" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="funcionariosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Employees</value>
   </data>
   <data name="IdiomaGroup.Text" xml:space="preserve">
     <value>Language/Region</value>
   </data>
   <data name="IdiomaTab.Text" xml:space="preserve">
     <value>Language/Region</value>
+  </data>
+  <data name="ingredientesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ingredients</value>
+  </data>
+  <data name="inicioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Start</value>
   </data>
   <data name="labelBairro.Text" xml:space="preserve">
     <value>Neighborhood</value>
@@ -173,6 +209,14 @@
   </data>
   <data name="labelEmail.Text" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="LabelFechamento.Text" xml:space="preserve">
+    <value>You're sure you want
+ close this screen?</value>
+  </data>
+  <data name="LabelFechamentoPrincipal.Text" xml:space="preserve">
+    <value>You're sure you want
+ close this screen?</value>
   </data>
   <data name="labelFuncao.Text" xml:space="preserve">
     <value>Function</value>
@@ -237,7 +281,25 @@
   <data name="ListarTamanhos.Text" xml:space="preserve">
     <value>Sizes</value>
   </data>
+  <data name="produtosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="saboresToolStripMenuItem.Text" xml:space="preserve">
+    <value>Flavors</value>
+  </data>
+  <data name="sairToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="sobreToolStripMenuItem.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="Telalabel.Text" xml:space="preserve">
     <value>Main screen</value>
+  </data>
+  <data name="Telalabel.Text1" xml:space="preserve">
+    <value>Main screen</value>
+  </data>
+  <data name="valoresToolStripMenuItem.Text" xml:space="preserve">
+    <value>Values</value>
   </data>
 </root>

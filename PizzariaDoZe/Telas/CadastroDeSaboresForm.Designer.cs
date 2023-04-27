@@ -178,6 +178,7 @@
             Name = "CadastroDeSaboresForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CadastroDeSaboresForm";
+            FormClosing += CadastroDeSaboresForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)PBFotoPizza).EndInit();
             ResumeLayout(false);
             PerformLayout();

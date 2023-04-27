@@ -33,5 +33,10 @@ namespace PizzariaDoZe.Telas
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown);
             #endregion
         }
+
+        private void CadastroDeIngredientesForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
     }
 }
