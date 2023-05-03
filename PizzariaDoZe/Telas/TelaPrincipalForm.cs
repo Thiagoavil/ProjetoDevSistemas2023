@@ -134,6 +134,7 @@ namespace PizzariaDoZe.Telas
             else if (FormWindowState.Normal == this.WindowState)
             {
                 notifyIconSystemTray.Visible = false;
+                notifyIconSystemTray.ShowBalloonTip(1000);
             }
         }
 

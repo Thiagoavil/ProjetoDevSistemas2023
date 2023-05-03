@@ -580,12 +580,11 @@
             // notifyIconSystemTray
             // 
             notifyIconSystemTray.BalloonTipIcon = ToolTipIcon.Info;
-            notifyIconSystemTray.BalloonTipText = "Enivado Para Bandeija";
+            notifyIconSystemTray.BalloonTipText = "Aplicação está em funcionamento";
             notifyIconSystemTray.BalloonTipTitle = "Pizzaria Do Zé";
             notifyIconSystemTray.ContextMenuStrip = contextMenuStripSystemTray;
             notifyIconSystemTray.Icon = (Icon)resources.GetObject("notifyIconSystemTray.Icon");
             notifyIconSystemTray.Text = "Pizzaria Do Zé";
-            notifyIconSystemTray.Visible = true;
             notifyIconSystemTray.MouseDoubleClick += notifyIcon1_MouseDoubleClick;
             // 
             // contextMenuStripSystemTray
@@ -700,10 +699,10 @@
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripMenuItem ClienteStripMenuItem;
         private NotifyIcon notifyIcon1;
-        private ContextMenuStrip contextMenuStripSystemTray;
         private ToolStripMenuItem abrirAplicaçãoToolStripMenuItem;
         private ToolStripMenuItem encerrarToolStripMenuItem;
         private ToolStripMenuItem sobreToolStripMenuItem;
-        public NotifyIcon notifyIconSystemTray;
+        public ContextMenuStrip contextMenuStripSystemTray;
+        private NotifyIcon notifyIconSystemTray;
     }
 }
