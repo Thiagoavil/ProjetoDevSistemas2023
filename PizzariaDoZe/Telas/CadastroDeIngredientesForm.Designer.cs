@@ -71,6 +71,7 @@
             btnSalvar.TabIndex = 3;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += ButtonSalvar_Click;
             // 
             // btnCancelar
             // 

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzariaDoZe", "PizzariaDoZe\PizzariaDoZe.csproj", "{05943847-C02F-4C5B-A040-D2E02D6C48DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzariaDoZe_DAO", "PizzariaDoZe_DAO\PizzariaDoZe_DAO.csproj", "{6EEB873D-9A1B-4B2C-A56E-1F0508E49ABA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{05943847-C02F-4C5B-A040-D2E02D6C48DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05943847-C02F-4C5B-A040-D2E02D6C48DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05943847-C02F-4C5B-A040-D2E02D6C48DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EEB873D-9A1B-4B2C-A56E-1F0508E49ABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EEB873D-9A1B-4B2C-A56E-1F0508E49ABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EEB873D-9A1B-4B2C-A56E-1F0508E49ABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EEB873D-9A1B-4B2C-A56E-1F0508E49ABA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

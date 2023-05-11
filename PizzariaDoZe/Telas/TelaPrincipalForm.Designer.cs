@@ -59,7 +59,7 @@
             ListarFuncionários = new TabPage();
             ListarSabores = new TabPage();
             ListarIngredientes = new TabPage();
-            ListarTamanhos = new TabPage();
+            ListarValores = new TabPage();
             ListarProdutos = new TabPage();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             imageList1 = new ImageList(components);
@@ -80,6 +80,12 @@
             abrirAplicaçãoToolStripMenuItem = new ToolStripMenuItem();
             encerrarToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem = new ToolStripMenuItem();
+            dataGridViewClientes = new DataGridView();
+            dataGridViewFuncionario = new DataGridView();
+            dataGridViewSabores = new DataGridView();
+            dataGridViewIngredientes = new DataGridView();
+            dataGridViewValores = new DataGridView();
+            dataGridViewProdutos = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -92,8 +98,20 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             tabControlCadastros.SuspendLayout();
+            ListarClientes.SuspendLayout();
+            ListarFuncionários.SuspendLayout();
+            ListarSabores.SuspendLayout();
+            ListarIngredientes.SuspendLayout();
+            ListarValores.SuspendLayout();
+            ListarProdutos.SuspendLayout();
             contextMenuStripPrincipal.SuspendLayout();
             contextMenuStripSystemTray.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFuncionario).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewSabores).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewIngredientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewValores).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -421,7 +439,7 @@
             tabControlCadastros.Controls.Add(ListarFuncionários);
             tabControlCadastros.Controls.Add(ListarSabores);
             tabControlCadastros.Controls.Add(ListarIngredientes);
-            tabControlCadastros.Controls.Add(ListarTamanhos);
+            tabControlCadastros.Controls.Add(ListarValores);
             tabControlCadastros.Controls.Add(ListarProdutos);
             tabControlCadastros.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             tabControlCadastros.Location = new Point(20, 66);
@@ -433,6 +451,7 @@
             // 
             // ListarClientes
             // 
+            ListarClientes.Controls.Add(dataGridViewClientes);
             ListarClientes.Location = new Point(4, 29);
             ListarClientes.Name = "ListarClientes";
             ListarClientes.Padding = new Padding(3);
@@ -443,6 +462,7 @@
             // 
             // ListarFuncionários
             // 
+            ListarFuncionários.Controls.Add(dataGridViewFuncionario);
             ListarFuncionários.Location = new Point(4, 29);
             ListarFuncionários.Name = "ListarFuncionários";
             ListarFuncionários.Padding = new Padding(3);
@@ -453,6 +473,7 @@
             // 
             // ListarSabores
             // 
+            ListarSabores.Controls.Add(dataGridViewSabores);
             ListarSabores.Location = new Point(4, 29);
             ListarSabores.Name = "ListarSabores";
             ListarSabores.Size = new Size(643, 365);
@@ -462,6 +483,7 @@
             // 
             // ListarIngredientes
             // 
+            ListarIngredientes.Controls.Add(dataGridViewIngredientes);
             ListarIngredientes.Location = new Point(4, 29);
             ListarIngredientes.Name = "ListarIngredientes";
             ListarIngredientes.Size = new Size(643, 365);
@@ -469,17 +491,19 @@
             ListarIngredientes.Text = "Ingredientes";
             ListarIngredientes.UseVisualStyleBackColor = true;
             // 
-            // ListarTamanhos
+            // ListarValores
             // 
-            ListarTamanhos.Location = new Point(4, 29);
-            ListarTamanhos.Name = "ListarTamanhos";
-            ListarTamanhos.Size = new Size(643, 365);
-            ListarTamanhos.TabIndex = 4;
-            ListarTamanhos.Text = "Tamanhos";
-            ListarTamanhos.UseVisualStyleBackColor = true;
+            ListarValores.Controls.Add(dataGridViewValores);
+            ListarValores.Location = new Point(4, 29);
+            ListarValores.Name = "ListarValores";
+            ListarValores.Size = new Size(643, 365);
+            ListarValores.TabIndex = 4;
+            ListarValores.Text = "Valores";
+            ListarValores.UseVisualStyleBackColor = true;
             // 
             // ListarProdutos
             // 
+            ListarProdutos.Controls.Add(dataGridViewProdutos);
             ListarProdutos.Location = new Point(4, 29);
             ListarProdutos.Name = "ListarProdutos";
             ListarProdutos.Size = new Size(643, 365);
@@ -616,6 +640,66 @@
             sobreToolStripMenuItem.Size = new Size(181, 24);
             sobreToolStripMenuItem.Text = "Sobre";
             // 
+            // dataGridViewClientes
+            // 
+            dataGridViewClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewClientes.Location = new Point(3, 0);
+            dataGridViewClientes.Name = "dataGridViewClientes";
+            dataGridViewClientes.RowHeadersWidth = 51;
+            dataGridViewClientes.RowTemplate.Height = 29;
+            dataGridViewClientes.Size = new Size(637, 362);
+            dataGridViewClientes.TabIndex = 9;
+            // 
+            // dataGridViewFuncionario
+            // 
+            dataGridViewFuncionario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewFuncionario.Location = new Point(3, 1);
+            dataGridViewFuncionario.Name = "dataGridViewFuncionario";
+            dataGridViewFuncionario.RowHeadersWidth = 51;
+            dataGridViewFuncionario.RowTemplate.Height = 29;
+            dataGridViewFuncionario.Size = new Size(637, 362);
+            dataGridViewFuncionario.TabIndex = 10;
+            // 
+            // dataGridViewSabores
+            // 
+            dataGridViewSabores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewSabores.Location = new Point(3, 1);
+            dataGridViewSabores.Name = "dataGridViewSabores";
+            dataGridViewSabores.RowHeadersWidth = 51;
+            dataGridViewSabores.RowTemplate.Height = 29;
+            dataGridViewSabores.Size = new Size(637, 362);
+            dataGridViewSabores.TabIndex = 10;
+            // 
+            // dataGridViewIngredientes
+            // 
+            dataGridViewIngredientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewIngredientes.Location = new Point(3, 1);
+            dataGridViewIngredientes.Name = "dataGridViewIngredientes";
+            dataGridViewIngredientes.RowHeadersWidth = 51;
+            dataGridViewIngredientes.RowTemplate.Height = 29;
+            dataGridViewIngredientes.Size = new Size(637, 362);
+            dataGridViewIngredientes.TabIndex = 10;
+            // 
+            // dataGridViewValores
+            // 
+            dataGridViewValores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewValores.Location = new Point(3, 1);
+            dataGridViewValores.Name = "dataGridViewValores";
+            dataGridViewValores.RowHeadersWidth = 51;
+            dataGridViewValores.RowTemplate.Height = 29;
+            dataGridViewValores.Size = new Size(637, 362);
+            dataGridViewValores.TabIndex = 10;
+            // 
+            // dataGridViewProdutos
+            // 
+            dataGridViewProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProdutos.Location = new Point(3, 1);
+            dataGridViewProdutos.Name = "dataGridViewProdutos";
+            dataGridViewProdutos.RowHeadersWidth = 51;
+            dataGridViewProdutos.RowTemplate.Height = 29;
+            dataGridViewProdutos.Size = new Size(637, 362);
+            dataGridViewProdutos.TabIndex = 10;
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -646,8 +730,20 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             tabControlCadastros.ResumeLayout(false);
+            ListarClientes.ResumeLayout(false);
+            ListarFuncionários.ResumeLayout(false);
+            ListarSabores.ResumeLayout(false);
+            ListarIngredientes.ResumeLayout(false);
+            ListarValores.ResumeLayout(false);
+            ListarProdutos.ResumeLayout(false);
             contextMenuStripPrincipal.ResumeLayout(false);
             contextMenuStripSystemTray.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFuncionario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewSabores).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewIngredientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewValores).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).EndInit();
             ResumeLayout(false);
         }
 
@@ -675,7 +771,7 @@
         private Button btnIconEditar;
         private Button btnCadastrarProduto;
         private Button btnCadastroValores;
-        private TabPage ListarTamanhos;
+        private TabPage ListarValores;
         private TabPage ListarProdutos;
         private PictureBox pictureBox7;
         private PictureBox pictureBox6;
@@ -704,5 +800,11 @@
         private ToolStripMenuItem sobreToolStripMenuItem;
         public ContextMenuStrip contextMenuStripSystemTray;
         private NotifyIcon notifyIconSystemTray;
+        private DataGridView dataGridViewClientes;
+        private DataGridView dataGridViewFuncionario;
+        private DataGridView dataGridViewSabores;
+        private DataGridView dataGridViewIngredientes;
+        private DataGridView dataGridViewValores;
+        private DataGridView dataGridViewProdutos;
     }
 }

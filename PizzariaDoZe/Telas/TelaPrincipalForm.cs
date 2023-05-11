@@ -1,9 +1,18 @@
 using PizzariaDoZe.Properties;
+using PizzariaDoZe_DAO;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace PizzariaDoZe.Telas
 {
     public partial class TelaPrincipalForm : Form
     {
+        private IngredientesDAO ingredienteDAO;
+        // pega os dados do banco de dados
+        string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
+        string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
+        
         public TelaPrincipalForm()
         {
             InitializeComponent();
@@ -15,9 +24,6 @@ namespace PizzariaDoZe.Telas
             //ajuste manual de campos ou mensagens para o usuário que não puderam ser
             //automatizadas acima
             this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
-            #endregion
-            #region configuração idioma - MenuStrip 
-            Funcoes.AjustaResourcesItem(contextMenuStripPrincipal);
             #endregion
             #region Configuração De Botões no Foco
             //adiciona eventos em geral, exemplo: ganhar e perder o foco
@@ -37,6 +43,16 @@ namespace PizzariaDoZe.Telas
             produtosToolStripMenuItem.Click += new EventHandler(btnCadastrarProduto_Click!);
             configuraçõesToolStripMenuItem.Click += new EventHandler(ConfiguraçõesBtn_Click!);
             //sairToolStripMenuItem.Click += new EventHandler(TelaPrincipalForm_FormClosing!);
+            #endregion
+            #region configuração idioma - MenuStrip 
+            Funcoes.AjustaResourcesItem(contextMenuStripPrincipal);
+            #endregion
+            #region DAO
+            // cria a instancia da classe da model
+            ingredienteDAO = new IngredientesDAO(provider, strConnection);
+            #endregion
+            #region Atualizar Views
+            AtualizarViews();
             #endregion
         }
 
@@ -62,6 +78,7 @@ namespace PizzariaDoZe.Telas
         {
             CadastroDeIngredientesForm TelaCadastroIngrediente = new CadastroDeIngredientesForm();
             TelaCadastroIngrediente.ShowDialog();
+            AtualizarTelaIngredientes();
         }
 
         private void btnCadastroValores_Click(object sender, EventArgs e)
@@ -140,12 +157,39 @@ namespace PizzariaDoZe.Telas
 
         private void abrirAplicaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Show();
             this.WindowState = FormWindowState.Normal;
+            notifyIconSystemTray.Visible = false;
         }
 
         private void encerrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AtualizarViews()
+        {
+            AtualizarTelaIngredientes();
+        }
+
+        private void AtualizarTelaIngredientes()
+        {
+            //Instância e Preenche o objeto com os dados da view
+            var ingrediente = new Ingrediente();
+            try
+            {
+                //chama o método para buscar todos os dados da nossa camada model
+                DataTable linhas = ingredienteDAO.Buscar(ingrediente);
+                // seta o datasouce do dataGridView com os dados retornados
+                dataGridViewIngredientes.Columns.Clear();
+                dataGridViewIngredientes.AutoGenerateColumns = true;
+                dataGridViewIngredientes.DataSource = linhas;
+                dataGridViewIngredientes.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

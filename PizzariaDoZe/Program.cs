@@ -35,7 +35,27 @@ namespace PizzariaDoZe
             // see https://aka.ms/applicationconfiguration.
             #endregion
             ApplicationConfiguration.Initialize();
+            ValidaConexaoDB();
             Application.Run(new TelaPrincipalForm());
+        }
+        public static void ValidaConexaoDB()
+        {
+            DbProviderFactory factory;
+            try
+            {
+                factory = DbProviderFactories.GetFactory(ConfigurationManager.ConnectionStrings["BD"].ProviderName);
+                using var conexao = factory.CreateConnection();
+                conexao!.ConnectionString = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
+                using var comando = factory.CreateCommand();
+                comando!.Connection = conexao;
+                conexao.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                new TelaConfiguraçãoForm().ShowDialog();
+                ValidaConexaoDB();
+            }
         }
     }
 }

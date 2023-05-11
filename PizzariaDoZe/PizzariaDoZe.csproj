@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PizzariaDoZe_DAO\PizzariaDoZe_DAO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.es.Designer.cs">
       <DependentUpon>Resources.es.resx</DependentUpon>
       <DesignTime>True</DesignTime>
