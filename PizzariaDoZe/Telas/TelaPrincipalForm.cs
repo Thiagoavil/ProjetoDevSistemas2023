@@ -1,5 +1,6 @@
 using PizzariaDoZe.Properties;
-using PizzariaDoZe_DAO;
+using PizzariaDoZe_DAO.PastaEndereco;
+using PizzariaDoZe_DAO.PastaIngredientes;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,10 +10,11 @@ namespace PizzariaDoZe.Telas
     public partial class TelaPrincipalForm : Form
     {
         private IngredientesDAO ingredienteDAO;
+        private EnderecoDAO enderecoDAO;
         // pega os dados do banco de dados
         string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
         string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
-        
+
         public TelaPrincipalForm()
         {
             InitializeComponent();
@@ -50,6 +52,7 @@ namespace PizzariaDoZe.Telas
             #region DAO
             // cria a instancia da classe da model
             ingredienteDAO = new IngredientesDAO(provider, strConnection);
+            enderecoDAO = new EnderecoDAO(provider, strConnection);
             #endregion
             #region Atualizar Views
             AtualizarViews();
@@ -170,6 +173,7 @@ namespace PizzariaDoZe.Telas
         private void AtualizarViews()
         {
             AtualizarTelaIngredientes();
+            AtualizarTelaEndereco();
         }
 
         private void AtualizarTelaIngredientes()
@@ -190,6 +194,31 @@ namespace PizzariaDoZe.Telas
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void AtualizarTelaEndereco()
+        {
+            //Instância e Preenche o objeto com os dados da view
+            var endereco = new Endereco();
+            try
+            {
+                //chama o método para buscar todos os dados da nossa camada model
+                DataTable linhas = enderecoDAO.Buscar(endereco);
+                // seta o datasouce do dataGridView com os dados retornados
+                dataGridViewEndereco.Columns.Clear();
+                dataGridViewEndereco.AutoGenerateColumns = true;
+                dataGridViewEndereco.DataSource = linhas;
+                dataGridViewEndereco.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tabControlCadastros_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

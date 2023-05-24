@@ -1,4 +1,4 @@
-﻿using PizzariaDoZe_DAO;
+﻿using PizzariaDoZe_DAO.PastaIngredientes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,9 +6,11 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PizzariaDoZe.Telas
 {
@@ -42,14 +44,17 @@ namespace PizzariaDoZe.Telas
 
         private void ButtonSalvar_Click(object? sender, EventArgs e)
         {
-            //Instância e Preenche o objeto com os dados da view
-            var ingrediente = new Ingrediente
-            {
-                IdIngrediente = 0,
-                Nome = txtNome.Text,
-            };
+
+           
             try
             {
+                //Instância e Preenche o objeto com os dados da view
+                var ingrediente = new Ingrediente
+                {
+                    IdIngrediente = 0,
+                    Nome = txtNome.Text,
+                };
+
                 // chama o método para inserir da camada model
                 dao.InserirDbProvider(ingrediente);
                 MessageBox.Show("Dados inseridos com sucesso!");
@@ -62,7 +67,38 @@ namespace PizzariaDoZe.Telas
 
         private void CadastroDeIngredientesForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            try
+            {
+                e.Cancel = false;
+            }
+            catch (Exception ex)
+            {
+                //errorProviderIngredientes.HandleError(ex);
+            }
+        }
 
+        private void txtNome_Validating(object sender, CancelEventArgs e)
+        {
+            try
+            {
+
+                if (txtNome.Text.Trim().Length < 0)
+                {
+                    errorProviderIngredientes.SetError(txtNome, "Informe o nome do Ingrediente");
+                }
+                else if (txtNome.Text.Trim().Length > 30)
+                {
+                    errorProviderIngredientes.SetError(txtNome, "Deve ter no máximo 30 caracteres");
+                }
+                else
+                {
+                    errorProviderIngredientes.SetError(txtNome, "");
+                }
+            }
+            catch (Exception ex)
+            {
+                //Errors.HandleError(ex);
+            }
         }
     }
 }

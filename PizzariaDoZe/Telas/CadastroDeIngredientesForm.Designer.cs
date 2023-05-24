@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtNome = new TextBox();
             labelNome = new Label();
             btnLimpar = new Button();
             btnSalvar = new Button();
             btnCancelar = new Button();
+            errorProviderIngredientes = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProviderIngredientes).BeginInit();
             SuspendLayout();
             // 
             // txtNome
@@ -42,6 +45,7 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(185, 27);
             txtNome.TabIndex = 0;
+            txtNome.Validating += txtNome_Validating;
             // 
             // labelNome
             // 
@@ -54,6 +58,7 @@
             // 
             // btnLimpar
             // 
+            btnLimpar.CausesValidation = false;
             btnLimpar.Location = new Point(131, 240);
             btnLimpar.Margin = new Padding(3, 4, 3, 4);
             btnLimpar.Name = "btnLimpar";
@@ -75,6 +80,7 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.CausesValidation = false;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(11, 240);
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
@@ -83,6 +89,10 @@
             btnCancelar.TabIndex = 1;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // errorProviderIngredientes
+            // 
+            errorProviderIngredientes.ContainerControl = this;
             // 
             // CadastroDeIngredientesForm
             // 
@@ -101,6 +111,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaCadastroDeIngredientesForm";
             FormClosing += CadastroDeIngredientesForm_FormClosing;
+            ((System.ComponentModel.ISupportInitialize)errorProviderIngredientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -112,5 +123,6 @@
         private Button btnLimpar;
         private Button btnSalvar;
         private Button btnCancelar;
+        public ErrorProvider errorProviderIngredientes;
     }
 }

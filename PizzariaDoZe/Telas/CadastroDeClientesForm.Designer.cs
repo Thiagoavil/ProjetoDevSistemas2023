@@ -208,7 +208,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
-            ClientSize = new Size(506, 421);
+            ClientSize = new Size(908, 421);
             Controls.Add(maskedTextBoxTelefone);
             Controls.Add(maskedTextBoxCpf);
             Controls.Add(btnLimpar);
