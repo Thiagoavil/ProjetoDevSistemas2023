@@ -66,5 +66,23 @@ namespace PizzariaDoZe.Telas
         {
 
         }
+
+        private void labelRua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRua_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void labelTelefone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBoxTelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+        }
     }
 }
