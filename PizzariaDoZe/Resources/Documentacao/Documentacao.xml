@@ -795,6 +795,9 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="M:PizzariaDoZe.Telas.CadastroDeFuncionariosForm.Sha256Hash(System.String)">
+            string hash = ClassFuncoes.Sha256Hash(textBoxSenha.Text);
+        </member>
         <member name="F:PizzariaDoZe.Telas.CadastroDeFuncionariosForm.components">
             <summary>
             Required designer variable.

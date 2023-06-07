@@ -32,12 +32,10 @@
             labelEmail = new Label();
             labelCpf = new Label();
             labelTelefone = new Label();
-            labelRua = new Label();
             labelBairro = new Label();
             labelComplemento = new Label();
             txtNome = new TextBox();
             txtEmail = new TextBox();
-            txtRua = new TextBox();
             txtComplemento = new TextBox();
             txtBairro = new TextBox();
             btnCancelar = new Button();
@@ -105,20 +103,10 @@
             labelTelefone.Text = "Telefone";
             labelTelefone.Click += labelTelefone_Click;
             // 
-            // labelRua
-            // 
-            labelRua.AutoSize = true;
-            labelRua.Location = new Point(72, 164);
-            labelRua.Name = "labelRua";
-            labelRua.Size = new Size(34, 20);
-            labelRua.TabIndex = 4;
-            labelRua.Text = "Rua";
-            labelRua.Click += labelRua_Click;
-            // 
             // labelBairro
             // 
             labelBairro.AutoSize = true;
-            labelBairro.Location = new Point(57, 198);
+            labelBairro.Location = new Point(57, 167);
             labelBairro.Name = "labelBairro";
             labelBairro.Size = new Size(49, 20);
             labelBairro.TabIndex = 5;
@@ -150,15 +138,6 @@
             txtEmail.Size = new Size(161, 27);
             txtEmail.TabIndex = 9;
             // 
-            // txtRua
-            // 
-            txtRua.Location = new Point(112, 165);
-            txtRua.Margin = new Padding(3, 4, 3, 4);
-            txtRua.Name = "txtRua";
-            txtRua.Size = new Size(161, 27);
-            txtRua.TabIndex = 12;
-            txtRua.TextChanged += txtRua_TextChanged;
-            // 
             // txtComplemento
             // 
             txtComplemento.Location = new Point(112, 129);
@@ -169,7 +148,7 @@
             // 
             // txtBairro
             // 
-            txtBairro.Location = new Point(112, 201);
+            txtBairro.Location = new Point(112, 164);
             txtBairro.Margin = new Padding(3, 4, 3, 4);
             txtBairro.Name = "txtBairro";
             txtBairro.Size = new Size(161, 27);
@@ -271,10 +250,8 @@
             panel2.Controls.Add(labelLogradouro);
             panel2.Controls.Add(labelCep);
             panel2.Controls.Add(txtComplemento);
-            panel2.Controls.Add(labelRua);
             panel2.Controls.Add(labelBairro);
             panel2.Controls.Add(labelComplemento);
-            panel2.Controls.Add(txtRua);
             panel2.Controls.Add(txtBairro);
             panel2.Location = new Point(365, 16);
             panel2.Name = "panel2";
@@ -437,12 +414,10 @@
         private Label labelEmail;
         private Label labelCpf;
         private Label labelTelefone;
-        private Label labelRua;
         private Label labelBairro;
         private Label labelComplemento;
         private TextBox txtNome;
         private TextBox txtEmail;
-        private TextBox txtRua;
         private TextBox txtComplemento;
         private TextBox txtBairro;
         private Button btnCancelar;

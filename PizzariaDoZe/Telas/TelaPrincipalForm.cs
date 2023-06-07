@@ -1,10 +1,13 @@
+using PizzariaDoZe.PastaEnums;
 using PizzariaDoZe.Properties;
 using PizzariaDoZe_DAO.PastaCliente;
 using PizzariaDoZe_DAO.PastaEndereco;
+using PizzariaDoZe_DAO.PastaFuncionario;
 using PizzariaDoZe_DAO.PastaIngredientes;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+
 
 namespace PizzariaDoZe.Telas
 {
@@ -13,6 +16,7 @@ namespace PizzariaDoZe.Telas
         private IngredientesDAO ingredienteDAO;
         private EnderecoDAO enderecoDAO;
         private ClienteDAO clienteDAO;
+        private FuncionarioDAO funcionarioDAO;
         // pega os dados do banco de dados
         string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
         string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
@@ -55,7 +59,8 @@ namespace PizzariaDoZe.Telas
             // cria a instancia da classe da model
             ingredienteDAO = new IngredientesDAO(provider, strConnection);
             enderecoDAO = new EnderecoDAO(provider, strConnection);
-            clienteDAO = new ClienteDAO(provider, strConnection);   
+            clienteDAO = new ClienteDAO(provider, strConnection);
+            funcionarioDAO = new FuncionarioDAO(provider, strConnection);
             #endregion
             #region Atualizar Views
             AtualizarViews();
@@ -66,13 +71,14 @@ namespace PizzariaDoZe.Telas
         {
             CadastroDeClientesForm TelaCadastroCliente = new CadastroDeClientesForm();
             TelaCadastroCliente.ShowDialog();
-            AtualizarTelaIngredientes();
+            AtualizarTelaClientes();
         }
 
         private void btnCadastroDeFuncionarios_Click(object sender, EventArgs e)
         {
             CadastroDeFuncionariosForm TelaCadastroFuncionario = new CadastroDeFuncionariosForm();
             TelaCadastroFuncionario.ShowDialog();
+            AtualizarTelaFuncionario();
         }
 
         private void btnCadastroDeSabores_Click(object sender, EventArgs e)
@@ -179,6 +185,27 @@ namespace PizzariaDoZe.Telas
             AtualizarTelaIngredientes();
             AtualizarTelaEndereco();
             AtualizarTelaClientes();
+            AtualizarTelaFuncionario();
+        }
+
+        private void AtualizarTelaFuncionario()
+        {
+            //Instância e Preenche o objeto com os dados da view
+            var funcionario = new Funcionario();
+            try
+            {
+                //chama o método para buscar todos os dados da nossa camada model
+                DataTable linhas = funcionarioDAO.Buscar(funcionario);
+                // seta o datasouce do dataGridView com os dados retornados
+                dataGridViewFuncionario.Columns.Clear();
+                dataGridViewFuncionario.AutoGenerateColumns = true;
+                dataGridViewFuncionario.DataSource = linhas;
+                dataGridViewFuncionario.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void AtualizarTelaIngredientes()
@@ -243,6 +270,70 @@ namespace PizzariaDoZe.Telas
 
         private void tabControlCadastros_MouseClick(object sender, MouseEventArgs e)
         {
+
+        }
+
+        private void dataGridViewFuncionario_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == this.dataGridViewFuncionario.NewRowIndex || e.Value.ToString().Trim().Length == 0)
+            {
+                return;
+            }
+            if (this.dataGridViewFuncionario.Columns[e.ColumnIndex].Name.Equals("Grupo"))
+            {
+                e.Value = EnumExtensions.GetDescription((EnumFuncionarioGrupo)int.Parse(e.Value.ToString()));
+            }
+            else if (this.dataGridViewFuncionario.Columns[e.ColumnIndex].Name.Equals("CPF"))
+            {
+                long value = long.Parse(e.Value.ToString().Replace(" ", ""));
+                e.Value = string.Format(@"{0:000\.000\.000\-00}", value);
+            }
+            else if (this.dataGridViewFuncionario.Columns[e.ColumnIndex].Name.Equals("CEP"))
+            {
+                long value = long.Parse(e.Value.ToString().Replace(" ", ""));
+                e.Value = string.Format(@"{0:00\.000\-000}", value);
+            }
+            else if (this.dataGridViewFuncionario.Columns[e.ColumnIndex].Name.Equals("Telefone"))
+            {
+                long value = long.Parse(e.Value.ToString().Replace(" ", ""));
+                e.Value = string.Format(@"{0:(00) 00000\-0000}", value);
+            }
+            else if (this.dataGridViewFuncionario.Columns[e.ColumnIndex].Name.Equals("Valor"))
+            {
+                // formata valor numérico com duas casa decimais
+                double d = double.Parse(e.Value.ToString());
+                e.Value = d.ToString("N2");
+            }
+        }
+
+        private void dataGridViewClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == this.dataGridViewClientes.NewRowIndex || e.Value.ToString().Trim().Length == 0)
+            {
+                return;
+            }
+            
+            if (this.dataGridViewClientes.Columns[e.ColumnIndex].Name.Equals("CPF"))
+            {
+                long value = long.Parse(e.Value.ToString().Replace(" ", ""));
+                e.Value = string.Format(@"{0:000\.000\.000\-00}", value);
+            }
+            else if (this.dataGridViewClientes.Columns[e.ColumnIndex].Name.Equals("CEP"))
+            {
+                long value = long.Parse(e.Value.ToString().Replace(" ", ""));
+                e.Value = string.Format(@"{0:00\.000\-000}", value);
+            }
+            else if (this.dataGridViewClientes.Columns[e.ColumnIndex].Name.Equals("Telefone"))
+            {
+                long value = long.Parse(e.Value.ToString().Replace(" ", ""));
+                e.Value = string.Format(@"{0:(00) 00000\-0000}", value);
+            }
+            else if (this.dataGridViewClientes.Columns[e.ColumnIndex].Name.Equals("Valor"))
+            {
+                // formata valor numérico com duas casa decimais
+                double d = double.Parse(e.Value.ToString());
+                e.Value = d.ToString("N2");
+            }
 
         }
     }

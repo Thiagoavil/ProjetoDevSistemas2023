@@ -67,6 +67,8 @@
             dataGridViewValores = new DataGridView();
             ListarProdutos = new TabPage();
             dataGridViewProdutos = new DataGridView();
+            ListarEndereco = new TabPage();
+            dataGridViewEndereco = new DataGridView();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             imageList1 = new ImageList(components);
             contextMenuStripPrincipal = new ContextMenuStrip(components);
@@ -86,8 +88,6 @@
             abrirAplicaçãoToolStripMenuItem = new ToolStripMenuItem();
             encerrarToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem = new ToolStripMenuItem();
-            ListarEndereco = new TabPage();
-            dataGridViewEndereco = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -112,10 +112,10 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewValores).BeginInit();
             ListarProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).BeginInit();
-            contextMenuStripPrincipal.SuspendLayout();
-            contextMenuStripSystemTray.SuspendLayout();
             ListarEndereco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewEndereco).BeginInit();
+            contextMenuStripPrincipal.SuspendLayout();
+            contextMenuStripSystemTray.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -475,6 +475,7 @@
             dataGridViewClientes.RowTemplate.Height = 29;
             dataGridViewClientes.Size = new Size(637, 362);
             dataGridViewClientes.TabIndex = 9;
+            dataGridViewClientes.CellFormatting += dataGridViewClientes_CellFormatting;
             // 
             // ListarFuncionários
             // 
@@ -496,6 +497,7 @@
             dataGridViewFuncionario.RowTemplate.Height = 29;
             dataGridViewFuncionario.Size = new Size(637, 362);
             dataGridViewFuncionario.TabIndex = 10;
+            dataGridViewFuncionario.CellFormatting += dataGridViewFuncionario_CellFormatting;
             // 
             // ListarSabores
             // 
@@ -576,6 +578,26 @@
             dataGridViewProdutos.RowTemplate.Height = 29;
             dataGridViewProdutos.Size = new Size(637, 362);
             dataGridViewProdutos.TabIndex = 10;
+            // 
+            // ListarEndereco
+            // 
+            ListarEndereco.Controls.Add(dataGridViewEndereco);
+            ListarEndereco.Location = new Point(4, 29);
+            ListarEndereco.Name = "ListarEndereco";
+            ListarEndereco.Size = new Size(643, 365);
+            ListarEndereco.TabIndex = 6;
+            ListarEndereco.Text = "Endereço";
+            ListarEndereco.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewEndereco
+            // 
+            dataGridViewEndereco.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewEndereco.Location = new Point(3, 1);
+            dataGridViewEndereco.Name = "dataGridViewEndereco";
+            dataGridViewEndereco.RowHeadersWidth = 51;
+            dataGridViewEndereco.RowTemplate.Height = 29;
+            dataGridViewEndereco.Size = new Size(637, 362);
+            dataGridViewEndereco.TabIndex = 11;
             // 
             // imageList1
             // 
@@ -706,26 +728,6 @@
             sobreToolStripMenuItem.Size = new Size(181, 24);
             sobreToolStripMenuItem.Text = "Sobre";
             // 
-            // ListarEndereco
-            // 
-            ListarEndereco.Controls.Add(dataGridViewEndereco);
-            ListarEndereco.Location = new Point(4, 29);
-            ListarEndereco.Name = "ListarEndereco";
-            ListarEndereco.Size = new Size(643, 365);
-            ListarEndereco.TabIndex = 6;
-            ListarEndereco.Text = "Endereço";
-            ListarEndereco.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewEndereco
-            // 
-            dataGridViewEndereco.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewEndereco.Location = new Point(3, 1);
-            dataGridViewEndereco.Name = "dataGridViewEndereco";
-            dataGridViewEndereco.RowHeadersWidth = 51;
-            dataGridViewEndereco.RowTemplate.Height = 29;
-            dataGridViewEndereco.Size = new Size(637, 362);
-            dataGridViewEndereco.TabIndex = 11;
-            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -768,10 +770,10 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewValores).EndInit();
             ListarProdutos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).EndInit();
-            contextMenuStripPrincipal.ResumeLayout(false);
-            contextMenuStripSystemTray.ResumeLayout(false);
             ListarEndereco.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewEndereco).EndInit();
+            contextMenuStripPrincipal.ResumeLayout(false);
+            contextMenuStripSystemTray.ResumeLayout(false);
             ResumeLayout(false);
         }
 
