@@ -3,17 +3,6 @@ using System.Data.Common;
 
 namespace PizzariaDoZe_DAO.PastaIngredientes
 {
-    public class Ingrediente
-    {
-        public int IdIngrediente { get; set; }
-        public string Nome { get; set; }
-
-        public Ingrediente(int id = 0, string nome = "")
-        {
-            IdIngrediente = id;
-            Nome = nome;
-        }
-    }
     public class IngredientesDAO
     {
         /// <summary>
@@ -29,7 +18,7 @@ namespace PizzariaDoZe_DAO.PastaIngredientes
             factory = DbProviderFactories.GetFactory(Provider);
         }
 
-        public void InserirDbProvider(Ingrediente ingrediente)
+        public void InserirDbProvider(Ingredientes ingrediente)
         {
             using var conexao = factory.CreateConnection(); //Cria conexão
             conexao!.ConnectionString = StringConexao; //Atribui a string de conexão
@@ -46,7 +35,7 @@ namespace PizzariaDoZe_DAO.PastaIngredientes
             var linhas = comando.ExecuteNonQuery();
             //using faz o Close() automático quando fecha o seu escopo
         }
-        public DataTable Buscar(Ingrediente ingrediente)
+        public DataTable Buscar(Ingredientes ingrediente)
         {
             using var conexao = factory.CreateConnection(); //Cria conexão
             conexao!.ConnectionString = StringConexao; //Atribui a string de conexão

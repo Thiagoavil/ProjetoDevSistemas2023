@@ -49,7 +49,7 @@ namespace PizzariaDoZe.Telas
             try
             {
                 //Instância e Preenche o objeto com os dados da view
-                var ingrediente = new Ingrediente
+                var ingrediente = new Ingredientes
                 {
                     IdIngrediente = 0,
                     Nome = txtNome.Text,

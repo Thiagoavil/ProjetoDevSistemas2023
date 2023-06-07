@@ -48,10 +48,20 @@
             panel1 = new Panel();
             labelCliente = new Label();
             panel2 = new Panel();
-            labelCep = new Label();
-            txtCEP = new TextBox();
+            txtNumero = new TextBox();
+            labelNumero = new Label();
+            txtId = new TextBox();
+            labelId = new Label();
+            txtPais = new TextBox();
+            labelPais = new Label();
+            comboBoxUf = new ComboBox();
+            labelUF = new Label();
+            txtCidade = new TextBox();
+            labelCidade = new Label();
+            maskedTextBoxCep = new MaskedTextBox();
             txtLogradouro = new TextBox();
             labelLogradouro = new Label();
+            labelCep = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -98,7 +108,7 @@
             // labelRua
             // 
             labelRua.AutoSize = true;
-            labelRua.Location = new Point(60, 173);
+            labelRua.Location = new Point(72, 164);
             labelRua.Name = "labelRua";
             labelRua.Size = new Size(34, 20);
             labelRua.TabIndex = 4;
@@ -108,7 +118,7 @@
             // labelBairro
             // 
             labelBairro.AutoSize = true;
-            labelBairro.Location = new Point(58, 208);
+            labelBairro.Location = new Point(57, 198);
             labelBairro.Name = "labelBairro";
             labelBairro.Size = new Size(49, 20);
             labelBairro.TabIndex = 5;
@@ -117,7 +127,7 @@
             // labelComplemento
             // 
             labelComplemento.AutoSize = true;
-            labelComplemento.Location = new Point(9, 128);
+            labelComplemento.Location = new Point(2, 130);
             labelComplemento.Name = "labelComplemento";
             labelComplemento.Size = new Size(104, 20);
             labelComplemento.TabIndex = 6;
@@ -142,7 +152,7 @@
             // 
             // txtRua
             // 
-            txtRua.Location = new Point(112, 169);
+            txtRua.Location = new Point(112, 165);
             txtRua.Margin = new Padding(3, 4, 3, 4);
             txtRua.Name = "txtRua";
             txtRua.Size = new Size(161, 27);
@@ -151,7 +161,7 @@
             // 
             // txtComplemento
             // 
-            txtComplemento.Location = new Point(112, 124);
+            txtComplemento.Location = new Point(112, 129);
             txtComplemento.Margin = new Padding(3, 4, 3, 4);
             txtComplemento.Name = "txtComplemento";
             txtComplemento.Size = new Size(175, 27);
@@ -159,7 +169,7 @@
             // 
             // txtBairro
             // 
-            txtBairro.Location = new Point(123, 204);
+            txtBairro.Location = new Point(112, 201);
             txtBairro.Margin = new Padding(3, 4, 3, 4);
             txtBairro.Name = "txtBairro";
             txtBairro.Size = new Size(161, 27);
@@ -206,6 +216,7 @@
             maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             maskedTextBoxCpf.Size = new Size(161, 27);
             maskedTextBoxCpf.TabIndex = 11;
+            maskedTextBoxCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // maskedTextBoxTelefone
             // 
@@ -214,6 +225,7 @@
             maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
             maskedTextBoxTelefone.Size = new Size(161, 27);
             maskedTextBoxTelefone.TabIndex = 8;
+            maskedTextBoxTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             maskedTextBoxTelefone.MaskInputRejected += maskedTextBoxTelefone_MaskInputRejected;
             // 
             // panel1
@@ -244,9 +256,19 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(txtNumero);
+            panel2.Controls.Add(labelNumero);
+            panel2.Controls.Add(txtId);
+            panel2.Controls.Add(labelId);
+            panel2.Controls.Add(txtPais);
+            panel2.Controls.Add(labelPais);
+            panel2.Controls.Add(comboBoxUf);
+            panel2.Controls.Add(labelUF);
+            panel2.Controls.Add(txtCidade);
+            panel2.Controls.Add(labelCidade);
+            panel2.Controls.Add(maskedTextBoxCep);
             panel2.Controls.Add(txtLogradouro);
             panel2.Controls.Add(labelLogradouro);
-            panel2.Controls.Add(txtCEP);
             panel2.Controls.Add(labelCep);
             panel2.Controls.Add(txtComplemento);
             panel2.Controls.Add(labelRua);
@@ -254,31 +276,113 @@
             panel2.Controls.Add(labelComplemento);
             panel2.Controls.Add(txtRua);
             panel2.Controls.Add(txtBairro);
-            panel2.Location = new Point(375, 16);
+            panel2.Location = new Point(365, 16);
             panel2.Name = "panel2";
-            panel2.Size = new Size(506, 250);
+            panel2.Size = new Size(516, 250);
             panel2.TabIndex = 18;
             // 
-            // labelCep
+            // txtNumero
             // 
-            labelCep.AutoSize = true;
-            labelCep.Location = new Point(42, 96);
-            labelCep.Name = "labelCep";
-            labelCep.Size = new Size(34, 20);
-            labelCep.TabIndex = 14;
-            labelCep.Text = "CEP";
+            txtNumero.Location = new Point(366, 127);
+            txtNumero.Margin = new Padding(3, 4, 3, 4);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(126, 27);
+            txtNumero.TabIndex = 28;
             // 
-            // txtCEP
+            // labelNumero
             // 
-            txtCEP.Location = new Point(112, 89);
-            txtCEP.Margin = new Padding(3, 4, 3, 4);
-            txtCEP.Name = "txtCEP";
-            txtCEP.Size = new Size(175, 27);
-            txtCEP.TabIndex = 15;
+            labelNumero.AutoSize = true;
+            labelNumero.Location = new Point(297, 129);
+            labelNumero.Name = "labelNumero";
+            labelNumero.Size = new Size(63, 20);
+            labelNumero.TabIndex = 27;
+            labelNumero.Text = "Numero";
+            // 
+            // txtId
+            // 
+            txtId.Enabled = false;
+            txtId.Location = new Point(364, 206);
+            txtId.Margin = new Padding(3, 4, 3, 4);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(128, 27);
+            txtId.TabIndex = 26;
+            txtId.TabStop = false;
+            // 
+            // labelId
+            // 
+            labelId.AutoSize = true;
+            labelId.Location = new Point(336, 209);
+            labelId.Name = "labelId";
+            labelId.Size = new Size(22, 20);
+            labelId.TabIndex = 25;
+            labelId.Text = "Id";
+            // 
+            // txtPais
+            // 
+            txtPais.Location = new Point(366, 71);
+            txtPais.Margin = new Padding(3, 4, 3, 4);
+            txtPais.Name = "txtPais";
+            txtPais.Size = new Size(126, 27);
+            txtPais.TabIndex = 24;
+            txtPais.TextChanged += textBox1_TextChanged;
+            // 
+            // labelPais
+            // 
+            labelPais.AutoSize = true;
+            labelPais.Location = new Point(326, 74);
+            labelPais.Name = "labelPais";
+            labelPais.Size = new Size(34, 20);
+            labelPais.TabIndex = 23;
+            labelPais.Text = "Pais";
+            // 
+            // comboBoxUf
+            // 
+            comboBoxUf.FormattingEnabled = true;
+            comboBoxUf.Location = new Point(366, 33);
+            comboBoxUf.Name = "comboBoxUf";
+            comboBoxUf.Size = new Size(126, 28);
+            comboBoxUf.TabIndex = 22;
+            comboBoxUf.SelectedIndexChanged += comboBoxUf_SelectedIndexChanged;
+            // 
+            // labelUF
+            // 
+            labelUF.AutoSize = true;
+            labelUF.Location = new Point(336, 36);
+            labelUF.Name = "labelUF";
+            labelUF.Size = new Size(24, 20);
+            labelUF.TabIndex = 21;
+            labelUF.Text = "Uf";
+            // 
+            // txtCidade
+            // 
+            txtCidade.Location = new Point(112, 21);
+            txtCidade.Margin = new Padding(3, 4, 3, 4);
+            txtCidade.Name = "txtCidade";
+            txtCidade.Size = new Size(175, 27);
+            txtCidade.TabIndex = 20;
+            // 
+            // labelCidade
+            // 
+            labelCidade.AutoSize = true;
+            labelCidade.Location = new Point(50, 28);
+            labelCidade.Name = "labelCidade";
+            labelCidade.Size = new Size(56, 20);
+            labelCidade.TabIndex = 19;
+            labelCidade.Text = "Cidade";
+            // 
+            // maskedTextBoxCep
+            // 
+            maskedTextBoxCep.Location = new Point(112, 93);
+            maskedTextBoxCep.Mask = "00000-000";
+            maskedTextBoxCep.Name = "maskedTextBoxCep";
+            maskedTextBoxCep.Size = new Size(161, 27);
+            maskedTextBoxCep.TabIndex = 18;
+            maskedTextBoxCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            maskedTextBoxCep.Leave += maskedTextBoxCep_Leave;
             // 
             // txtLogradouro
             // 
-            txtLogradouro.Location = new Point(113, 53);
+            txtLogradouro.Location = new Point(112, 57);
             txtLogradouro.Margin = new Padding(3, 4, 3, 4);
             txtLogradouro.Name = "txtLogradouro";
             txtLogradouro.Size = new Size(175, 27);
@@ -287,11 +391,20 @@
             // labelLogradouro
             // 
             labelLogradouro.AutoSize = true;
-            labelLogradouro.Location = new Point(20, 60);
+            labelLogradouro.Location = new Point(19, 62);
             labelLogradouro.Name = "labelLogradouro";
             labelLogradouro.Size = new Size(87, 20);
             labelLogradouro.TabIndex = 16;
             labelLogradouro.Text = "Logradouro";
+            // 
+            // labelCep
+            // 
+            labelCep.AutoSize = true;
+            labelCep.Location = new Point(72, 96);
+            labelCep.Name = "labelCep";
+            labelCep.Size = new Size(34, 20);
+            labelCep.TabIndex = 14;
+            labelCep.Text = "CEP";
             // 
             // CadastroDeClientesForm
             // 
@@ -342,7 +455,17 @@
         private Panel panel2;
         private TextBox txtLogradouro;
         private Label labelLogradouro;
-        private TextBox txtCEP;
         private Label labelCep;
+        private MaskedTextBox maskedTextBoxCep;
+        private TextBox txtCidade;
+        private Label labelCidade;
+        private ComboBox comboBoxUf;
+        private Label labelUF;
+        private TextBox txtPais;
+        private Label labelPais;
+        private TextBox txtId;
+        private Label labelId;
+        private TextBox txtNumero;
+        private Label labelNumero;
     }
 }

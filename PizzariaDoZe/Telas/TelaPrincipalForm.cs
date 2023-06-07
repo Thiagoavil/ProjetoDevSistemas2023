@@ -1,4 +1,5 @@
 using PizzariaDoZe.Properties;
+using PizzariaDoZe_DAO.PastaCliente;
 using PizzariaDoZe_DAO.PastaEndereco;
 using PizzariaDoZe_DAO.PastaIngredientes;
 using System.Configuration;
@@ -11,6 +12,7 @@ namespace PizzariaDoZe.Telas
     {
         private IngredientesDAO ingredienteDAO;
         private EnderecoDAO enderecoDAO;
+        private ClienteDAO clienteDAO;
         // pega os dados do banco de dados
         string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
         string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
@@ -53,6 +55,7 @@ namespace PizzariaDoZe.Telas
             // cria a instancia da classe da model
             ingredienteDAO = new IngredientesDAO(provider, strConnection);
             enderecoDAO = new EnderecoDAO(provider, strConnection);
+            clienteDAO = new ClienteDAO(provider, strConnection);   
             #endregion
             #region Atualizar Views
             AtualizarViews();
@@ -63,6 +66,7 @@ namespace PizzariaDoZe.Telas
         {
             CadastroDeClientesForm TelaCadastroCliente = new CadastroDeClientesForm();
             TelaCadastroCliente.ShowDialog();
+            AtualizarTelaIngredientes();
         }
 
         private void btnCadastroDeFuncionarios_Click(object sender, EventArgs e)
@@ -174,12 +178,13 @@ namespace PizzariaDoZe.Telas
         {
             AtualizarTelaIngredientes();
             AtualizarTelaEndereco();
+            AtualizarTelaClientes();
         }
 
         private void AtualizarTelaIngredientes()
         {
             //Instância e Preenche o objeto com os dados da view
-            var ingrediente = new Ingrediente();
+            var ingrediente = new Ingredientes();
             try
             {
                 //chama o método para buscar todos os dados da nossa camada model
@@ -209,6 +214,26 @@ namespace PizzariaDoZe.Telas
                 dataGridViewEndereco.AutoGenerateColumns = true;
                 dataGridViewEndereco.DataSource = linhas;
                 dataGridViewEndereco.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void AtualizarTelaClientes()
+        {
+            //Instância e Preenche o objeto com os dados da view
+            var cliente = new Cliente();
+            try
+            {
+                //chama o método para buscar todos os dados da nossa camada model
+                DataTable linhas = clienteDAO.Buscar(cliente);
+                // seta o datasouce do dataGridView com os dados retornados
+                dataGridViewClientes.Columns.Clear();
+                dataGridViewClientes.AutoGenerateColumns = true;
+                dataGridViewClientes.DataSource = linhas;
+                dataGridViewClientes.Refresh();
             }
             catch (Exception ex)
             {
