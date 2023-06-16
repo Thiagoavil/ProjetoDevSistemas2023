@@ -398,7 +398,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroDeClientesForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "TelaCadastroDeClientesForm";
+            Text = "Clientes";
             FormClosing += CadastroDeClientesForm_FormClosing;
             Load += CadastroDeClientesForm_Load;
             panel1.ResumeLayout(false);

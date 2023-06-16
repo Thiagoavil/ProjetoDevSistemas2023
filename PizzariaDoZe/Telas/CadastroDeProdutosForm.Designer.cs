@@ -126,6 +126,7 @@
             btnSalvar.TabIndex = 6;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnCancelar
             // 
@@ -145,6 +146,7 @@
             maskedTextBoxValor.Name = "maskedTextBoxValor";
             maskedTextBoxValor.Size = new Size(125, 27);
             maskedTextBoxValor.TabIndex = 1;
+            maskedTextBoxValor.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // CadastroDeProdutosForm
             // 
@@ -165,7 +167,7 @@
             Controls.Add(labelNome);
             KeyPreview = true;
             Name = "CadastroDeProdutosForm";
-            Text = "CadastroDeProdutosForm";
+            Text = "Produtos";
             FormClosing += CadastroDeProdutosForm_FormClosing;
             ResumeLayout(false);
             PerformLayout();

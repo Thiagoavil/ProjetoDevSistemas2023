@@ -109,7 +109,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroDeIngredientesForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "TelaCadastroDeIngredientesForm";
+            Text = "Ingredientes";
             FormClosing += CadastroDeIngredientesForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)errorProviderIngredientes).EndInit();
             ResumeLayout(false);

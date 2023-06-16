@@ -4,6 +4,9 @@ using PizzariaDoZe_DAO.PastaCliente;
 using PizzariaDoZe_DAO.PastaEndereco;
 using PizzariaDoZe_DAO.PastaFuncionario;
 using PizzariaDoZe_DAO.PastaIngredientes;
+using PizzariaDoZe_DAO.PastaProduto;
+using PizzariaDoZe_DAO.PastaSabores;
+using PizzariaDoZe_DAO.PastaValor;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -17,6 +20,9 @@ namespace PizzariaDoZe.Telas
         private EnderecoDAO enderecoDAO;
         private ClienteDAO clienteDAO;
         private FuncionarioDAO funcionarioDAO;
+        private SaborDAO saborDAO;
+        private ValorDAO valorDAO;
+        private ProdutoDAO produtoDAO;
         // pega os dados do banco de dados
         string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
         string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
@@ -61,6 +67,9 @@ namespace PizzariaDoZe.Telas
             enderecoDAO = new EnderecoDAO(provider, strConnection);
             clienteDAO = new ClienteDAO(provider, strConnection);
             funcionarioDAO = new FuncionarioDAO(provider, strConnection);
+            saborDAO = new SaborDAO(provider, strConnection);
+            valorDAO = new ValorDAO(provider, strConnection);
+            produtoDAO = new ProdutoDAO(provider, strConnection);
             #endregion
             #region Atualizar Views
             AtualizarViews();
@@ -85,6 +94,7 @@ namespace PizzariaDoZe.Telas
         {
             CadastroDeSaboresForm TelaCadastroFuncionario = new CadastroDeSaboresForm();
             TelaCadastroFuncionario.ShowDialog();
+            AtualizarTelaSabores();
         }
 
         private void btnCadastroDeIngredientes_Click(object sender, EventArgs e)
@@ -98,12 +108,19 @@ namespace PizzariaDoZe.Telas
         {
             CadastroDeValorForm TelaCadastroValores = new CadastroDeValorForm();
             TelaCadastroValores.ShowDialog();
+            AtualizarTelaValores();
         }
 
         private void btnCadastrarProduto_Click(object sender, EventArgs e)
         {
             CadastroDeProdutosForm TelaCadastroProduto = new CadastroDeProdutosForm();
             TelaCadastroProduto.ShowDialog();
+            AtualizarTelaProdutos();
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void ConfiguraçõesBtn_Click(object sender, EventArgs e)
@@ -186,6 +203,69 @@ namespace PizzariaDoZe.Telas
             AtualizarTelaEndereco();
             AtualizarTelaClientes();
             AtualizarTelaFuncionario();
+            AtualizarTelaSabores();
+            AtualizarTelaValores();
+            AtualizarTelaProdutos();
+        }
+
+        private void AtualizarTelaProdutos()
+        {
+            //Instância e Preenche o objeto com os dados da view
+            var produto = new Produto();
+            try
+            {
+                //chama o método para buscar todos os dados da nossa camada model
+                DataTable linhas = produtoDAO.Buscar(produto);
+                // seta o datasouce do dataGridView com os dados retornados
+                dataGridViewProdutos.Columns.Clear();
+                dataGridViewProdutos.AutoGenerateColumns = true;
+                dataGridViewProdutos.DataSource = linhas;
+                dataGridViewProdutos.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void AtualizarTelaValores()
+        {
+            //Instância e Preenche o objeto com os dados da view
+            var valor = new Valor();
+            try
+            {
+                //chama o método para buscar todos os dados da nossa camada model
+                DataTable linhas = valorDAO.Buscar(valor);
+                // seta o datasouce do dataGridView com os dados retornados
+                dataGridViewValores.Columns.Clear();
+                dataGridViewValores.AutoGenerateColumns = true;
+                dataGridViewValores.DataSource = linhas;
+                dataGridViewValores.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void AtualizarTelaSabores()
+        {
+            //Instância e Preenche o objeto com os dados da view
+            var sabor = new Sabor();
+            try
+            {
+                //chama o método para buscar todos os dados da nossa camada model
+                DataTable linhas = saborDAO.Buscar(sabor);
+                // seta o datasouce do dataGridView com os dados retornados
+                dataGridViewSabores.Columns.Clear();
+                dataGridViewSabores.AutoGenerateColumns = true;
+                dataGridViewSabores.DataSource = linhas;
+                dataGridViewSabores.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void AtualizarTelaFuncionario()
@@ -312,7 +392,7 @@ namespace PizzariaDoZe.Telas
             {
                 return;
             }
-            
+
             if (this.dataGridViewClientes.Columns[e.ColumnIndex].Name.Equals("CPF"))
             {
                 long value = long.Parse(e.Value.ToString().Replace(" ", ""));
@@ -336,5 +416,82 @@ namespace PizzariaDoZe.Telas
             }
 
         }
+
+        private void dataGridViewEndereco_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == this.dataGridViewEndereco.NewRowIndex || e.Value.ToString().Trim().Length == 0)
+            {
+                return;
+            }
+
+            if (this.dataGridViewEndereco.Columns[e.ColumnIndex].Name.Equals("CEP"))
+            {
+                long value = long.Parse(e.Value.ToString().Replace(" ", ""));
+                e.Value = string.Format(@"{0:00\.000\-000}", value);
+            }
+
+        }
+
+        private void dataGridViewSabores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == this.dataGridViewSabores.NewRowIndex || e.Value.ToString().Trim().Length == 0)
+            {
+                return;
+            }
+
+            if (this.dataGridViewSabores.Columns[e.ColumnIndex].Name.Equals("Categoria"))
+            {
+                e.Value = EnumExtensions.GetDescription((EnumSaborCategoria)char.Parse(e.Value.ToString()));
+            }
+            else if (this.dataGridViewSabores.Columns[e.ColumnIndex].Name.Equals("Tipo"))
+            {
+                e.Value = EnumExtensions.GetDescription((EnumSaborTipo)char.Parse(e.Value.ToString()));
+            }
+        }
+
+        private void dataGridViewValores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == this.dataGridViewValores.NewRowIndex || e.Value.ToString().Trim().Length == 0)
+            {
+                return;
+            }
+
+            if (this.dataGridViewValores.Columns[e.ColumnIndex].Name.Equals("Categoria"))
+            {
+                e.Value = EnumExtensions.GetDescription((EnumSaborCategoria)char.Parse(e.Value.ToString()));
+            }
+            else if (this.dataGridViewValores.Columns[e.ColumnIndex].Name.Equals("Tamanho"))
+            {
+                e.Value = EnumExtensions.GetDescription((EnumValorTamanho)char.Parse(e.Value.ToString()));
+            }
+            else if (this.dataGridViewValores.Columns[e.ColumnIndex].Name.Equals("Valor") || this.dataGridViewValores.Columns[e.ColumnIndex].Name.Equals("Valor Borda"))
+            {
+                // formata valor numérico com duas casa decimais
+                double d = double.Parse(e.Value.ToString());
+
+                e.Value = d.ToString("N2");
+            }
+        }
+
+        private void dataGridViewProdutos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == this.dataGridViewProdutos.NewRowIndex || e.Value.ToString().Trim().Length == 0)
+            {
+                return;
+            }
+
+            if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("Tipo Produto"))
+            {
+                e.Value = EnumExtensions.GetDescription((EnumProdutoTipo)char.Parse(e.Value.ToString()));
+            }
+            else if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("Valor"))
+            {
+                // formata valor numérico com duas casa decimais
+                double d = double.Parse(e.Value.ToString());
+
+                e.Value = d.ToString("N2");
+            }
+        }
+
     }
 }

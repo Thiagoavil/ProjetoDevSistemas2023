@@ -28,59 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListTamanho = new CheckedListBox();
             labelTamanho = new Label();
-            labelValorTradicional = new Label();
-            LabelValorEspecial = new Label();
+            labelValor = new Label();
             labelValorBorda = new Label();
             btnLimpar = new Button();
             btnSalvar = new Button();
             btnCancelar = new Button();
-            maskedTextBoxValorTradicional = new MaskedTextBox();
-            maskedTextBoxValorEspecial = new MaskedTextBox();
+            maskedTextBoxValor = new MaskedTextBox();
             maskedTextBoValorBorda = new MaskedTextBox();
+            labelCategoria = new Label();
+            listBoxTamanho = new ListBox();
+            listBoxCategoria = new ListBox();
             SuspendLayout();
-            // 
-            // ListTamanho
-            // 
-            ListTamanho.FormattingEnabled = true;
-            ListTamanho.Items.AddRange(new object[] { "Pequeno", "Medio", "Grande", "Familia" });
-            ListTamanho.Location = new Point(22, 32);
-            ListTamanho.Name = "ListTamanho";
-            ListTamanho.Size = new Size(129, 92);
-            ListTamanho.TabIndex = 0;
             // 
             // labelTamanho
             // 
             labelTamanho.AutoSize = true;
-            labelTamanho.Location = new Point(22, 9);
+            labelTamanho.Location = new Point(22, 3);
             labelTamanho.Name = "labelTamanho";
             labelTamanho.Size = new Size(69, 20);
             labelTamanho.TabIndex = 1;
             labelTamanho.Text = "Tamanho";
             // 
-            // labelValorTradicional
+            // labelValor
             // 
-            labelValorTradicional.AutoSize = true;
-            labelValorTradicional.Location = new Point(22, 133);
-            labelValorTradicional.Name = "labelValorTradicional";
-            labelValorTradicional.Size = new Size(120, 20);
-            labelValorTradicional.TabIndex = 2;
-            labelValorTradicional.Text = "Valor Tradicional";
-            // 
-            // LabelValorEspecial
-            // 
-            LabelValorEspecial.AutoSize = true;
-            LabelValorEspecial.Location = new Point(22, 198);
-            LabelValorEspecial.Name = "LabelValorEspecial";
-            LabelValorEspecial.Size = new Size(101, 20);
-            LabelValorEspecial.TabIndex = 3;
-            LabelValorEspecial.Text = "Valor Especial";
+            labelValor.AutoSize = true;
+            labelValor.Location = new Point(22, 133);
+            labelValor.Name = "labelValor";
+            labelValor.Size = new Size(43, 20);
+            labelValor.TabIndex = 2;
+            labelValor.Text = "Valor";
             // 
             // labelValorBorda
             // 
             labelValorBorda.AutoSize = true;
-            labelValorBorda.Location = new Point(22, 263);
+            labelValorBorda.Location = new Point(22, 212);
             labelValorBorda.Name = "labelValorBorda";
             labelValorBorda.Size = new Size(87, 20);
             labelValorBorda.TabIndex = 7;
@@ -105,6 +87,7 @@
             btnSalvar.TabIndex = 5;
             btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnCancelar
             // 
@@ -117,30 +100,51 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBoxValorTradicional
+            // maskedTextBoxValor
             // 
-            maskedTextBoxValorTradicional.Location = new Point(22, 156);
-            maskedTextBoxValorTradicional.Mask = "$000,00";
-            maskedTextBoxValorTradicional.Name = "maskedTextBoxValorTradicional";
-            maskedTextBoxValorTradicional.Size = new Size(125, 27);
-            maskedTextBoxValorTradicional.TabIndex = 1;
-            // 
-            // maskedTextBoxValorEspecial
-            // 
-            maskedTextBoxValorEspecial.Location = new Point(22, 221);
-            maskedTextBoxValorEspecial.Mask = "$000,00";
-            maskedTextBoxValorEspecial.Name = "maskedTextBoxValorEspecial";
-            maskedTextBoxValorEspecial.Size = new Size(125, 27);
-            maskedTextBoxValorEspecial.TabIndex = 2;
+            maskedTextBoxValor.Location = new Point(22, 156);
+            maskedTextBoxValor.Mask = "$000,00";
+            maskedTextBoxValor.Name = "maskedTextBoxValor";
+            maskedTextBoxValor.Size = new Size(125, 27);
+            maskedTextBoxValor.TabIndex = 1;
+            maskedTextBoxValor.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // maskedTextBoValorBorda
             // 
-            maskedTextBoValorBorda.Location = new Point(22, 286);
+            maskedTextBoValorBorda.Location = new Point(22, 235);
             maskedTextBoValorBorda.Mask = "$000,00";
             maskedTextBoValorBorda.Name = "maskedTextBoValorBorda";
             maskedTextBoValorBorda.Size = new Size(125, 27);
             maskedTextBoValorBorda.TabIndex = 3;
+            maskedTextBoValorBorda.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             maskedTextBoValorBorda.MaskInputRejected += maskedTextBoValorBorda_MaskInputRejected;
+            // 
+            // labelCategoria
+            // 
+            labelCategoria.AutoSize = true;
+            labelCategoria.Location = new Point(200, 3);
+            labelCategoria.Name = "labelCategoria";
+            labelCategoria.Size = new Size(74, 20);
+            labelCategoria.TabIndex = 8;
+            labelCategoria.Text = "Categoria";
+            // 
+            // listBoxTamanho
+            // 
+            listBoxTamanho.FormattingEnabled = true;
+            listBoxTamanho.ItemHeight = 20;
+            listBoxTamanho.Location = new Point(22, 26);
+            listBoxTamanho.Name = "listBoxTamanho";
+            listBoxTamanho.Size = new Size(150, 104);
+            listBoxTamanho.TabIndex = 9;
+            // 
+            // listBoxCategoria
+            // 
+            listBoxCategoria.FormattingEnabled = true;
+            listBoxCategoria.ItemHeight = 20;
+            listBoxCategoria.Location = new Point(200, 26);
+            listBoxCategoria.Name = "listBoxCategoria";
+            listBoxCategoria.Size = new Size(150, 104);
+            listBoxCategoria.TabIndex = 10;
             // 
             // CadastroDeValorForm
             // 
@@ -148,37 +152,36 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
             ClientSize = new Size(447, 450);
+            Controls.Add(listBoxCategoria);
+            Controls.Add(listBoxTamanho);
+            Controls.Add(labelCategoria);
             Controls.Add(maskedTextBoValorBorda);
-            Controls.Add(maskedTextBoxValorEspecial);
-            Controls.Add(maskedTextBoxValorTradicional);
+            Controls.Add(maskedTextBoxValor);
             Controls.Add(btnLimpar);
             Controls.Add(btnSalvar);
             Controls.Add(btnCancelar);
             Controls.Add(labelValorBorda);
-            Controls.Add(LabelValorEspecial);
-            Controls.Add(labelValorTradicional);
+            Controls.Add(labelValor);
             Controls.Add(labelTamanho);
-            Controls.Add(ListTamanho);
             KeyPreview = true;
             Name = "CadastroDeValorForm";
-            Text = "CadastroDeValores";
+            Text = "Valores";
             FormClosing += CadastroDeValorForm_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private CheckedListBox ListTamanho;
         private Label labelTamanho;
-        private Label labelValorTradicional;
-        private Label LabelValorEspecial;
+        private Label labelValor;
         private Label labelValorBorda;
         private Button btnLimpar;
         private Button btnSalvar;
         private Button btnCancelar;
-        private MaskedTextBox maskedTextBoxValorTradicional;
-        private MaskedTextBox maskedTextBoxValorEspecial;
+        private MaskedTextBox maskedTextBoxValor;
         private MaskedTextBox maskedTextBoValorBorda;
+        private Label labelCategoria;
+        private ListBox listBoxTamanho;
+        private ListBox listBoxCategoria;
     }
 }

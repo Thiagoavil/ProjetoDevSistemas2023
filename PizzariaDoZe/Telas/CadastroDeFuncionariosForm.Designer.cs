@@ -528,7 +528,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroDeFuncionariosForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "TelaCadastroDeFuncionariosForm";
+            Text = "Funcionario";
             FormClosing += CadastroDeFuncionariosForm_FormClosing;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

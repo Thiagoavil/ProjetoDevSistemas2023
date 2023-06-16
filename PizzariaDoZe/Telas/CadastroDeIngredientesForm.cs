@@ -45,7 +45,7 @@ namespace PizzariaDoZe.Telas
         private void ButtonSalvar_Click(object? sender, EventArgs e)
         {
 
-           
+
             try
             {
                 //Instância e Preenche o objeto com os dados da view

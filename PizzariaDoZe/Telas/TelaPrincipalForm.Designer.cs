@@ -35,6 +35,8 @@
             Telalabel = new Label();
             labelLogo = new Label();
             panel2 = new Panel();
+            btnPedidos = new Button();
+            pictureBoxPedido = new PictureBox();
             ConfiguraçõesBtn = new Button();
             pictureBox8 = new PictureBox();
             pictureBox7 = new PictureBox();
@@ -69,6 +71,7 @@
             dataGridViewProdutos = new DataGridView();
             ListarEndereco = new TabPage();
             dataGridViewEndereco = new DataGridView();
+            ListarPedidos = new TabPage();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             imageList1 = new ImageList(components);
             contextMenuStripPrincipal = new ContextMenuStrip(components);
@@ -88,9 +91,11 @@
             abrirAplicaçãoToolStripMenuItem = new ToolStripMenuItem();
             encerrarToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem = new ToolStripMenuItem();
+            PedidosToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPedido).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -168,6 +173,8 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(btnPedidos);
+            panel2.Controls.Add(pictureBoxPedido);
             panel2.Controls.Add(ConfiguraçõesBtn);
             panel2.Controls.Add(pictureBox8);
             panel2.Controls.Add(pictureBox7);
@@ -188,11 +195,38 @@
             panel2.Size = new Size(253, 481);
             panel2.TabIndex = 1;
             // 
+            // btnPedidos
+            // 
+            btnPedidos.FlatStyle = FlatStyle.Popup;
+            btnPedidos.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPedidos.Location = new Point(67, 347);
+            btnPedidos.Margin = new Padding(3, 4, 3, 4);
+            btnPedidos.Name = "btnPedidos";
+            btnPedidos.Size = new Size(173, 49);
+            btnPedidos.TabIndex = 18;
+            btnPedidos.Text = "Pedidos";
+            btnPedidos.UseVisualStyleBackColor = true;
+            btnPedidos.Click += btnPedidos_Click;
+            // 
+            // pictureBoxPedido
+            // 
+            pictureBoxPedido.BackColor = Color.Transparent;
+            pictureBoxPedido.BackgroundImage = (Image)resources.GetObject("pictureBoxPedido.BackgroundImage");
+            pictureBoxPedido.BackgroundImageLayout = ImageLayout.None;
+            pictureBoxPedido.Image = (Image)resources.GetObject("pictureBoxPedido.Image");
+            pictureBoxPedido.InitialImage = (Image)resources.GetObject("pictureBoxPedido.InitialImage");
+            pictureBoxPedido.Location = new Point(3, 347);
+            pictureBoxPedido.Name = "pictureBoxPedido";
+            pictureBoxPedido.Size = new Size(58, 49);
+            pictureBoxPedido.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPedido.TabIndex = 19;
+            pictureBoxPedido.TabStop = false;
+            // 
             // ConfiguraçõesBtn
             // 
             ConfiguraçõesBtn.FlatStyle = FlatStyle.Popup;
             ConfiguraçõesBtn.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            ConfiguraçõesBtn.Location = new Point(67, 368);
+            ConfiguraçõesBtn.Location = new Point(67, 406);
             ConfiguraçõesBtn.Margin = new Padding(3, 4, 3, 4);
             ConfiguraçõesBtn.Name = "ConfiguraçõesBtn";
             ConfiguraçõesBtn.Size = new Size(173, 49);
@@ -208,7 +242,7 @@
             pictureBox8.BackgroundImageLayout = ImageLayout.None;
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
             pictureBox8.InitialImage = (Image)resources.GetObject("pictureBox8.InitialImage");
-            pictureBox8.Location = new Point(3, 368);
+            pictureBox8.Location = new Point(3, 406);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(58, 49);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -222,7 +256,7 @@
             pictureBox7.BackgroundImageLayout = ImageLayout.None;
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
             pictureBox7.InitialImage = (Image)resources.GetObject("pictureBox7.InitialImage");
-            pictureBox7.Location = new Point(3, 312);
+            pictureBox7.Location = new Point(3, 290);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(58, 49);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -236,7 +270,7 @@
             pictureBox6.BackgroundImageLayout = ImageLayout.None;
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
             pictureBox6.InitialImage = (Image)resources.GetObject("pictureBox6.InitialImage");
-            pictureBox6.Location = new Point(3, 256);
+            pictureBox6.Location = new Point(3, 234);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(58, 49);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -251,7 +285,7 @@
             pictureBox5.ErrorImage = (Image)resources.GetObject("pictureBox5.ErrorImage");
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.InitialImage = (Image)resources.GetObject("pictureBox5.InitialImage");
-            pictureBox5.Location = new Point(3, 200);
+            pictureBox5.Location = new Point(3, 178);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(58, 49);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -265,7 +299,7 @@
             pictureBox4.BackgroundImageLayout = ImageLayout.None;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.InitialImage = (Image)resources.GetObject("pictureBox4.InitialImage");
-            pictureBox4.Location = new Point(3, 144);
+            pictureBox4.Location = new Point(3, 122);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(58, 49);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -279,7 +313,7 @@
             pictureBox3.BackgroundImageLayout = ImageLayout.None;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.InitialImage = (Image)resources.GetObject("pictureBox3.InitialImage");
-            pictureBox3.Location = new Point(3, 88);
+            pictureBox3.Location = new Point(3, 66);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(58, 49);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -293,7 +327,7 @@
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.InitialImage = (Image)resources.GetObject("pictureBox2.InitialImage");
-            pictureBox2.Location = new Point(3, 32);
+            pictureBox2.Location = new Point(3, 10);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(58, 49);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -304,7 +338,7 @@
             // 
             btnCadastrarProduto.FlatStyle = FlatStyle.Popup;
             btnCadastrarProduto.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastrarProduto.Location = new Point(67, 312);
+            btnCadastrarProduto.Location = new Point(67, 290);
             btnCadastrarProduto.Margin = new Padding(3, 4, 3, 4);
             btnCadastrarProduto.Name = "btnCadastrarProduto";
             btnCadastrarProduto.Size = new Size(173, 49);
@@ -317,7 +351,7 @@
             // 
             btnCadastroValores.FlatStyle = FlatStyle.Popup;
             btnCadastroValores.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroValores.Location = new Point(67, 256);
+            btnCadastroValores.Location = new Point(67, 234);
             btnCadastroValores.Margin = new Padding(3, 4, 3, 4);
             btnCadastroValores.Name = "btnCadastroValores";
             btnCadastroValores.Size = new Size(173, 49);
@@ -330,7 +364,7 @@
             // 
             btnCadastroDeIngredientes.FlatStyle = FlatStyle.Popup;
             btnCadastroDeIngredientes.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroDeIngredientes.Location = new Point(67, 200);
+            btnCadastroDeIngredientes.Location = new Point(67, 178);
             btnCadastroDeIngredientes.Margin = new Padding(3, 4, 3, 4);
             btnCadastroDeIngredientes.Name = "btnCadastroDeIngredientes";
             btnCadastroDeIngredientes.Size = new Size(173, 49);
@@ -343,7 +377,7 @@
             // 
             btnCadastroDeSabores.FlatStyle = FlatStyle.Popup;
             btnCadastroDeSabores.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroDeSabores.Location = new Point(67, 144);
+            btnCadastroDeSabores.Location = new Point(67, 122);
             btnCadastroDeSabores.Margin = new Padding(3, 4, 3, 4);
             btnCadastroDeSabores.Name = "btnCadastroDeSabores";
             btnCadastroDeSabores.Size = new Size(173, 49);
@@ -356,7 +390,7 @@
             // 
             btnCadastroDeFuncionarios.FlatStyle = FlatStyle.Popup;
             btnCadastroDeFuncionarios.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastroDeFuncionarios.Location = new Point(67, 88);
+            btnCadastroDeFuncionarios.Location = new Point(67, 66);
             btnCadastroDeFuncionarios.Margin = new Padding(3, 4, 3, 4);
             btnCadastroDeFuncionarios.Name = "btnCadastroDeFuncionarios";
             btnCadastroDeFuncionarios.Size = new Size(173, 49);
@@ -369,7 +403,7 @@
             // 
             btnCadastrarCliente.FlatStyle = FlatStyle.Popup;
             btnCadastrarCliente.Font = new Font("Rockwell", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCadastrarCliente.Location = new Point(67, 32);
+            btnCadastrarCliente.Location = new Point(67, 10);
             btnCadastrarCliente.Margin = new Padding(3, 4, 3, 4);
             btnCadastrarCliente.Name = "btnCadastrarCliente";
             btnCadastrarCliente.Size = new Size(173, 49);
@@ -446,6 +480,7 @@
             tabControlCadastros.Controls.Add(ListarValores);
             tabControlCadastros.Controls.Add(ListarProdutos);
             tabControlCadastros.Controls.Add(ListarEndereco);
+            tabControlCadastros.Controls.Add(ListarPedidos);
             tabControlCadastros.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             tabControlCadastros.Location = new Point(20, 66);
             tabControlCadastros.Name = "tabControlCadastros";
@@ -518,6 +553,7 @@
             dataGridViewSabores.RowTemplate.Height = 29;
             dataGridViewSabores.Size = new Size(637, 362);
             dataGridViewSabores.TabIndex = 10;
+            dataGridViewSabores.CellFormatting += dataGridViewSabores_CellFormatting;
             // 
             // ListarIngredientes
             // 
@@ -558,6 +594,7 @@
             dataGridViewValores.RowTemplate.Height = 29;
             dataGridViewValores.Size = new Size(637, 362);
             dataGridViewValores.TabIndex = 10;
+            dataGridViewValores.CellFormatting += dataGridViewValores_CellFormatting;
             // 
             // ListarProdutos
             // 
@@ -578,6 +615,7 @@
             dataGridViewProdutos.RowTemplate.Height = 29;
             dataGridViewProdutos.Size = new Size(637, 362);
             dataGridViewProdutos.TabIndex = 10;
+            dataGridViewProdutos.CellFormatting += dataGridViewProdutos_CellFormatting;
             // 
             // ListarEndereco
             // 
@@ -598,6 +636,16 @@
             dataGridViewEndereco.RowTemplate.Height = 29;
             dataGridViewEndereco.Size = new Size(637, 362);
             dataGridViewEndereco.TabIndex = 11;
+            dataGridViewEndereco.CellFormatting += dataGridViewEndereco_CellFormatting;
+            // 
+            // ListarPedidos
+            // 
+            ListarPedidos.Location = new Point(4, 29);
+            ListarPedidos.Name = "ListarPedidos";
+            ListarPedidos.Size = new Size(643, 365);
+            ListarPedidos.TabIndex = 7;
+            ListarPedidos.Text = "Pedidos";
+            ListarPedidos.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -609,10 +657,10 @@
             // 
             contextMenuStripPrincipal.ImageScalingSize = new Size(20, 20);
             contextMenuStripPrincipal.ImeMode = ImeMode.NoControl;
-            contextMenuStripPrincipal.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, funcionariosToolStripMenuItem, ClienteStripMenuItem, ingredientesToolStripMenuItem, saboresToolStripMenuItem, valoresToolStripMenuItem, produtosToolStripMenuItem, toolStripSeparator2, configuraçõesToolStripMenuItem, toolStripSeparator1, sairToolStripMenuItem });
+            contextMenuStripPrincipal.Items.AddRange(new ToolStripItem[] { inicioToolStripMenuItem, funcionariosToolStripMenuItem, ClienteStripMenuItem, ingredientesToolStripMenuItem, saboresToolStripMenuItem, valoresToolStripMenuItem, produtosToolStripMenuItem, PedidosToolStripMenuItem, toolStripSeparator2, configuraçõesToolStripMenuItem, toolStripSeparator1, sairToolStripMenuItem });
             contextMenuStripPrincipal.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
             contextMenuStripPrincipal.Name = "contextMenuStripPrincipal";
-            contextMenuStripPrincipal.Size = new Size(238, 232);
+            contextMenuStripPrincipal.Size = new Size(238, 256);
             // 
             // inicioToolStripMenuItem
             // 
@@ -728,6 +776,13 @@
             sobreToolStripMenuItem.Size = new Size(181, 24);
             sobreToolStripMenuItem.Text = "Sobre";
             // 
+            // PedidosToolStripMenuItem
+            // 
+            PedidosToolStripMenuItem.Name = "PedidosToolStripMenuItem";
+            PedidosToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F9;
+            PedidosToolStripMenuItem.Size = new Size(237, 24);
+            PedidosToolStripMenuItem.Text = "Pedidos";
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -748,6 +803,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPedido).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -838,5 +894,9 @@
         private DataGridView dataGridViewProdutos;
         private TabPage ListarEndereco;
         private DataGridView dataGridViewEndereco;
+        private Button btnPedidos;
+        private PictureBox pictureBoxPedido;
+        private TabPage ListarPedidos;
+        private ToolStripMenuItem PedidosToolStripMenuItem;
     }
 }
