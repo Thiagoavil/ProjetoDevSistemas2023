@@ -104,5 +104,66 @@ namespace PizzariaDoZe_DAO.PastaFuncionario
             linhas.Load(sdr);
             return linhas;
         }
+
+        public void Editar(Funcionario funcionario)
+        {
+            using var conexao = factory.CreateConnection(); //Cria conexão
+            conexao!.ConnectionString = StringConexao; //Atribui a string de conexão
+            using var comando = factory.CreateCommand(); //Cria comando
+            comando!.Connection = conexao; //Atribui conexão
+                                           //Adiciona parâmetro (@campo e valor)
+            var id = comando.CreateParameter(); id.ParameterName = "@id"; id.Value = funcionario.Id; comando.Parameters.Add(id);
+            var nome = comando.CreateParameter(); nome.ParameterName = "@nome"; nome.Value = funcionario.Nome; comando.Parameters.Add(nome);
+            var cpf = comando.CreateParameter(); cpf.ParameterName = "@cpf"; cpf.Value = funcionario.Cpf; comando.Parameters.Add(cpf);
+            var matricula = comando.CreateParameter(); matricula.ParameterName = "@matricula"; matricula.Value = funcionario.Matricula; comando.Parameters.Add(matricula);
+            var senha = comando.CreateParameter(); senha.ParameterName = "@senha"; senha.Value = funcionario.Senha; comando.Parameters.Add(senha);
+            var grupo = comando.CreateParameter(); grupo.ParameterName = "@grupo"; grupo.Value = funcionario.Grupo; comando.Parameters.Add(grupo);
+            var motorista = comando.CreateParameter(); motorista.ParameterName = "@motorista"; motorista.Value = funcionario.Motorista; comando.Parameters.Add(motorista);
+            var validade_motorista = comando.CreateParameter(); validade_motorista.ParameterName = "@validade_motorista"; validade_motorista.Value = funcionario.Validade;
+            comando.Parameters.Add(validade_motorista);
+            var observacao = comando.CreateParameter(); observacao.ParameterName = "@observacao"; observacao.Value = funcionario.Observacao; comando.Parameters.Add(observacao);
+            var telefone = comando.CreateParameter(); telefone.ParameterName = "@telefone"; telefone.Value = funcionario.Telefone; comando.Parameters.Add(telefone);
+            var email = comando.CreateParameter(); email.ParameterName = "@email"; email.Value = funcionario.Email; comando.Parameters.Add(email);
+            var endereco_id = comando.CreateParameter(); endereco_id.ParameterName = "@endereco_id"; endereco_id.Value = funcionario.EnderecoId; comando.Parameters.Add(endereco_id);
+            var numero = comando.CreateParameter(); numero.ParameterName = "@numero"; numero.Value = funcionario.Numero; comando.Parameters.Add(numero);
+            var complemento = comando.CreateParameter(); complemento.ParameterName = "@complemento"; complemento.Value = funcionario.Complemento; comando.Parameters.Add(complemento);
+            conexao.Open();
+            //realiza o UPDATE
+            comando.CommandText = @"UPDATE tb_funcionarios SET " +
+            "nome_funcionario = @nome, " +
+            "cpf = @cpf, " +
+            "matricula = @matricula, " +
+            "senha = @senha, " +
+            "grupo = @grupo, " +
+            "motorista = @motorista, " +
+            "validade_motorista = @validade_motorista, " +
+            "observacao = @observacao, " +
+            "telefone = @telefone, " +
+            "email = @email, " +
+            "endereco_id = @endereco_id, " +
+            "numero = @numero, " +
+            "complemento = @complemento " +
+            "WHERE id_funcionario = @id;";
+            //executa o comando no banco de dados
+            _ = comando.ExecuteNonQuery();
+        }
+
+        public void Excluir(int id)
+        {
+            using var conexao = factory.CreateConnection(); //Cria conexão
+            conexao!.ConnectionString = StringConexao; //Atribui a string de conexão
+            using var comando = factory.CreateCommand(); //Cria comando
+            comando!.Connection = conexao; //Atribui conexão
+                                           //Adiciona parâmetro (@campo e valor)
+            var idParam = comando.CreateParameter();
+            idParam.ParameterName = "@id";
+            idParam.Value = id;
+            comando.Parameters.Add(idParam);
+            conexao.Open();
+            //realiza o DELETE
+            comando.CommandText = @"DELETE FROM tb_funcionarios WHERE id_funcionario = @id;";
+            //executa o comando no banco de dados
+            _ = comando.ExecuteNonQuery();
+        }
     }
 }

@@ -72,6 +72,9 @@
             txtObservacoes = new TextBox();
             labelEmail = new Label();
             txtEmail = new TextBox();
+            IdFuncionario = new TextBox();
+            label1 = new Label();
+            btnEditar = new Button();
             panel2.SuspendLayout();
             GorupBoxGrupo.SuspendLayout();
             SuspendLayout();
@@ -168,7 +171,7 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(350, 352);
+            btnSalvar.Location = new Point(346, 352);
             btnSalvar.Margin = new Padding(3, 4, 3, 4);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(125, 76);
@@ -190,7 +193,7 @@
             // 
             // btnLimpar
             // 
-            btnLimpar.Location = new Point(190, 352);
+            btnLimpar.Location = new Point(188, 352);
             btnLimpar.Margin = new Padding(3, 4, 3, 4);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(125, 76);
@@ -495,12 +498,47 @@
             txtEmail.Size = new Size(161, 27);
             txtEmail.TabIndex = 30;
             // 
+            // IdFuncionario
+            // 
+            IdFuncionario.Enabled = false;
+            IdFuncionario.Location = new Point(95, 13);
+            IdFuncionario.Margin = new Padding(3, 4, 3, 4);
+            IdFuncionario.Name = "IdFuncionario";
+            IdFuncionario.Size = new Size(128, 27);
+            IdFuncionario.TabIndex = 32;
+            IdFuncionario.TabStop = false;
+            IdFuncionario.Visible = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(67, 16);
+            label1.Name = "label1";
+            label1.Size = new Size(22, 20);
+            label1.TabIndex = 31;
+            label1.Text = "Id";
+            label1.Visible = false;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(504, 352);
+            btnEditar.Margin = new Padding(3, 4, 3, 4);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(125, 76);
+            btnEditar.TabIndex = 33;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
+            // 
             // CadastroDeFuncionariosForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
             ClientSize = new Size(1117, 444);
+            Controls.Add(btnEditar);
+            Controls.Add(IdFuncionario);
+            Controls.Add(label1);
             Controls.Add(txtEmail);
             Controls.Add(labelEmail);
             Controls.Add(txtObservacoes);
@@ -583,5 +621,8 @@
         private TextBox txtObservacoes;
         private Label labelEmail;
         private TextBox txtEmail;
+        private TextBox IdFuncionario;
+        private Label label1;
+        private Button btnEditar;
     }
 }

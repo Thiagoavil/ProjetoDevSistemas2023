@@ -72,6 +72,7 @@
             ListarEndereco = new TabPage();
             dataGridViewEndereco = new DataGridView();
             ListarPedidos = new TabPage();
+            dataGridViewPedidos = new DataGridView();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             imageList1 = new ImageList(components);
             contextMenuStripPrincipal = new ContextMenuStrip(components);
@@ -82,6 +83,7 @@
             saboresToolStripMenuItem = new ToolStripMenuItem();
             valoresToolStripMenuItem = new ToolStripMenuItem();
             produtosToolStripMenuItem = new ToolStripMenuItem();
+            PedidosToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator2 = new ToolStripSeparator();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
@@ -91,7 +93,6 @@
             abrirAplicaçãoToolStripMenuItem = new ToolStripMenuItem();
             encerrarToolStripMenuItem = new ToolStripMenuItem();
             sobreToolStripMenuItem = new ToolStripMenuItem();
-            PedidosToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -119,6 +120,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).BeginInit();
             ListarEndereco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewEndereco).BeginInit();
+            ListarPedidos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPedidos).BeginInit();
             contextMenuStripPrincipal.SuspendLayout();
             contextMenuStripSystemTray.SuspendLayout();
             SuspendLayout();
@@ -437,6 +440,7 @@
             btnIconExcluir.TabIndex = 6;
             btnIconExcluir.TabStop = false;
             btnIconExcluir.UseVisualStyleBackColor = false;
+            btnIconExcluir.Click += btnIconExcluir_Click;
             // 
             // btnIconEditar
             // 
@@ -503,11 +507,15 @@
             // 
             // dataGridViewClientes
             // 
+            dataGridViewClientes.AllowUserToAddRows = false;
             dataGridViewClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewClientes.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewClientes.Location = new Point(3, 0);
+            dataGridViewClientes.MultiSelect = false;
             dataGridViewClientes.Name = "dataGridViewClientes";
             dataGridViewClientes.RowHeadersWidth = 51;
             dataGridViewClientes.RowTemplate.Height = 29;
+            dataGridViewClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewClientes.Size = new Size(637, 362);
             dataGridViewClientes.TabIndex = 9;
             dataGridViewClientes.CellFormatting += dataGridViewClientes_CellFormatting;
@@ -525,14 +533,19 @@
             // 
             // dataGridViewFuncionario
             // 
+            dataGridViewFuncionario.AllowUserToAddRows = false;
             dataGridViewFuncionario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewFuncionario.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewFuncionario.Location = new Point(3, 1);
+            dataGridViewFuncionario.MultiSelect = false;
             dataGridViewFuncionario.Name = "dataGridViewFuncionario";
             dataGridViewFuncionario.RowHeadersWidth = 51;
             dataGridViewFuncionario.RowTemplate.Height = 29;
+            dataGridViewFuncionario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewFuncionario.Size = new Size(637, 362);
             dataGridViewFuncionario.TabIndex = 10;
             dataGridViewFuncionario.CellFormatting += dataGridViewFuncionario_CellFormatting;
+            dataGridViewFuncionario.DoubleClick += dataGridViewFuncionario_DoubleClick;
             // 
             // ListarSabores
             // 
@@ -546,11 +559,15 @@
             // 
             // dataGridViewSabores
             // 
+            dataGridViewSabores.AllowUserToAddRows = false;
             dataGridViewSabores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewSabores.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewSabores.Location = new Point(3, 1);
+            dataGridViewSabores.MultiSelect = false;
             dataGridViewSabores.Name = "dataGridViewSabores";
             dataGridViewSabores.RowHeadersWidth = 51;
             dataGridViewSabores.RowTemplate.Height = 29;
+            dataGridViewSabores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewSabores.Size = new Size(637, 362);
             dataGridViewSabores.TabIndex = 10;
             dataGridViewSabores.CellFormatting += dataGridViewSabores_CellFormatting;
@@ -567,11 +584,15 @@
             // 
             // dataGridViewIngredientes
             // 
+            dataGridViewIngredientes.AllowUserToAddRows = false;
             dataGridViewIngredientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewIngredientes.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewIngredientes.Location = new Point(3, 1);
+            dataGridViewIngredientes.MultiSelect = false;
             dataGridViewIngredientes.Name = "dataGridViewIngredientes";
             dataGridViewIngredientes.RowHeadersWidth = 51;
             dataGridViewIngredientes.RowTemplate.Height = 29;
+            dataGridViewIngredientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewIngredientes.Size = new Size(637, 362);
             dataGridViewIngredientes.TabIndex = 10;
             // 
@@ -587,11 +608,15 @@
             // 
             // dataGridViewValores
             // 
+            dataGridViewValores.AllowUserToAddRows = false;
             dataGridViewValores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewValores.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewValores.Location = new Point(3, 1);
+            dataGridViewValores.MultiSelect = false;
             dataGridViewValores.Name = "dataGridViewValores";
             dataGridViewValores.RowHeadersWidth = 51;
             dataGridViewValores.RowTemplate.Height = 29;
+            dataGridViewValores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewValores.Size = new Size(637, 362);
             dataGridViewValores.TabIndex = 10;
             dataGridViewValores.CellFormatting += dataGridViewValores_CellFormatting;
@@ -608,11 +633,15 @@
             // 
             // dataGridViewProdutos
             // 
+            dataGridViewProdutos.AllowUserToAddRows = false;
             dataGridViewProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProdutos.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewProdutos.Location = new Point(3, 1);
+            dataGridViewProdutos.MultiSelect = false;
             dataGridViewProdutos.Name = "dataGridViewProdutos";
             dataGridViewProdutos.RowHeadersWidth = 51;
             dataGridViewProdutos.RowTemplate.Height = 29;
+            dataGridViewProdutos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewProdutos.Size = new Size(637, 362);
             dataGridViewProdutos.TabIndex = 10;
             dataGridViewProdutos.CellFormatting += dataGridViewProdutos_CellFormatting;
@@ -629,23 +658,42 @@
             // 
             // dataGridViewEndereco
             // 
+            dataGridViewEndereco.AllowUserToAddRows = false;
             dataGridViewEndereco.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewEndereco.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewEndereco.Location = new Point(3, 1);
+            dataGridViewEndereco.MultiSelect = false;
             dataGridViewEndereco.Name = "dataGridViewEndereco";
             dataGridViewEndereco.RowHeadersWidth = 51;
             dataGridViewEndereco.RowTemplate.Height = 29;
+            dataGridViewEndereco.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewEndereco.Size = new Size(637, 362);
             dataGridViewEndereco.TabIndex = 11;
             dataGridViewEndereco.CellFormatting += dataGridViewEndereco_CellFormatting;
             // 
             // ListarPedidos
             // 
+            ListarPedidos.Controls.Add(dataGridViewPedidos);
             ListarPedidos.Location = new Point(4, 29);
             ListarPedidos.Name = "ListarPedidos";
             ListarPedidos.Size = new Size(643, 365);
             ListarPedidos.TabIndex = 7;
             ListarPedidos.Text = "Pedidos";
             ListarPedidos.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewPedidos
+            // 
+            dataGridViewPedidos.AllowUserToAddRows = false;
+            dataGridViewPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewPedidos.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridViewPedidos.Location = new Point(3, 1);
+            dataGridViewPedidos.MultiSelect = false;
+            dataGridViewPedidos.Name = "dataGridViewPedidos";
+            dataGridViewPedidos.RowHeadersWidth = 51;
+            dataGridViewPedidos.RowTemplate.Height = 29;
+            dataGridViewPedidos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewPedidos.Size = new Size(637, 362);
+            dataGridViewPedidos.TabIndex = 12;
             // 
             // imageList1
             // 
@@ -713,6 +761,13 @@
             produtosToolStripMenuItem.Size = new Size(237, 24);
             produtosToolStripMenuItem.Text = "Produtos";
             // 
+            // PedidosToolStripMenuItem
+            // 
+            PedidosToolStripMenuItem.Name = "PedidosToolStripMenuItem";
+            PedidosToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F9;
+            PedidosToolStripMenuItem.Size = new Size(237, 24);
+            PedidosToolStripMenuItem.Text = "Pedidos";
+            // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
@@ -776,13 +831,6 @@
             sobreToolStripMenuItem.Size = new Size(181, 24);
             sobreToolStripMenuItem.Text = "Sobre";
             // 
-            // PedidosToolStripMenuItem
-            // 
-            PedidosToolStripMenuItem.Name = "PedidosToolStripMenuItem";
-            PedidosToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.F9;
-            PedidosToolStripMenuItem.Size = new Size(237, 24);
-            PedidosToolStripMenuItem.Text = "Pedidos";
-            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -828,6 +876,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewProdutos).EndInit();
             ListarEndereco.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewEndereco).EndInit();
+            ListarPedidos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPedidos).EndInit();
             contextMenuStripPrincipal.ResumeLayout(false);
             contextMenuStripSystemTray.ResumeLayout(false);
             ResumeLayout(false);
@@ -898,5 +948,6 @@
         private PictureBox pictureBoxPedido;
         private TabPage ListarPedidos;
         private ToolStripMenuItem PedidosToolStripMenuItem;
+        private DataGridView dataGridViewPedidos;
     }
 }

@@ -197,6 +197,7 @@ namespace PizzariaDoZe.Telas
             this.Close();
         }
 
+        #region Atualizar Telas
         private void AtualizarViews()
         {
             AtualizarTelaIngredientes();
@@ -347,12 +348,14 @@ namespace PizzariaDoZe.Telas
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
 
         private void tabControlCadastros_MouseClick(object sender, MouseEventArgs e)
         {
 
         }
 
+        #region Cell Formating
         private void dataGridViewFuncionario_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex == this.dataGridViewFuncionario.NewRowIndex || e.Value.ToString().Trim().Length == 0)
@@ -492,6 +495,45 @@ namespace PizzariaDoZe.Telas
                 e.Value = d.ToString("N2");
             }
         }
+        #endregion
 
+        private void dataGridViewFuncionario_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridViewFuncionario.SelectedCells.Count > 0)
+            {
+                //pega a primeira coluna, que esta com o ID, da linha selecionada
+                DataGridViewRow selectedRow = dataGridViewFuncionario.Rows[dataGridViewFuncionario.SelectedCells[0].RowIndex];
+                int id = Convert.ToInt32(selectedRow.Cells[0].Value);
+                CadastroDeFuncionariosForm telaEditar = new CadastroDeFuncionariosForm(id);
+                telaEditar.ShowDialog();
+                AtualizarTelaFuncionario();
+            }
+        }
+
+        private void btnIconExcluir_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridViewFuncionario.SelectedCells.Count > 0)
+            {
+                //pega a primeira coluna, que esta com o ID, da linha selecionada
+                DataGridViewRow selectedRow = dataGridViewFuncionario.Rows[dataGridViewFuncionario.SelectedCells[0].RowIndex];
+                int id = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+                try
+                {
+                    int idExclusao = id;
+                    // chama o método da model para excluir
+                    funcionarioDAO.Excluir(id);
+                    MessageBox.Show("Dados excluidos com sucesso! " + id);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                AtualizarTelaFuncionario();
+            }
+
+
+        }
     }
 }
