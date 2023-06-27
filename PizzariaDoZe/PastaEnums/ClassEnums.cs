@@ -56,6 +56,18 @@ namespace PizzariaDoZe.PastaEnums
         [Description("Outros")]
         Outros = 'O'
     }
+
+    public enum EnumTamanhoPizza
+    {
+        [Description("Pequena")]
+        Pequena = 'P',
+        [Description("Media")]
+        Media = 'M',
+        [Description("Grande")]
+        Grande = 'G',
+        [Description("Familia")]
+        Familia = 'F'
+    }
     public static class EnumExtensions
     {
         public static string GetDescription(this Enum GenericEnum)

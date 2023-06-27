@@ -14,15 +14,16 @@ namespace PizzariaDoZe_DAO.PastaPizza
         public int IdPizza { get; set; } 
         public decimal Valor { get; set; }
         public char Tipo { get; set; }
-
         public char Tamanho { get; set; }
+        public int Borda { get; set; }
         public List<Sabor> Sabores { get; set; }
 
-        public Pizza(decimal valor,char tipo,char tamanho, List<Sabor> sabores = null) 
+        public Pizza(decimal valor,char tipo,char tamanho,int borda ,List<Sabor> sabores = null) 
         { 
             Valor = valor;
             Tipo = tipo;
             Tamanho = tamanho;
+            Borda = borda;
             this.Sabores = sabores;
         }
 
