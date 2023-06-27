@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzariaDoZe_DAO.PastaPedido
+namespace PizzariaDoZe_DAO.PastaPizza
 {
-    public class PedidoDAO
+    public class PizzaDAO
     {
         private readonly DbProviderFactory factory;
         private string Provider { get; set; }
         private string StringConexao { get; set; }
-        public PedidoDAO(string provider, string stringConexao)
+        public PizzaDAO(string provider, string stringConexao)
         {
             Provider = provider;
             StringConexao = stringConexao;

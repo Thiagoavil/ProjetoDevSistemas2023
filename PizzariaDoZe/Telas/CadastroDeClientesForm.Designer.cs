@@ -284,6 +284,7 @@
             txtId.Size = new Size(128, 27);
             txtId.TabIndex = 26;
             txtId.TabStop = false;
+            txtId.Visible = false;
             // 
             // labelId
             // 
@@ -293,6 +294,7 @@
             labelId.Size = new Size(22, 20);
             labelId.TabIndex = 25;
             labelId.Text = "Id";
+            labelId.Visible = false;
             // 
             // txtPais
             // 
