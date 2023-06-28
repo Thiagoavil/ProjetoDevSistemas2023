@@ -3,6 +3,7 @@ using PizzariaDoZe_DAO.Pastapizzaes;
 using PizzariaDoZe_DAO.PastaSabores;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
@@ -83,5 +84,42 @@ namespace PizzariaDoZe_DAO.PastaPizza
                 throw new Exception(ex.Message);
             }
         }
+
+        public DataTable Buscar(Sabor sabor)
+        {
+            using var conexao = factory.CreateConnection(); //Cria conexão
+            conexao!.ConnectionString = StringConexao; //Atribui a string de conexão
+            using var comando = factory.CreateCommand(); //Cria comando
+            comando!.Connection = conexao; //Atribui conexão
+                                           //verifica se tem filtro e personaliza o SQL do filtro
+
+
+            //SELECT id_Pizza, valor, tamanho, p.tipo,Borda, sabor.descricao_sabor FROM tb_Pizza as p
+            //join sabores_pizza  on pizza_id = p.id_Pizza
+            //join tb_sabores sabor on id_sabor = sabores_pizza.sabor_id order by id_Pizza asc
+
+            //string auxSqlFiltro = "";
+            //if (sabor.Id > 0)
+            //{
+            //    auxSqlFiltro = "WHERE p.id = " + sabor.Id + " ";
+            //}
+            //else if (sabor.Descricao.Length > 0)
+            //{
+            //    auxSqlFiltro = "WHERE p.descricao_sabor like '%" + sabor.Descricao + "%' ";
+            //}
+
+            conexao.Open();
+            comando.CommandText = @"SELECT id_Pizza, valor, tamanho, p.tipo,Borda, sabor.descricao_sabor FROM tb_Pizza as p
+            join sabores_pizza  on pizza_id = p.id_Pizza
+            join tb_sabores sabor on id_sabor = sabores_pizza.sabor_id 
+            where id_Pizza = " + sabor.Id +   
+            "order by id_Pizza asc";
+            //Executa o script na conexão e retorna as linhas afetadas.
+            var sdr = comando.ExecuteReader();
+            DataTable linhas = new();
+            linhas.Load(sdr);
+            return linhas;
+        }
     }
+}
 }
